@@ -25,12 +25,12 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "@id": "https://bayeuxhypnose.fr/#business",
-            "name": "Cabinet d'Hypnose Bayeux - Nadège GUIGNARD",
+            "name": "Cabinet d&apos;Hypnose Bayeux - Nadège GUIGNARD",
             "image": "https://bayeuxhypnose.fr/og-image.jpg",
             "url": "https://bayeuxhypnose.fr",
             "telephone": "+33649292077",
             "priceRange": "€€",
-            "description": "Cabinet d'hypnothérapie certifié à Bayeux. Nadège GUIGNARD, experte en hypnose thérapeutique, propose des séances personnalisées avec plus de 500 patients accompagnés. Spécialiste de l'arrêt du tabac, stress et perte de poids.",
+            "description": "Cabinet d&apos;hypnothérapie certifié à Bayeux. Nadège GUIGNARD, experte en hypnose thérapeutique, propose des séances personnalisées avec plus de 500 patients accompagnés. Spécialiste de l&apos;arrêt du tabac, stress et perte de poids.",
             "slogan": "Expertise et résultats en hypnothérapie à Bayeux",
             "knowsAbout": [
               "Hypnothérapie",
@@ -68,7 +68,7 @@ export default function HomePage() {
                   "@type": "Person",
                   "name": "Marie L."
                 },
-                "reviewBody": "Grâce à Nadège, j'ai réussi à arrêter de fumer après 15 ans de tabagisme. Son approche est professionnelle et efficace."
+                "reviewBody": "Grâce à Nadège, j&apos;ai réussi à arrêter de fumer après 15 ans de tabagisme. Son approche est professionnelle et efficace."
               },
               {
                 "@type": "Review",
@@ -138,8 +138,8 @@ export default function HomePage() {
             "makesOffer": [
               {
                 "@type": "Offer",
-                "name": "Séance d'hypnose standard",
-                "description": "Séance d'hypnose pour stress, anxiété, phobies, confiance en soi",
+                "name": "Séance d&apos;hypnose standard",
+                "description": "Séance d&apos;hypnose pour stress, anxiété, phobies, confiance en soi",
                 "price": "70",
                 "priceCurrency": "EUR"
               },
@@ -174,10 +174,10 @@ export default function HomePage() {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-8 leading-tight">
-              Cabinet d'Hypnose à Bayeux | Votre Hypnothérapeute Professionnelle
+              Cabinet d&apos;Hypnose à Bayeux | Votre Hypnothérapeute Professionnelle
             </h1>
             <p className="text-xl mb-10 leading-relaxed opacity-90 font-light">
-              Découvrez les bienfaits de l'hypnose à Bayeux avec une hypnothérapeute certifiée. 
+              Découvrez les bienfaits de l&apos;hypnose à Bayeux avec une hypnothérapeute certifiée. 
               Séances personnalisées pour arrêt du tabac, perte de poids, gestion du stress et plus encore.
             </p>
             <div className="flex flex-wrap gap-6 justify-center">
@@ -225,7 +225,7 @@ export default function HomePage() {
                 <h2 className="text-3xl font-serif font-medium text-teal-700 mb-3">
                   Nadège GUIGNARD - Hypnothérapeute à Bayeux
                 </h2>
-                <h3 className="text-xl text-gray-700 mb-4">Cabinet d'hypnose professionnel à Bayeux</h3>
+                <h3 className="text-xl text-gray-700 mb-4">Cabinet d&apos;hypnose professionnel à Bayeux</h3>
                 <div className="bg-teal-50 px-4 py-2 rounded-md inline-block mb-2">
                   <p className="text-teal-700 font-medium">Certifiée en hypnothérapie</p>
                 </div>
@@ -233,26 +233,26 @@ export default function HomePage() {
             </div>
             
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
-              En tant qu'hypnothérapeute professionnelle à Bayeux, je mets mon expertise au service de votre bien-être. 
-              Spécialisée dans les techniques d'hypnose thérapeutique, j'accompagne mes patients dans leur transformation personnelle.
+              En tant qu&apos;hypnothérapeute professionnelle à Bayeux, je mets mon expertise au service de votre bien-être. 
+              Spécialisée dans les techniques d&apos;hypnose thérapeutique, j&apos;accompagne mes patients dans leur transformation personnelle.
             </p>
             
             <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-              Mon cabinet d'hypnose à Bayeux vous accueille dans un cadre apaisant et professionnel. 
-              Je propose des séances d'hypnothérapie adaptées à vos besoins spécifiques, que ce soit pour l'arrêt du tabac, 
+              Mon cabinet d&apos;hypnose à Bayeux vous accueille dans un cadre apaisant et professionnel. 
+              Je propose des séances d&apos;hypnothérapie adaptées à vos besoins spécifiques, que ce soit pour l&apos;arrêt du tabac, 
               la perte de poids, ou la gestion du stress.
             </p>
             
             <div className="bg-teal-50 p-6 rounded-lg border border-teal-100 mb-8">
               <h4 className="text-lg font-medium text-gray-800 mb-3">Mon approche</h4>
               <p className="text-gray-700">
-                L'hypnose est un état naturel de conscience modifiée qui permet d'accéder aux ressources de votre inconscient. 
+                L&apos;hypnose est un état naturel de conscience modifiée qui permet d&apos;accéder aux ressources de votre inconscient. 
                 Par un accompagnement sur mesure, je vous guide pour résoudre vos problématiques et atteindre vos objectifs de changement.
               </p>
             </div>
             
             <div className="border-t border-gray-200 pt-6 mt-4">
-              <p className="text-center text-gray-600 mb-4">Pour prendre rendez-vous ou obtenir plus d'informations :</p>
+              <p className="text-center text-gray-600 mb-4">Pour prendre rendez-vous ou obtenir plus d&apos;informations :</p>
               <div className="flex flex-wrap items-center justify-center gap-8">
                 <a href="tel:0649292077" className="flex items-center text-teal-600 hover:text-teal-800 transition-colors duration-300">
                   <PhoneCall className="w-5 h-5 mr-2" />
@@ -273,7 +273,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-serif font-medium text-center mb-4">Mes services</h2>
           <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-            Des techniques d'hypnose adaptées à vos besoins spécifiques
+            Des techniques d&apos;hypnose adaptées à vos besoins spécifiques
           </p>
           
           <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
@@ -284,7 +284,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">HYPNOSE</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Technique douce permettant d'accéder à votre inconscient pour résoudre divers problèmes : stress, anxiété, phobies, confiance en soi...
+                Technique douce permettant d&apos;accéder à votre inconscient pour résoudre divers problèmes : stress, anxiété, phobies, confiance en soi...
               </p>
               <Link href="/contact" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 mt-auto font-medium">
                 En savoir plus →
@@ -312,10 +312,10 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">MINCEUR</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Retrouvez une relation saine avec l'alimentation et changez durablement vos habitudes pour atteindre votre poids de forme.
+                Retrouvez une relation saine avec l&apos;alimentation et changez durablement vos habitudes pour atteindre votre poids de forme.
               </p>
               <Link href="/tarifs" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 mt-auto font-medium">
-                Découvrir l'offre →
+                Découvrir l&apos;offre →
               </Link>
             </div>
           </div>
@@ -327,7 +327,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-serif font-medium text-center mb-4">Pourquoi consulter ?</h2>
           <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-            L'hypnose peut vous aider dans de nombreux domaines
+            L&apos;hypnose peut vous aider dans de nombreux domaines
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -338,7 +338,7 @@ export default function HomePage() {
                   <Shield className="w-6 h-6 text-teal-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Gestion du stress et de l'anxiété</h3>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Gestion du stress et de l&apos;anxiété</h3>
                   <p className="text-gray-600 leading-relaxed">
                     Apprenez à réduire votre niveau de stress et à gérer votre anxiété pour retrouver calme et sérénité au quotidien.
                   </p>
@@ -399,7 +399,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-serif font-medium mb-6">Prêt à commencer votre transformation ?</h2>
           <p className="max-w-2xl mx-auto text-xl mb-10 opacity-90 font-light">
-            Prenez rendez-vous dès aujourd'hui pour une première consultation et découvrez comment l'hypnothérapie peut vous aider.
+            Prenez rendez-vous dès aujourd&apos;hui pour une première consultation et découvrez comment l&apos;hypnothérapie peut vous aider.
           </p>
           <Link 
             href="/contact" 

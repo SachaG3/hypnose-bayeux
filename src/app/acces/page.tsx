@@ -10,7 +10,7 @@ export default function AccesPage() {
       <Script id="schema-location" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "HealthAndBeautyBusiness",
-        "name": "Hypnose Bayeux - Plan d'accès",
+        "name": "Hypnose Bayeux - Plan d&apos;accès",
         "image": "https://bayeuxhypnose.fr/og-image.jpg",
         "url": "https://bayeuxhypnose.fr/acces",
         "@id": "https://bayeuxhypnose.fr/acces",
@@ -35,10 +35,10 @@ export default function AccesPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-6 leading-tight">
-              Plan d'accès
+              Plan d&apos;accès
             </h1>
             <p className="text-xl opacity-90 font-light">
-              Comment vous rendre au cabinet d'hypnothérapie
+              Comment vous rendre au cabinet d&apos;hypnothérapie
             </p>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function AccesPage() {
                 <div>
                   <h2 className="text-2xl font-semibold text-gray-800 mb-2">Adresse du cabinet</h2>
                   <p className="text-gray-600 text-lg" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-                    <span itemProp="name">Cabinet d'Hypnothérapie</span><br />
+                    <span itemProp="name">Cabinet d&apos;Hypnothérapie</span><br />
                     <span itemProp="streetAddress">La Fosse Buhot</span><br />
                     <span itemProp="postalCode">14400</span> <span itemProp="addressLocality">Maisons</span>
                   </p>
@@ -108,9 +108,9 @@ export default function AccesPage() {
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Carte du cabinet d'hypnothérapie"
+                  title="Carte du cabinet d&apos;hypnothérapie"
                   className="rounded-xl"
-                  aria-label="Google Maps - Localisation du cabinet d'hypnothérapie à Maisons"
+                  aria-label="Google Maps - Localisation du cabinet d&apos;hypnothérapie à Maisons"
                 ></iframe>
               </div>
             </div>
@@ -123,17 +123,17 @@ export default function AccesPage() {
               
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Le cabinet est situé dans un environnement calme et verdoyant, idéal pour votre séance d'hypnothérapie.
+                  Le cabinet est situé dans un environnement calme et verdoyant, idéal pour votre séance d&apos;hypnothérapie.
                 </p>
                 <p>
-                  Si vous avez des difficultés à trouver le cabinet, n'hésitez pas à me contacter par téléphone au 
+                  Si vous avez des difficultés à trouver le cabinet, n&apos;hésitez pas à me contacter par téléphone au 
                   <a href="tel:0649292077" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 mx-1">
                     06 49 29 20 77
                   </a>
                   pour que je puisse vous guider.
                 </p>
                 <p>
-                  Je vous recommande d'arriver environ 5 minutes avant votre rendez-vous pour vous installer confortablement.
+                  Je vous recommande d&apos;arriver environ 5 minutes avant votre rendez-vous pour vous installer confortablement.
                 </p>
               </div>
             </div>

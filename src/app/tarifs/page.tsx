@@ -31,8 +31,8 @@ export default function TarifsPage() {
         "offers": [
           {
             "@type": "Offer",
-            "name": "Séance d'hypnose standard",
-            "description": "Entretien approfondi ou première séance d'hypnose (environ 1h30)",
+            "name": "Séance d&apos;hypnose standard",
+            "description": "Entretien approfondi ou première séance d&apos;hypnose (environ 1h30)",
             "price": "70",
             "priceCurrency": "EUR"
           },
@@ -61,7 +61,7 @@ export default function TarifsPage() {
               Tarifs et Horaires
             </h1>
             <p className="text-xl opacity-90 font-light">
-              Des séances d'hypnothérapie adaptées à vos besoins
+              Des séances d&apos;hypnothérapie adaptées à vos besoins
             </p>
           </div>
         </div>
@@ -81,9 +81,9 @@ export default function TarifsPage() {
               <div className="bg-gray-50 p-8 rounded-xl shadow-sm">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2" itemProp="name">Séance d'hypnose standard</h3>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2" itemProp="name">Séance d&apos;hypnose standard</h3>
                     <p className="text-gray-600" itemProp="description">
-                      Entretien approfondi ou première séance d'hypnose (environ 1h30)
+                      Entretien approfondi ou première séance d&apos;hypnose (environ 1h30)
                     </p>
                   </div>
                   <div className="md:text-right">
@@ -148,7 +148,7 @@ export default function TarifsPage() {
                   <div className="bg-teal-50 rounded-full p-3 mr-4 shrink-0">
                     <Clock className="w-6 h-6 text-teal-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800">Horaires d'ouverture</h3>
+                  <h3 className="text-xl font-semibold text-gray-800">Horaires d&apos;ouverture</h3>
                 </div>
                 
                 <div className="pl-16 space-y-3 text-gray-600">
@@ -193,7 +193,7 @@ export default function TarifsPage() {
                 </div>
                 
                 <div className="pl-16 space-y-3 text-gray-600" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-                  <p itemProp="name">Cabinet d'Hypnothérapie</p>
+                  <p itemProp="name">Cabinet d&apos;Hypnothérapie</p>
                   <p itemProp="streetAddress">La Fosse Buhot</p>
                   <p><span itemProp="postalCode">14400</span> <span itemProp="addressLocality">Maisons</span></p>
                   <p>(À 10 minutes de Bayeux)</p>

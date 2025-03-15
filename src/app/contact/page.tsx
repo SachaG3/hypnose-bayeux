@@ -14,7 +14,7 @@ export default function ContactPage() {
         "url": "https://bayeuxhypnose.fr/contact",
         "mainEntity": {
           "@type": "HealthAndBeautyBusiness",
-          "name": "Hypnose Bayeux - Cabinet d'Hypnothérapie",
+          "name": "Hypnose Bayeux - Cabinet d&apos;Hypnothérapie",
           "telephone": "+33649292077",
           "email": "contact@bayeuxhypnose.fr",
           "address": {
@@ -100,13 +100,13 @@ export default function ContactPage() {
                       <h3 className="text-xl font-semibold text-gray-800 mb-2">Adresse</h3>
                       <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                         <p className="text-gray-600">
-                          <span itemProp="name">Cabinet d'Hypnothérapie</span><br />
+                          <span itemProp="name">Cabinet d&apos;Hypnothérapie</span><br />
                           <span itemProp="streetAddress">La Fosse Buhot</span><br />
                           <span itemProp="postalCode">14400</span> <span itemProp="addressLocality">Maisons</span>
                         </p>
                       </div>
                       <Link href="/acces" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block mt-2">
-                        Voir le plan d'accès →
+                        Voir le plan d&apos;accès →
                       </Link>
                     </div>
                   </div>
@@ -210,7 +210,7 @@ export default function ContactPage() {
                   </button>
                   
                   <p className="text-sm text-gray-500 text-center">
-                    * Ce formulaire est une démonstration. Pour un véritable contact, veuillez m'appeler ou m'envoyer un email directement.
+                    * Ce formulaire est une démonstration. Pour un véritable contact, veuillez m&apos;appeler ou m&apos;envoyer un email directement.
                   </p>
                 </form>
               </div>
@@ -218,10 +218,10 @@ export default function ContactPage() {
             
             <div className="mt-16 p-8 bg-teal-50 rounded-xl border border-teal-100 text-center">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Besoin d'un rendez-vous rapidement ?
+                Besoin d&apos;un rendez-vous rapidement ?
               </h3>
               <p className="text-gray-600 mb-6">
-                N'hésitez pas à me contacter directement par téléphone pour obtenir un rendez-vous dans les meilleurs délais.
+                N&apos;hésitez pas à me contacter directement par téléphone pour obtenir un rendez-vous dans les meilleurs délais.
               </p>
               <a
                 href="tel:0649292077"
