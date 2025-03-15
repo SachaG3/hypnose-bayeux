@@ -15,12 +15,12 @@ export default function CarouselClient({ images }: { images: Image[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalSlides = images.length;
 
-  // Fonction pour afficher l'image précédente
+  // Fonction pour afficher l&apos;image précédente
   const showPrevSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
   }, [totalSlides]);
 
-  // Fonction pour afficher l'image suivante
+  // Fonction pour afficher l&apos;image suivante
   const showNextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
   }, [totalSlides]);

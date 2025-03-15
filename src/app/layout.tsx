@@ -65,7 +65,7 @@ export default function RootLayout({
               "description": "Sur rendez-vous uniquement"
             }
           ],
-          "description": "Cabinet d'hypnothérapie à Maisons près de Bayeux. Séances d'hypnose pour l'arrêt du tabac, gestion du stress, perte de poids, confiance en soi et sommeil."
+          "description": "Cabinet d&apos;hypnothérapie à Maisons près de Bayeux. Séances d&apos;hypnose pour l&apos;arrêt du tabac, gestion du stress, perte de poids, confiance en soi et sommeil."
         })}}/>
       </head>
       <body

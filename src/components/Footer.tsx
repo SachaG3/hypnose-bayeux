@@ -56,7 +56,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/acces" className="text-gray-600 hover:text-teal-700 transition-colors duration-300">
-                  Plan d'accès
+                  Plan d&apos;accès
                 </Link>
               </li>
             </ul>
@@ -64,7 +64,7 @@ export default function Footer() {
           
           {/* Colonne 3: Horaires */}
           <div className="flex flex-col">
-            <h3 className="text-xl font-serif text-teal-700 font-medium mb-6">Horaires d'ouverture</h3>
+            <h3 className="text-xl font-serif text-teal-700 font-medium mb-6">Horaires d&apos;ouverture</h3>
             <div className="flex items-start mb-4">
               <Clock className="w-5 h-5 text-teal-600 mr-3 shrink-0 mt-0.5" />
               <div className="text-gray-600">
