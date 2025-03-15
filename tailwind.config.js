@@ -16,7 +16,6 @@ module.exports = {
   },
   darkMode: "class",
   plugins: [
-    require('@heroui/plugin')
   ]
 }
 
