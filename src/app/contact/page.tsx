@@ -240,7 +240,7 @@ export default function ContactPage() {
                       name="name"
                       value={formState.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
                       placeholder="Votre nom"
                       itemProp="name"
                       required
@@ -258,7 +258,7 @@ export default function ContactPage() {
                       name="email"
                       value={formState.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
                       placeholder="votre@email.com"
                       itemProp="email"
                       required
@@ -276,7 +276,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formState.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
                       placeholder="Votre numéro de téléphone"
                       itemProp="telephone"
                     />
@@ -292,7 +292,7 @@ export default function ContactPage() {
                       value={formState.message}
                       onChange={handleChange}
                       rows={5}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
                       placeholder="Votre message ou demande de rendez-vous..."
                       required
                       aria-required="true"

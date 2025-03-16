@@ -13,6 +13,7 @@ export default function TarifsPage() {
         "name": "Hypnose Bayeux - Tarifs",
         "url": "https://bayeuxhypnose.fr/tarifs",
         "priceRange": "€€",
+        "paymentAccepted": "Cash, Credit Card, Check",
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
@@ -97,8 +98,8 @@ export default function TarifsPage() {
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                   <div>
                     <h3 className="text-xl font-semibold text-gray-800 mb-2" itemProp="name">Programme Arrêt du Tabac</h3>
-                    <p className="text-gray-600" itemProp="description">
-                      Séances pour arrêter de fumer durablement
+                    <p className="text-gray-700" itemProp="description">
+                      Séance spécifique pour arrêter de fumer durablement
                     </p>
                   </div>
                   <div className="md:text-right">
@@ -112,13 +113,12 @@ export default function TarifsPage() {
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                   <div>
                     <h3 className="text-xl font-semibold text-gray-800 mb-2" itemProp="name">Programme Amincissement</h3>
-                    <p className="text-gray-600" itemProp="description">
+                    <p className="text-gray-700" itemProp="description">
                       Accompagnement personnalisé pour la perte de poids (3 séances)
                     </p>
                   </div>
                   <div className="md:text-right">
                     <p className="text-2xl font-serif text-teal-700 font-medium" itemProp="price">210</p>
-                    <p className="text-gray-500 text-sm">(70€ par séance)</p>
                   </div>
                 </div>
               </div>
@@ -126,7 +126,7 @@ export default function TarifsPage() {
             
             <div className="mt-12 p-6 bg-teal-50 rounded-xl border border-teal-100 text-center">
               <p className="text-gray-700">
-                Les consultations peuvent être réglées par chèque ou espèces.
+                Les consultations peuvent être réglées par carte bancaire, chèque ou espèces.
               </p>
             </div>
           </div>
@@ -177,7 +177,7 @@ export default function TarifsPage() {
                 </div>
                 
                 <div className="pl-16 space-y-3 text-gray-600">
-                  <p>Paiement par chèque ou espèces.</p>
+                  <p>Paiement par carte bancaire, chèque ou espèces.</p>
                   <p>Règlement demandé à la fin de chaque séance.</p>
                   <p>Facture disponible sur demande.</p>
                 </div>

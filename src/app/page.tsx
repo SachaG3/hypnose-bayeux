@@ -146,15 +146,15 @@ export default function HomePage() {
               {
                 "@type": "Offer",
                 "name": "Programme Arrêt du Tabac",
-                "description": "Protocole complet en 3 séances pour arrêter de fumer durablement",
-                "price": "210",
+                "description": "Séance spécifique pour arrêter de fumer durablement",
+                "price": "90",
                 "priceCurrency": "EUR"
               },
               {
                 "@type": "Offer",
                 "name": "Programme Amincissement",
-                "description": "Accompagnement personnalisé pour la perte de poids (4 séances)",
-                "price": "260",
+                "description": "Accompagnement personnalisé pour la perte de poids (3 séances)",
+                "price": "210",
                 "priceCurrency": "EUR"
               }
             ],
@@ -389,6 +389,136 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hypnose Ericksonienne Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-serif font-medium text-center mb-8 text-teal-700">
+              L&apos;Hypnose Ericksonienne : Une Approche Bienveillante
+            </h2>
+            
+            <div className="bg-gray-100 p-8 rounded-xl mb-8">
+              <p className="text-gray-800 leading-relaxed mb-4">
+                L&apos;hypnose ericksonienne, développée par le psychiatre américain Milton Erickson, est une approche thérapeutique douce et respectueuse. Contrairement aux idées reçues, vous ne perdez jamais le contrôle pendant une séance.
+              </p>
+              <p className="text-gray-800 leading-relaxed mb-4">
+                Cette méthode utilise le langage métaphorique et la communication indirecte pour accéder à l&apos;inconscient, là où se trouvent vos ressources naturelles de guérison et de changement.
+              </p>
+              <p className="text-gray-800 leading-relaxed">
+                Pendant une séance, vous restez parfaitement conscient et participez activement au processus. Vous atteindrez simplement un état de concentration focalisée et de relaxation profonde, propice aux transformations positives.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-gray-100 p-8 rounded-xl">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">Principes clés</h3>
+                <ul className="space-y-3 text-gray-800">
+                  <li className="flex items-start">
+                    <span className="bg-teal-100 text-teal-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 shrink-0 mt-0.5">✓</span>
+                    <span>Approche sur-mesure adaptée à chaque personne</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-teal-100 text-teal-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 shrink-0 mt-0.5">✓</span>
+                    <span>Utilisation des ressources propres à chaque individu</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-teal-100 text-teal-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 shrink-0 mt-0.5">✓</span>
+                    <span>Communication avec l&apos;inconscient par la suggestion indirecte</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-teal-100 text-teal-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 shrink-0 mt-0.5">✓</span>
+                    <span>Absence de manipulation : vous gardez toujours le contrôle</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-gray-100 p-8 rounded-xl">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">Bénéfices observés</h3>
+                <ul className="space-y-3 text-gray-800">
+                  <li className="flex items-start">
+                    <span className="bg-teal-100 text-teal-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 shrink-0 mt-0.5">✓</span>
+                    <span>Résultats rapides et durables</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-teal-100 text-teal-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 shrink-0 mt-0.5">✓</span>
+                    <span>Développement de nouvelles ressources mentales</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-teal-100 text-teal-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 shrink-0 mt-0.5">✓</span>
+                    <span>Amélioration de la confiance et de l&apos;estime de soi</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-teal-100 text-teal-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 shrink-0 mt-0.5">✓</span>
+                    <span>Réduction significative du stress et de l&apos;anxiété</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="mt-10 text-center">
+              <Link href="/contact" className="inline-block text-teal-600 hover:text-teal-800 font-medium transition-colors duration-300">
+                En savoir plus sur mes méthodes →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gray-100">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-serif font-medium text-center mb-4 text-teal-700">
+              Questions fréquentes
+            </h2>
+            <p className="text-xl text-gray-800 text-center mb-12 max-w-2xl mx-auto">
+              Découvrez les réponses aux questions les plus courantes
+            </p>
+            
+            <div className="space-y-6">
+              {/* Question 1 */}
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                  Comment fonctionne l&apos;hypnose thérapeutique ?
+                </h3>
+                <p className="text-gray-800 leading-relaxed">
+                  L&apos;hypnose thérapeutique est un état naturel de conscience modifiée qui permet d&apos;accéder aux ressources de l&apos;inconscient. Durant une séance, vous restez conscient et gardez le contrôle tout en étant dans un état de relaxation profonde, propice au changement thérapeutique.
+                </p>
+              </div>
+              
+              {/* Question 2 */}
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                  Combien de séances sont nécessaires ?
+                </h3>
+                <p className="text-gray-800 leading-relaxed">
+                  En général, une seule séance est suffisante pour la plupart des problématiques. Pour l'arrêt du tabac, une séance peut suffire dans de nombreux cas. Pour l'amaigrissement, un protocole de 3 séances est recommandé afin d'obtenir des résultats durables.
+                </p>
+              </div>
+              
+              {/* Question 3 */}
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                  Est-ce que tout le monde peut être hypnotisé ?
+                </h3>
+                <p className="text-gray-800 leading-relaxed">
+                  Oui, toute personne capable de concentration et désireuse de changement peut entrer en état d&apos;hypnose. C&apos;est un état naturel que nous expérimentons quotidiennement, par exemple en conduisant ou en lisant un livre captivant.
+                </p>
+              </div>
+            </div>
+            
+            <div className="mt-10 text-center">
+              <Link 
+                href="/faq" 
+                className="bg-teal-600 text-white px-6 py-3 rounded-md hover:bg-teal-700 transition-colors duration-300 inline-block font-medium"
+              >
+                Voir toutes les questions →
+              </Link>
             </div>
           </div>
         </div>
