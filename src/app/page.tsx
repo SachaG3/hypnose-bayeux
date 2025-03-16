@@ -497,7 +497,7 @@ export default function HomePage() {
                   Combien de séances sont nécessaires ?
                 </h3>
                 <p className="text-gray-800 leading-relaxed">
-                  En général, une seule séance est suffisante pour la plupart des problématiques. Pour l'arrêt du tabac, une séance peut suffire dans de nombreux cas. Pour l'amaigrissement, un protocole de 3 séances est recommandé afin d'obtenir des résultats durables.
+                  En général, une seule séance est suffisante pour la plupart des problématiques. Pour l&apos;arrêt du tabac, une séance peut suffire dans de nombreux cas. Pour l&apos;amaigrissement, un protocole de 3 séances est recommandé afin d&apos;obtenir des résultats durables.
                 </p>
               </div>
               

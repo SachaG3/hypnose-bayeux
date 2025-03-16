@@ -72,7 +72,7 @@ export default function FAQPage() {
                 Questions Fréquentes
               </h1>
               <p className="text-xl opacity-90 font-light">
-                Tout ce que vous devez savoir sur l'hypnothérapie et mes services
+                Tout ce que vous devez savoir sur l&apos;hypnothérapie et mes services
               </p>
             </div>
           </div>
@@ -83,7 +83,7 @@ export default function FAQPage() {
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto mb-16">
               <p className="text-lg text-gray-800 text-center mb-8">
-                Découvrez les réponses aux questions les plus fréquentes sur l'hypnose thérapeutique, son fonctionnement et ses applications
+                Découvrez les réponses aux questions les plus fréquentes sur l&apos;hypnose thérapeutique, son fonctionnement et ses applications
               </p>
             </div>
 
@@ -128,10 +128,10 @@ export default function FAQPage() {
             </div>
             <div className="mt-16 p-8 bg-teal-50 rounded-xl border border-teal-100 text-center">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-              Vous avez d'autres questions ?
+              Vous avez d&apos;autres questions ?
               </h3>
               <p className="text-gray-700 mb-6">
-              N'hésitez pas à me contacter directement pour obtenir des réponses personnalisées à vos interrogations.
+              N&apos;hésitez pas à me contacter directement pour obtenir des réponses personnalisées à vos interrogations.
               </p>
               <a
                 href="tel:0649292077"
