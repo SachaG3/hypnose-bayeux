@@ -3,8 +3,81 @@
 import { Phone, Mail, MessageSquare, Clock, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import Script from 'next/script';
+import { useState, FormEvent } from 'react';
 
 export default function ContactPage() {
+  // États pour gérer le formulaire
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  
+  // État pour gérer les statuts de soumission
+  const [status, setStatus] = useState({
+    submitting: false,
+    submitted: false,
+    success: false,
+    error: ''
+  });
+
+  // Gérer les changements dans les champs du formulaire
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormState(prev => ({ ...prev, [name]: value }));
+  };
+
+  // Gérer la soumission du formulaire
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    // Mettre à jour l'état pour indiquer que le formulaire est en cours d'envoi
+    setStatus({ submitting: true, submitted: false, success: false, error: '' });
+    
+    try {
+      // Envoyer les données du formulaire à notre API
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Une erreur est survenue lors de l\'envoi du message');
+      }
+      
+      // Réinitialiser le formulaire en cas de succès
+      setFormState({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      
+      // Mettre à jour l'état pour indiquer que la soumission a réussi
+      setStatus({
+        submitting: false,
+        submitted: true,
+        success: true,
+        error: ''
+      });
+      
+    } catch (error) {
+      // Gérer les erreurs
+      setStatus({
+        submitting: false,
+        submitted: true,
+        success: false,
+        error: error instanceof Error ? error.message : 'Une erreur est survenue'
+      });
+    }
+  };
+
   return (
     <>
       <Script id="schema-contact" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -74,7 +147,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-800 mb-2">Téléphone</h3>
-                      <a href="tel:0649292077" className="text-gray-600 hover:text-teal-700 transition-colors duration-300" itemProp="telephone" content="+33649292077">
+                      <a href="tel:0649292077" className="text-gray-700 hover:text-teal-700 transition-colors duration-300" itemProp="telephone" content="+33649292077">
                         06 49 29 20 77
                       </a>
                     </div>
@@ -86,7 +159,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-800 mb-2">Email</h3>
-                      <a href="mailto:contact@bayeuxhypnose.fr" className="text-gray-600 hover:text-teal-700 transition-colors duration-300" itemProp="email">
+                      <a href="mailto:contact@bayeuxhypnose.fr" className="text-gray-700 hover:text-teal-700 transition-colors duration-300" itemProp="email">
                         contact@bayeuxhypnose.fr
                       </a>
                     </div>
@@ -99,7 +172,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-xl font-semibold text-gray-800 mb-2">Adresse</h3>
                       <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-                        <p className="text-gray-600">
+                        <p className="text-gray-700">
                           <span itemProp="name">Cabinet d&apos;Hypnothérapie</span><br />
                           <span itemProp="streetAddress">La Fosse Buhot</span><br />
                           <span itemProp="postalCode">14400</span> <span itemProp="addressLocality">Maisons</span>
@@ -121,7 +194,7 @@ export default function ContactPage() {
                         <meta itemProp="dayOfWeek" content="https://schema.org/Monday https://schema.org/Tuesday https://schema.org/Wednesday https://schema.org/Thursday https://schema.org/Friday" />
                         <meta itemProp="opens" content="09:00:00" />
                         <meta itemProp="closes" content="19:00:00" />
-                        <p className="text-gray-600">
+                        <p className="text-gray-700">
                           Lundi - Vendredi : 9h00 - 19h00<br />
                           Samedi : Sur rendez-vous<br />
                           Dimanche : Fermé
@@ -138,7 +211,25 @@ export default function ContactPage() {
                   Envoyez-moi un message
                 </h2>
                 
-                <form className="space-y-6" id="contactForm" itemScope itemType="https://schema.org/ContactPoint">
+                {/* Message de succès */}
+                {status.submitted && status.success && (
+                  <div className="bg-green-50 border border-green-200 text-green-800 rounded-md p-4 mb-6">
+                    <p className="text-center font-medium">
+                      Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais.
+                    </p>
+                  </div>
+                )}
+                
+                {/* Message d'erreur */}
+                {status.submitted && !status.success && (
+                  <div className="bg-red-50 border border-red-200 text-red-800 rounded-md p-4 mb-6">
+                    <p className="text-center font-medium">
+                      {status.error || "Une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer."}
+                    </p>
+                  </div>
+                )}
+                
+                <form className="space-y-6" id="contactForm" itemScope itemType="https://schema.org/ContactPoint" onSubmit={handleSubmit}>
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                       Nom complet
@@ -147,6 +238,8 @@ export default function ContactPage() {
                       type="text"
                       id="name"
                       name="name"
+                      value={formState.name}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
                       placeholder="Votre nom"
                       itemProp="name"
@@ -163,6 +256,8 @@ export default function ContactPage() {
                       type="email"
                       id="email"
                       name="email"
+                      value={formState.email}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
                       placeholder="votre@email.com"
                       itemProp="email"
@@ -179,6 +274,8 @@ export default function ContactPage() {
                       type="tel"
                       id="phone"
                       name="phone"
+                      value={formState.phone}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
                       placeholder="Votre numéro de téléphone"
                       itemProp="telephone"
@@ -192,6 +289,8 @@ export default function ContactPage() {
                     <textarea
                       id="message"
                       name="message"
+                      value={formState.message}
+                      onChange={handleChange}
                       rows={5}
                       className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
                       placeholder="Votre message ou demande de rendez-vous..."
@@ -204,14 +303,20 @@ export default function ContactPage() {
                     type="submit"
                     className="bg-teal-700 text-white px-6 py-3 rounded-md hover:bg-teal-800 transition-colors duration-300 w-full font-medium flex items-center justify-center"
                     aria-label="Envoyer le message de contact"
+                    disabled={status.submitting}
                   >
-                    <MessageSquare className="w-5 h-5 mr-2" />
-                    Envoyer le message
+                    {status.submitting ? (
+                      <>
+                        <div className="mr-2 h-5 w-5 border-t-2 border-b-2 border-white rounded-full animate-spin"></div>
+                        Envoi en cours...
+                      </>
+                    ) : (
+                      <>
+                        <MessageSquare className="w-5 h-5 mr-2" />
+                        Envoyer le message
+                      </>
+                    )}
                   </button>
-                  
-                  <p className="text-sm text-gray-500 text-center">
-                    * Ce formulaire est une démonstration. Pour un véritable contact, veuillez m&apos;appeler ou m&apos;envoyer un email directement.
-                  </p>
                 </form>
               </div>
             </div>
@@ -220,7 +325,7 @@ export default function ContactPage() {
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
                 Besoin d&apos;un rendez-vous rapidement ?
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-700 mb-6">
                 N&apos;hésitez pas à me contacter directement par téléphone pour obtenir un rendez-vous dans les meilleurs délais.
               </p>
               <a

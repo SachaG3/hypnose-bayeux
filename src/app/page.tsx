@@ -162,7 +162,7 @@ export default function HomePage() {
               "@type": "Person",
               "name": "Nadège GUIGNARD",
               "jobTitle": "Hypnothérapeute",
-              "image": "https://bayeuxhypnose.fr/nadegeGuignard.png",
+              "image": "https://bayeuxhypnose.fr/nadegeGuignard.webp",
               "description": "Hypnothérapeute certifiée spécialisée dans l'accompagnement des personnes souhaitant se libérer de leurs blocages"
             }
           })
@@ -208,7 +208,7 @@ export default function HomePage() {
                   <meta itemProp="name" content="Nadège GUIGNARD" />
                   <meta itemProp="jobTitle" content="Hypnothérapeute" />
           <Image
-                    src="/nadegeGuignard.png" 
+                    src="/nadegeGuignard.webp"
                     alt="Nadège GUIGNARD - Hypnothérapeute à Bayeux" 
                     fill
                     sizes="(max-width: 768px) 100vw, 224px"
