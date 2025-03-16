@@ -10,10 +10,10 @@ export const viewport: Viewport = {
 export const baseMetadata: Metadata = {
   metadataBase: new URL('https://www.bayeuxhypnose.fr'),
   title: {
-    default: 'Hypnothérapeute Bayeux | Cabinet d\'Hypnose Certifié - Nadège GUIGNARD',
-    template: '%s | Expert en Hypnothérapie à Bayeux - Nadège GUIGNARD',
+    default: 'Hypnothérapeute Bayeux | Cabinet d\'Hypnose - Nadège G',
+    template: '%s | Hypnothérapie Bayeux - Nadège GUIGNARD',
   },
-  description: 'Expert en hypnothérapie à Bayeux : Nadège GUIGNARD, hypnothérapeute certifiée, vous accompagne avec des séances personnalisées. Spécialiste de l\'arrêt du tabac, gestion du stress et perte de poids. Plus de 500 patients accompagnés.',
+  description: 'Expert en hypnothérapie à Bayeux : séances personnalisées pour arrêt du tabac, gestion du stress et perte de poids. Plus de 10 ans d\'expérience depuis 2014.',
   keywords: [
     'hypnothérapeute bayeux', 
     'hypnose bayeux',
@@ -40,8 +40,8 @@ export const baseMetadata: Metadata = {
     locale: 'fr_FR',
     url: 'https://www.bayeuxhypnose.fr',
     siteName: 'Cabinet d\'Hypnose Bayeux - Nadège GUIGNARD',
-    title: 'Expert en Hypnothérapie à Bayeux | Cabinet Certifié - Nadège GUIGNARD',
-    description: 'Découvrez l\'expertise de Nadège GUIGNARD, hypnothérapeute certifiée à Bayeux. Spécialiste de l\'hypnose thérapeutique : arrêt du tabac, perte de poids, gestion du stress. Résultats prouvés.',
+    title: 'Hypnose à Bayeux | Cabinet Certifié - Nadège GUIGNARD',
+    description: 'Expert en hypnothérapie à Bayeux : arrêt du tabac, perte de poids et gestion du stress. Plus de 10 ans d\'expérience depuis 2014.',
     images: [
       {
         url: 'https://www.bayeuxhypnose.fr/og-image.jpg',
@@ -60,7 +60,7 @@ export const baseMetadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Expert Hypnothérapeute à Bayeux | Nadège GUIGNARD',
-    description: 'Hypnothérapeute certifiée à Bayeux : expertise en arrêt du tabac, perte de poids et gestion du stress. Séances personnalisées, résultats prouvés.',
+    description: 'Hypnothérapeute certifiée à Bayeux : expertise en arrêt du tabac, perte de poids et gestion du stress. Plus de 10 ans d\'expérience depuis 2014.',
     images: ['https://www.bayeuxhypnose.fr/og-image.jpg'],
   },
   robots: {
