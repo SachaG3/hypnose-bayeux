@@ -24,13 +24,13 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "@id": "https://bayeuxhypnose.fr/#business",
-            "name": "Cabinet d&apos;Hypnose Bayeux - Nadège GUIGNARD",
-            "image": "https://bayeuxhypnose.fr/og-image.jpg",
-            "url": "https://bayeuxhypnose.fr",
+            "@id": "https://www.bayeuxhypnose.fr/#business",
+            "name": "Cabinet d'Hypnothérapie Bayeux",
+            "image": "https://www.bayeuxhypnose.fr/og-image.jpg",
+            "url": "https://www.bayeuxhypnose.fr",
             "telephone": "+33649292077",
             "priceRange": "€€",
-            "description": "Cabinet d&apos;hypnothérapie certifié à Bayeux. Nadège GUIGNARD, experte en hypnose thérapeutique, propose des séances personnalisées avec plus de 500 patients accompagnés. Spécialiste de l&apos;arrêt du tabac, stress et perte de poids.",
+            "description": "Cabinet d'hypnothérapie à Bayeux spécialisé dans l'arrêt du tabac, la gestion du stress et l'amincissement. Hypnothérapeute certifiée.",
             "slogan": "Expertise et résultats en hypnothérapie à Bayeux",
             "knowsAbout": [
               "Hypnothérapie",
@@ -123,9 +123,9 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@type": "HealthAndBeautyBusiness",
             "name": "Hypnose Bayeux",
-            "image": "https://bayeuxhypnose.fr/og-image.jpg",
-            "@id": "https://bayeuxhypnose.fr",
-            "url": "https://bayeuxhypnose.fr",
+            "image": "https://www.bayeuxhypnose.fr/og-image.jpg",
+            "@id": "https://www.bayeuxhypnose.fr",
+            "url": "https://www.bayeuxhypnose.fr",
             "telephone": "+33649292077",
             "priceRange": "€€",
             "address": {
@@ -162,7 +162,7 @@ export default function HomePage() {
               "@type": "Person",
               "name": "Nadège GUIGNARD",
               "jobTitle": "Hypnothérapeute",
-              "image": "https://bayeuxhypnose.fr/nadegeGuignard.webp",
+              "image": "https://www.bayeuxhypnose.fr/nadegeGuignard.webp",
               "description": "Hypnothérapeute certifiée spécialisée dans l'accompagnement des personnes souhaitant se libérer de leurs blocages"
             }
           })

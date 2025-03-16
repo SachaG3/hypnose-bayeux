@@ -6,19 +6,19 @@ import { Phone } from 'lucide-react';
 
 export const metadata: Metadata = {
   ...baseMetadata,
-  title: 'Galerie Photos | Hypnose Bayeux',
-  description: 'Découvrez en images le cabinet d&apos;hypnothérapie à Maisons près de Bayeux. Un espace apaisant dédié à votre bien-être et votre transformation personnelle.',
+  title: 'Galerie Photos | Cabinet d\'Hypnose à Bayeux',
+  description: 'Découvrez en images le cabinet d\'hypnothérapie situé à Maisons près de Bayeux. Un espace apaisant dédié à votre bien-être.',
   alternates: {
-    canonical: 'https://bayeuxhypnose.fr/galerie',
+    canonical: 'https://www.bayeuxhypnose.fr/galerie',
   },
   openGraph: {
     ...baseMetadata.openGraph,
-    title: 'Galerie Photos | Hypnose Bayeux',
-    description: 'Découvrez en images le cabinet d&apos;hypnothérapie à Maisons près de Bayeux. Un espace apaisant dédié à votre bien-être.',
-    url: 'https://bayeuxhypnose.fr/galerie',
+    title: 'Photos du Cabinet d\'Hypnose près de Bayeux',
+    description: 'Découvrez l\'environnement chaleureux et apaisant du cabinet d\'hypnothérapie de Nadège GUIGNARD à Maisons, près de Bayeux.',
+    url: 'https://www.bayeuxhypnose.fr/galerie',
     images: [
       {
-        url: 'https://bayeuxhypnose.fr/og-image.jpg',
+        url: 'https://www.bayeuxhypnose.fr/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Galerie Photos - Cabinet d&apos;Hypnothérapie à Bayeux',
@@ -67,16 +67,25 @@ export default function GaleriePage() {
       <Script id="schema-galerie" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "ImageGallery",
-        "name": "Galerie Photos du Cabinet d&apos;Hypnothérapie Hypnose Bayeux",
-        "description": "Découvrez en images le cabinet d&apos;hypnothérapie à Maisons près de Bayeux.",
-        "image": galleryImages.map(img => `https://bayeuxhypnose.fr${img.src}`),
-        "url": "https://bayeuxhypnose.fr/galerie",
+        "author": {
+          "@type": "Person",
+          "name": "Nadège GUIGNARD"
+        },
+        "contentLocation": {
+          "@type": "Place",
+          "name": "Cabinet d'Hypnothérapie - Hypnose Bayeux"
+        },
+        "thumbnailUrl": galleryImages.map(img => `https://www.bayeuxhypnose.fr${img.src}`),
+        "name": "Galerie photos du cabinet d'hypnose à Bayeux",
+        "description": "Photos du cabinet d'hypnothérapie situé à Maisons près de Bayeux. Un espace professionnel et apaisant dédié au bien-être et à la thérapie par l'hypnose.",
+        "image": galleryImages.map(img => `https://www.bayeuxhypnose.fr${img.src}`),
+        "url": "https://www.bayeuxhypnose.fr/galerie",
         "provider": {
-          "@type": "LocalBusiness",
-          "name": "Hypnose Bayeux",
-          "image": "https://bayeuxhypnose.fr/og-image.jpg",
-          "@id": "https://bayeuxhypnose.fr",
-          "url": "https://bayeuxhypnose.fr"
+          "@type": "HealthAndBeautyBusiness",
+          "name": "Hypnose Bayeux - Nadège GUIGNARD",
+          "image": "https://www.bayeuxhypnose.fr/og-image.jpg",
+          "@id": "https://www.bayeuxhypnose.fr",
+          "url": "https://www.bayeuxhypnose.fr"
         }
       })}} />
 

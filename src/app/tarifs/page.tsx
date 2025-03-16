@@ -11,7 +11,7 @@ export default function TarifsPage() {
         "@context": "https://schema.org",
         "@type": "HealthAndBeautyBusiness",
         "name": "Hypnose Bayeux - Tarifs",
-        "url": "https://bayeuxhypnose.fr/tarifs",
+        "url": "https://www.bayeuxhypnose.fr/tarifs",
         "priceRange": "€€",
         "paymentAccepted": "Cash, Credit Card, Check",
         "openingHoursSpecification": [

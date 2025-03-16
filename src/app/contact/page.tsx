@@ -83,8 +83,9 @@ export default function ContactPage() {
       <Script id="schema-contact" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "ContactPage",
+        "description": "Contactez Nadège GUIGNARD, hypnothérapeute à Bayeux, pour prendre rendez-vous ou obtenir des informations sur les séances d'hypnose.",
         "name": "Contact - Hypnose Bayeux",
-        "url": "https://bayeuxhypnose.fr/contact",
+        "url": "https://www.bayeuxhypnose.fr/contact",
         "mainEntity": {
           "@type": "HealthAndBeautyBusiness",
           "name": "Hypnose Bayeux - Cabinet d&apos;Hypnothérapie",

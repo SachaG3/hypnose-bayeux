@@ -10,10 +10,11 @@ export default function AccesPage() {
       <Script id="schema-location" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "HealthAndBeautyBusiness",
-        "name": "Hypnose Bayeux - Plan d&apos;accès",
-        "image": "https://bayeuxhypnose.fr/og-image.jpg",
-        "url": "https://bayeuxhypnose.fr/acces",
-        "@id": "https://bayeuxhypnose.fr/acces",
+        "name": "Cabinet d'Hypnose Bayeux - Nadège GUIGNARD",
+        "description": "Cabinet d'hypnothérapie situé à Maisons près de Bayeux. Facile d'accès, à 10 minutes de Bayeux et 30 minutes de Caen.",
+        "image": "https://www.bayeuxhypnose.fr/og-image.jpg",
+        "url": "https://www.bayeuxhypnose.fr/acces",
+        "@id": "https://www.bayeuxhypnose.fr/acces",
         "telephone": "+33649292077",
         "address": {
           "@type": "PostalAddress",
