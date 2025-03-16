@@ -207,7 +207,7 @@ export default function HomePage() {
                 <div className="relative w-56 h-56 rounded-full overflow-hidden border-4 border-teal-100 shadow-md" itemScope itemType="https://schema.org/Person">
                   <meta itemProp="name" content="Nadège GUIGNARD" />
                   <meta itemProp="jobTitle" content="Hypnothérapeute" />
-                  <Image 
+          <Image
                     src="/nadegeGuignard.png" 
                     alt="Nadège GUIGNARD - Hypnothérapeute à Bayeux" 
                     fill
@@ -271,7 +271,7 @@ export default function HomePage() {
       {/* Services Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-serif font-medium text-center mb-4">Mes services</h2>
+          <h2 className="text-3xl font-serif font-medium text-center mb-4 text-teal-700">Mes services</h2>
           <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
             Des techniques d&apos;hypnose adaptées à vos besoins spécifiques
           </p>
@@ -325,7 +325,7 @@ export default function HomePage() {
       {/* Why Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-serif font-medium text-center mb-4">Pourquoi consulter ?</h2>
+          <h2 className="text-3xl font-serif font-medium text-center mb-4 text-teal-700">Pourquoi consulter ?</h2>
           <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
             L&apos;hypnose peut vous aider dans de nombreux domaines
           </p>
@@ -407,7 +407,7 @@ export default function HomePage() {
           >
             Contactez-moi
           </Link>
-        </div>
+    </div>
       </section>
     </>
   );

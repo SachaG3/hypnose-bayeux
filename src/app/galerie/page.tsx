@@ -3,6 +3,7 @@ import { baseMetadata } from '../metadata';
 import Script from 'next/script';
 import Link from 'next/link';
 import CarouselClient from '@/components/CarouselClient';
+import { Phone } from 'lucide-react';
 
 export const metadata: Metadata = {
   ...baseMetadata,
@@ -100,24 +101,21 @@ export default function GaleriePage() {
           <div className="max-w-5xl mx-auto">
             <CarouselClient images={galleryImages} />
 
-            <div className="mt-16 text-center">
-              <p className="text-gray-700 mb-8">
-                Vous souhaitez en savoir plus sur mon cabinet d&apos;hypnothérapie ou prendre rendez-vous pour une séance ?
+            <div className="mt-16 p-8 bg-teal-50 rounded-xl border border-teal-100 text-center">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                Besoin d&apos;un rendez-vous rapidement ?
+              </h3>
+              <p className="text-gray-600 mb-6">
+                N&apos;hésitez pas à me contacter directement par téléphone pour obtenir un rendez-vous dans les meilleurs délais.
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Link 
-                  href="/contact" 
-                  className="bg-teal-600 text-white px-6 py-3 rounded-md hover:bg-teal-700 transition-colors duration-300 font-medium"
-                >
-                  Prendre rendez-vous
-                </Link>
-                <Link 
-                  href="/acces" 
-                  className="bg-gray-100 text-gray-800 px-6 py-3 rounded-md hover:bg-gray-200 transition-colors duration-300 font-medium"
-                >
-                  Comment venir ?
-                </Link>
-              </div>
+              <a
+                href="tel:0649292077"
+                className="bg-teal-700 text-white px-6 py-3 rounded-md hover:bg-teal-800 transition-colors duration-300 inline-flex items-center font-medium"
+                aria-label="Appeler pour prendre rendez-vous"
+              >
+                <Phone className="w-5 h-5 mr-2" /> 
+                Appeler maintenant
+              </a>
             </div>
           </div>
         </div>
