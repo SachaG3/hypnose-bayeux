@@ -3,7 +3,6 @@
 import { Phone, Mail, MessageSquare, Clock, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import Script from 'next/script';
-import Image from 'next/image';
 import { useState, FormEvent } from 'react';
 
 export default function ContactFormClient() {

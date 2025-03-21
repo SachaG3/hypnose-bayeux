@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { baseMetadata } from '../metadata';
 import Script from 'next/script';
-import Image from 'next/image';
 import CarouselClient from '@/components/CarouselClient';
 import { Phone } from 'lucide-react';
 
