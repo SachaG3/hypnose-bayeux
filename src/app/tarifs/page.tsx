@@ -1,6 +1,7 @@
-import { Clock, CreditCard, MapPin } from 'lucide-react';
+import { Clock, CreditCard, MapPin, Euro, Calendar } from 'lucide-react';
 import { tarifsMetadata } from '../metadata';
 import Script from 'next/script';
+import Image from 'next/image';
 
 export const metadata = tarifsMetadata;
 

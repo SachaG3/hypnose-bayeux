@@ -1,6 +1,7 @@
 "use client";
 
 import Script from 'next/script';
+import Image from 'next/image';
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, Phone } from 'lucide-react';
 

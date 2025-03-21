@@ -1,6 +1,7 @@
 import { MapPin, Car, Navigation } from 'lucide-react';
 import { accesMetadata } from '../metadata';
 import Script from 'next/script';
+import Image from 'next/image';
 
 export const metadata = accesMetadata;
 

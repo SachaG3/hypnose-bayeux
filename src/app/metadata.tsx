@@ -10,10 +10,10 @@ export const viewport: Viewport = {
 export const baseMetadata: Metadata = {
   metadataBase: new URL('https://www.bayeuxhypnose.fr'),
   title: {
-    default: 'Hypnothérapeute Bayeux | Cabinet d\'Hypnose - Nadège G',
+    default: 'Hypnothérapeute Bayeux | Nadège Guignard',
     template: '%s | Hypnothérapie Bayeux - Nadège GUIGNARD',
   },
-  description: 'Expert en hypnothérapie à Bayeux : séances personnalisées pour arrêt du tabac, gestion du stress et perte de poids. Plus de 10 ans d\'expérience depuis 2014.',
+  description: 'Expert en hypnothérapie à Bayeux : séances pour arrêt du tabac, gestion du stress et perte de poids. Plus de 10 ans d\'expérience depuis 2014.',
   keywords: [
     'hypnothérapeute bayeux', 
     'hypnose bayeux',
@@ -22,7 +22,20 @@ export const baseMetadata: Metadata = {
     'arrêt tabac hypnose bayeux',
     'expert hypnose bayeux',
     'hypnothérapeute certifié bayeux',
-    'meilleur hypnothérapeute bayeux'
+    'meilleur hypnothérapeute bayeux',
+    'hypnothérapie bayeux',
+    'hypnose bayeux',
+    'cabinet hypnose bayeux',
+    'hypnothérapie certifiée bayeux',
+    'arrêt tabac hypnose bayeux',
+    'expert hypnose bayeux',
+    'nadege guignard',
+    'nadege guignard hypnothérapeute',
+    'nadege guignard hypnose',
+    'nadege guignard cabinet hypnose',
+    'nadege guignard hypnothérapie',
+    'nadege guignard arrêt tabac',
+    'nadege guignard expert hypnose',
   ],
   authors: [{ 
     name: 'Nadège GUIGNARD', 
