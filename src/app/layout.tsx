@@ -30,6 +30,17 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
+        {/* Google tag (gtag.js) */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16943869327" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16943869327');
+          `}
+        </Script>
+        
         {/* Schema.org pour Local Business */}
         <Script id="schema-local-business" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
