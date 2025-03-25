@@ -43,7 +43,7 @@ export default function HomePage() {
             ],
             "hasCredential": {
               "@type": "EducationalOccupationalCredential",
-              "credentialCategory": "Certification professionnelle",
+              "credentialCategory": "Certification",
               "name": "Certification en Hypnothérapie",
               "recognizedBy": {
                 "@type": "Organization",
@@ -68,7 +68,7 @@ export default function HomePage() {
                   "@type": "Person",
                   "name": "Marie L."
                 },
-                "reviewBody": "Grâce à Nadège, j&apos;ai réussi à arrêter de fumer après 15 ans de tabagisme. Son approche est professionnelle et efficace."
+                "reviewBody": "Grâce à Nadège, j&apos;ai réussi à arrêter de fumer après 15 ans de tabagisme. Son approche est efficace."
               },
               {
                 "@type": "Review",
@@ -174,7 +174,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-8 leading-tight">
-              Cabinet d&apos;Hypnose à Bayeux | Votre Hypnothérapeute Professionnelle
+              Cabinet d&apos;Hypnose à Bayeux | Votre Hypnothérapeute
             </h1>
             <p className="text-xl mb-10 leading-relaxed opacity-90 font-light">
               Découvrez les bienfaits de l&apos;hypnose à Bayeux avec une hypnothérapeute certifiée. 
@@ -225,7 +225,7 @@ export default function HomePage() {
                 <h2 className="text-3xl font-serif font-medium text-teal-700 mb-3">
                   Nadège GUIGNARD - Hypnothérapeute à Bayeux
                 </h2>
-                <h3 className="text-xl text-gray-700 mb-4">Cabinet d&apos;hypnose professionnel à Bayeux</h3>
+                <h3 className="text-xl text-gray-700 mb-4">Cabinet d&apos;hypnose à Bayeux</h3>
                 <div className="bg-teal-50 px-4 py-2 rounded-md inline-block mb-2">
                   <p className="text-teal-700 font-medium">Certifiée en hypnothérapie</p>
                 </div>
@@ -233,12 +233,12 @@ export default function HomePage() {
             </div>
             
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
-              En tant qu&apos;hypnothérapeute professionnelle à Bayeux, je mets mon expertise au service de votre bien-être. 
+              En tant qu&apos;hypnothérapeute à Bayeux, je mets mon expertise au service de votre bien-être. 
               Spécialisée dans les techniques d&apos;hypnose thérapeutique, j&apos;accompagne mes patients dans leur transformation personnelle.
             </p>
             
             <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-              Mon cabinet d&apos;hypnose à Bayeux vous accueille dans un cadre apaisant et professionnel. 
+              Mon cabinet d&apos;hypnose à Bayeux vous accueille dans un cadre apaisant. 
               Je propose des séances d&apos;hypnothérapie adaptées à vos besoins spécifiques, que ce soit pour l&apos;arrêt du tabac, 
               la perte de poids, ou la gestion du stress.
             </p>

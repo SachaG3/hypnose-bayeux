@@ -30,14 +30,14 @@ export const metadata: Metadata = {
 // Définition des images à l'extérieur du composant pour pouvoir les utiliser à la fois dans le composant et dans les métadonnées JSON-LD
 const galleryImages = [
   {
-    src: '/images/IMG_1922.jpeg',
-    alt: 'Jardin du cabinet d&apos;hypnothérapie',
-    title: 'Le Jardin',
-    description: 'Un espace extérieur apaisant et verdoyant'
+    src: '/images/SAM_0448.JPG',
+    alt: 'Salle de consultation d\'hypnose',
+    title: 'Salle d\'Hypnose',
+    description: 'Un espace dédié à vos séances d\'hypnothérapie'
   },
   {
     src: '/images/IMG_1923 2.jpeg',
-    alt: 'Vue du jardin du cabinet d&apos;hypnothérapie',
+    alt: 'Vue du jardin du cabinet d\'hypnothérapie',
     title: 'Espace Jardin',
     description: 'Un cadre naturel et relaxant'
   },
@@ -48,16 +48,16 @@ const galleryImages = [
     description: 'Un jardin paisible propice à la détente'
   },
   {
-    src: '/images/SAM_0448.JPG',
-    alt: 'Salle de consultation d&apos;hypnose',
-    title: 'Salle d&apos;Hypnose',
-    description: 'Un espace dédié à vos séances d&apos;hypnothérapie'
+    src: '/images/IMG_4681.jpeg',
+    alt: 'Dessin d\'enfant de remerciement',
+    title: 'Témoignage Enfant',
+    description: 'Dessin de remerciement réalisé par un enfant après une séance'
   },
   {
-    src: '/images/71102913377__40CEE079-90F7-43AF-9EAF-DBDBFB4B99AF.jpeg',
-    alt: 'Entrée du cabinet avec portail bordeaux',
-    title: 'Entrée du Cabinet',
-    description: 'Accueil chaleureux avec son portail bordeaux caractéristique'
+    src: '/images/IMG_4682.jpeg',
+    alt: 'Dessin d\'enfant de remerciement',
+    title: 'Témoignage Créatif',
+    description: 'Dessin offert par un enfant en remerciement d\'une séance d\'hypnose'
   }
 ];
 
@@ -77,7 +77,7 @@ export default function GaleriePage() {
         },
         "thumbnailUrl": galleryImages.map(img => `https://www.bayeuxhypnose.fr${img.src}`),
         "name": "Galerie photos du cabinet d'hypnose à Bayeux",
-        "description": "Photos du cabinet d'hypnothérapie situé à Maisons près de Bayeux. Un espace professionnel et apaisant dédié au bien-être et à la thérapie par l'hypnose.",
+        "description": "Photos du cabinet d'hypnothérapie situé à Maisons près de Bayeux. Un espace apaisant dédié au bien-être et à la thérapie par l'hypnose.",
         "image": galleryImages.map(img => `https://www.bayeuxhypnose.fr${img.src}`),
         "url": "https://www.bayeuxhypnose.fr/galerie",
         "provider": {

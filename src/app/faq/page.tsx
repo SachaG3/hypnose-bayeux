@@ -39,7 +39,7 @@ export default function FAQPage() {
     },
     {
       question: "Est-ce que l'hypnose est dangereuse ?",
-      answer: "Non, l'hypnose thérapeutique pratiquée par un professionnel formé n'est pas dangereuse. Vous restez conscient tout au long de la séance et ne ferez rien contre votre volonté. C'est une méthode douce qui respecte votre intégrité."
+      answer: "Non, l'hypnose thérapeutique n'est pas dangereuse. Vous restez conscient tout au long de la séance et ne ferez rien contre votre volonté. C'est une méthode douce qui respecte votre intégrité."
     }
   ];
 
