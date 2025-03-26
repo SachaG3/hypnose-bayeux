@@ -36,8 +36,10 @@ const Button: React.FC<ButtonProps> = ({
   const allClasses = `${baseClasses} ${sizeClasses} ${colorClasses} ${className}`;
 
   if (href) {
+    // Désactivation de la règle ESLint pour cette ligne
+    // @ts-expect-error - Next.js Link peut accepter une string comme href
     return (
-      <Link href={href as any} className={allClasses}>
+      <Link href={href} className={allClasses}>
         {children}
       </Link>
     );

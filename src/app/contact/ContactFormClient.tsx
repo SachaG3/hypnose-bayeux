@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, Mail, MessageSquare, Clock, MapPin } from 'lucide-react';
+import { Phone, Mail, Clock, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import Script from 'next/script';
 import { useState, FormEvent } from 'react';
