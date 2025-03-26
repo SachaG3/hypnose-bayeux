@@ -193,7 +193,7 @@ export default function SeanceHypnosePage() {
                   
                   <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
                     <h4 className="text-xl font-semibold text-gray-800 mb-3">Anneau gastrique virtuel</h4>
-                    <p className="text-gray-700 mb-4">Accompagnement complet pour la perte de poids avec l'installation d'un anneau gastrique virtuel par hypnose.</p>
+                    <p className="text-gray-700 mb-4">Accompagnement complet pour la perte de poids avec l&apos;installation d&apos;un anneau gastrique virtuel par hypnose.</p>
                     <Link href="/anneau-gastrique" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block font-medium">
                       En savoir plus →
                     </Link>
