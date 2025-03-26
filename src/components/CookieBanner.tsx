@@ -7,7 +7,8 @@ import { Settings } from 'lucide-react';
 // Déclaration de type pour window.gtag
 declare global {
   interface Window {
-    gtag: any;
+    // @ts-ignore
+    gtag: Function;
   }
 }
 

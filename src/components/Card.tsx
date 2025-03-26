@@ -52,7 +52,11 @@ const Card: React.FC<CardProps> = ({
 
   if (href) {
     return (
-      <Link href={href as any} className={`block group ${className}`}>
+      <Link 
+        href={href} 
+        className={`block group ${className}`}
+        // @ts-ignore
+      >
         {cardContent}
       </Link>
     );
