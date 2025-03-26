@@ -41,7 +41,7 @@ export default function ConfidentialitePage() {
               <h2 className="text-3xl font-serif text-teal-700 mb-8">Introduction</h2>
               
               <p className="text-gray-700 mb-6">
-                Nadège GUIGNARD, exploitant le site bayeuxhypnose.fr, accorde une importance particulière à la protection 
+                Nadège GUIGNARD, exploitant le site hypnose-bayeux.fr, accorde une importance particulière à la protection 
                 de vos données personnelles. Cette politique de confidentialité vous informe sur la façon dont vos données sont 
                 collectées, utilisées et protégées conformément au Règlement Général sur la Protection des Données (RGPD).
               </p>
@@ -151,14 +151,14 @@ export default function ConfidentialitePage() {
               </ul>
               
               <p className="text-gray-700 mb-6">
-                Pour exercer ces droits, vous pouvez m&apos;adresser votre demande par email à <a href="mailto:contact@bayeuxhypnose.fr" className="text-teal-600 hover:text-teal-800">contact@bayeuxhypnose.fr</a> ou 
+                Pour exercer ces droits, vous pouvez m&apos;adresser votre demande par email à <a href="mailto:contact@hypnose-bayeux.fr" className="text-teal-600 hover:text-teal-800">contact@hypnose-bayeux.fr</a> ou 
                 par courrier à l&apos;adresse du cabinet.
               </p>
               
               <h2 className="text-3xl font-serif text-teal-700 mt-12 mb-6">Cookies</h2>
               
               <p className="text-gray-700 mb-6">
-                Le site bayeuxhypnose.fr utilise des cookies techniques strictement nécessaires au fonctionnement du site. 
+                Le site hypnose-bayeux.fr utilise des cookies techniques strictement nécessaires au fonctionnement du site. 
                 Aucun cookie publicitaire ou de traçage n&apos;est utilisé. Vous pouvez paramétrer votre navigateur pour 
                 refuser les cookies, mais cela pourrait affecter certaines fonctionnalités du site.
               </p>
@@ -177,7 +177,7 @@ export default function ConfidentialitePage() {
               </p>
               
               <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                <li>Par email : <a href="mailto:contact@bayeuxhypnose.fr" className="text-teal-600 hover:text-teal-800">contact@bayeuxhypnose.fr</a></li>
+                <li>Par email : <a href="mailto:contact@hypnose-bayeux.fr" className="text-teal-600 hover:text-teal-800">contact@hypnose-bayeux.fr</a></li>
                 <li>Par téléphone : <a href="tel:0649292077" className="text-teal-600 hover:text-teal-800">06 49 29 20 77</a></li>
                 <li>Par courrier : Cabinet d&apos;Hypnothérapie, LA FOSSE BUHOT, 14400 MAISONS</li>
               </ul>

@@ -57,7 +57,7 @@ export async function POST(request: Request) {
     // Formatter l'email
     try {
       const { data, error } = await resend.emails.send({
-        from: 'Contact <contact@bayeuxhypnose.fr>',
+        from: 'Contact <contact@hypnose-bayeux.fr>',
         to: ['drguignard@gmail.com','nadege.antik@wanadoo.fr','sacha.guignard03@gmail.com'], // Remplacez par votre adresse email réelle
         subject: `Nouveau message de ${name}`,
         replyTo: email,

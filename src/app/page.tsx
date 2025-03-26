@@ -24,10 +24,10 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "@id": "https://www.bayeuxhypnose.fr/#business",
+            "@id": "https://www.hypnose-bayeux.fr/#business",
             "name": "Cabinet d'Hypnothérapie Bayeux",
-            "image": "https://www.bayeuxhypnose.fr/og-image.jpg",
-            "url": "https://www.bayeuxhypnose.fr",
+            "image": "https://www.hypnose-bayeux.fr/og-image.jpg",
+            "url": "https://www.hypnose-bayeux.fr",
             "telephone": "+33649292077",
             "priceRange": "€€",
             "description": "Cabinet d'hypnothérapie à Bayeux spécialisé dans l'arrêt du tabac, la gestion du stress et l'amincissement. Hypnothérapeute certifiée.",
@@ -123,9 +123,9 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@type": "HealthAndBeautyBusiness",
             "name": "Hypnose Bayeux",
-            "image": "https://www.bayeuxhypnose.fr/og-image.jpg",
-            "@id": "https://www.bayeuxhypnose.fr",
-            "url": "https://www.bayeuxhypnose.fr",
+            "image": "https://www.hypnose-bayeux.fr/og-image.jpg",
+            "@id": "https://www.hypnose-bayeux.fr",
+            "url": "https://www.hypnose-bayeux.fr",
             "telephone": "+33649292077",
             "priceRange": "€€",
             "address": {
@@ -162,7 +162,7 @@ export default function HomePage() {
               "@type": "Person",
               "name": "Nadège GUIGNARD",
               "jobTitle": "Hypnothérapeute",
-              "image": "https://www.bayeuxhypnose.fr/nadegeGuignard.webp",
+              "image": "https://www.hypnose-bayeux.fr/nadegeGuignard.webp",
               "description": "Hypnothérapeute certifiée spécialisée dans l'accompagnement des personnes souhaitant se libérer de leurs blocages"
             }
           })
@@ -258,9 +258,9 @@ export default function HomePage() {
                   <PhoneCall className="w-5 h-5 mr-2" />
                   <span>06 49 29 20 77</span>
                 </a>
-                <a href="mailto:contact@bayeuxhypnose.fr" className="flex items-center text-teal-600 hover:text-teal-800 transition-colors duration-300">
+                <a href="mailto:contact@hypnose-bayeux.fr" className="flex items-center text-teal-600 hover:text-teal-800 transition-colors duration-300">
                   <Mail className="w-5 h-5 mr-2" />
-                  <span>contact@bayeuxhypnose.fr</span>
+                  <span>contact@hypnose-bayeux.fr</span>
                 </a>
               </div>
             </div>

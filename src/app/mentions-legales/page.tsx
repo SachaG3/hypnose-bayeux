@@ -41,7 +41,7 @@ export default function MentionsLegalesPage() {
               <h2 className="text-3xl font-serif text-teal-700 mb-8">Éditeur du site</h2>
               
               <p className="text-gray-700 mb-6">
-                Le site bayeuxhypnose.fr est édité par :
+                Le site hypnose-bayeux.fr est édité par :
               </p>
               
               <div className="bg-gray-50 p-6 rounded-xl mb-8">
@@ -58,7 +58,7 @@ export default function MentionsLegalesPage() {
                   <strong>Téléphone :</strong> <a href="tel:0649292077" className="text-teal-600 hover:text-teal-800">06 49 29 20 77</a>
                 </p>
                 <p className="text-gray-700 mb-2">
-                  <strong>Email :</strong> <a href="mailto:contact@bayeuxhypnose.fr" className="text-teal-600 hover:text-teal-800">contact@bayeuxhypnose.fr</a>
+                  <strong>Email :</strong> <a href="mailto:contact@hypnose-bayeux.fr" className="text-teal-600 hover:text-teal-800">contact@hypnose-bayeux.fr</a>
                 </p>
                 <p className="text-gray-700 mb-2">
                   <strong>SIRET :</strong> 39784234500043
@@ -68,7 +68,7 @@ export default function MentionsLegalesPage() {
               <h2 className="text-3xl font-serif text-teal-700 mt-12 mb-6">Hébergeur du site</h2>
               
               <p className="text-gray-700 mb-6">
-                Le site bayeuxhypnose.fr est hébergé par :
+                Le site hypnose-bayeux.fr est hébergé par :
               </p>
               
               <div className="bg-gray-50 p-6 rounded-xl mb-8">
@@ -89,7 +89,7 @@ export default function MentionsLegalesPage() {
               <h2 className="text-3xl font-serif text-teal-700 mt-12 mb-6">Propriété intellectuelle</h2>
               
               <p className="text-gray-700 mb-6">
-                L&apos;ensemble du contenu du site bayeuxhypnose.fr (textes, images, vidéos, logos, etc.) est protégé par 
+                L&apos;ensemble du contenu du site hypnose-bayeux.fr (textes, images, vidéos, logos, etc.) est protégé par 
                 le droit d&apos;auteur. Toute reproduction, représentation, modification, publication, transmission, ou plus 
                 généralement toute exploitation non autorisée du site ou de ses contenus, par quelque procédé que ce soit, 
                 est strictement interdite et constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle.
@@ -112,7 +112,7 @@ export default function MentionsLegalesPage() {
               <h2 className="text-3xl font-serif text-teal-700 mt-12 mb-6">Liens hypertextes</h2>
               
               <p className="text-gray-700 mb-6">
-                Le site bayeuxhypnose.fr peut contenir des liens hypertextes vers d&apos;autres sites internet ou d&apos;autres 
+                Le site hypnose-bayeux.fr peut contenir des liens hypertextes vers d&apos;autres sites internet ou d&apos;autres 
                 ressources disponibles sur internet. L&apos;éditeur ne dispose d&apos;aucun moyen pour contrôler les sites en 
                 connexion avec son site. L&apos;éditeur ne répond pas de la disponibilité de tels sites et sources externes, 
                 ni ne la garantit. Il ne peut être tenu pour responsable de tout dommage, de quelque nature que ce soit, 

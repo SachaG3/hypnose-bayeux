@@ -28,9 +28,9 @@ export default function Footer() {
                 <span>06 49 29 20 77</span>
               </a>
               
-              <a href="mailto:contact@bayeuxhypnose.fr" className="flex items-center hover:text-teal-700 transition-colors duration-300">
+              <a href="mailto:contact@hypnose-bayeux.fr" className="flex items-center hover:text-teal-700 transition-colors duration-300">
                 <Mail className="w-5 h-5 text-teal-600 mr-3 shrink-0" />
-                <span>contact@bayeuxhypnose.fr</span>
+                <span>contact@hypnose-bayeux.fr</span>
               </a>
             </div>
           </div>

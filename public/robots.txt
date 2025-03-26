@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://www.bayeuxhypnose.fr/sitemap.xml 
+Sitemap: https://www.hypnose-bayeux.fr/sitemap.xml 

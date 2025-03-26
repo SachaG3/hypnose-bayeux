@@ -102,13 +102,13 @@ export default function ContactFormClient() {
         "@type": "ContactPage",
         "description": "Contactez Nadège GUIGNARD, hypnothérapeute à Bayeux, pour prendre rendez-vous ou obtenir des informations sur les séances d'hypnose.",
         "name": "Contact - Hypnose Bayeux",
-        "url": "https://www.bayeuxhypnose.fr/contact",
+        "url": "https://www.hypnose-bayeux.fr/contact",
         "mainEntity": {
           "@type": "HealthAndBeautyBusiness",
           "name": "Cabinet d'Hypnose Bayeux - Nadège GUIGNARD",
           "telephone": "+33649292077",
-          "email": "contact@bayeuxhypnose.fr",
-          "image": "https://www.bayeuxhypnose.fr/nadegeGuignard.webp",
+          "email": "contact@hypnose-bayeux.fr",
+          "image": "https://www.hypnose-bayeux.fr/nadegeGuignard.webp",
           "priceRange": "€€",
           "address": {
             "@type": "PostalAddress",
@@ -180,8 +180,8 @@ export default function ContactFormClient() {
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-800 mb-2">Email</h3>
-                      <a href="mailto:contact@bayeuxhypnose.fr" className="text-gray-700 hover:text-teal-700 transition-colors duration-300" itemProp="email">
-                        contact@bayeuxhypnose.fr
+                      <a href="mailto:contact@hypnose-bayeux.fr" className="text-gray-700 hover:text-teal-700 transition-colors duration-300" itemProp="email">
+                        contact@hypnose-bayeux.fr
                       </a>
                     </div>
                   </div>
