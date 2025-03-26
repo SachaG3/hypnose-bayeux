@@ -51,15 +51,10 @@ const Card: React.FC<CardProps> = ({
   );
 
   if (href) {
-    return (
-      <Link 
-        href={href} 
-        className={`block group ${className}`}
-        // @ts-ignore
-      >
-        {cardContent}
-      </Link>
-    );
+    // Utilisation de la syntaxe JSX standard
+    const linkProps = { href, className: `block group ${className}` };
+    // @ts-expect-error - Next.js Link n'est pas correctement typé pour les strings simples
+    return React.createElement(Link, linkProps, cardContent);
   }
 
   return <div className={className}>{cardContent}</div>;

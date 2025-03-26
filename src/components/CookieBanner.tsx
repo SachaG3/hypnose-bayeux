@@ -4,13 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Settings } from 'lucide-react';
 
-// Déclaration de type pour window.gtag
-declare global {
-  interface Window {
-    // @ts-ignore
-    gtag: Function;
-  }
-}
+// Omit la déclaration explicite du type pour window.gtag
 
 export default function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
@@ -32,7 +26,8 @@ export default function CookieBanner() {
     localStorage.setItem('cookie-consent', 'true');
     
     // On active Google Analytics si c'est accepté
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && 'gtag' in window) {
+      // @ts-expect-error - Appel dynamique à gtag
       window.gtag('consent', 'update', {
         'analytics_storage': 'granted'
       });
@@ -46,7 +41,8 @@ export default function CookieBanner() {
     localStorage.setItem('cookie-consent', 'false');
     
     // On désactive Google Analytics si c'est refusé
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && 'gtag' in window) {
+      // @ts-expect-error - Appel dynamique à gtag
       window.gtag('consent', 'update', {
         'analytics_storage': 'denied'
       });
