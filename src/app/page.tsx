@@ -286,7 +286,7 @@ export default function HomePage() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Technique douce permettant d&apos;accéder à votre inconscient pour résoudre divers problèmes : stress, anxiété, phobies, confiance en soi...
               </p>
-              <Link href="/contact" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 mt-auto font-medium">
+              <Link href="/seance-hypnose" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 mt-auto font-medium">
                 En savoir plus →
               </Link>
             </div>
@@ -300,7 +300,7 @@ export default function HomePage() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Programme spécifique pour arrêter de fumer durablement grâce à un protocole en 3 séances ciblant les mécanismes de la dépendance.
               </p>
-              <Link href="/tarifs" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 mt-auto font-medium">
+              <Link href="/arret-tabac" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 mt-auto font-medium">
                 Voir le programme →
               </Link>
             </div>
@@ -314,7 +314,7 @@ export default function HomePage() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Retrouvez une relation saine avec l&apos;alimentation et changez durablement vos habitudes pour atteindre votre poids de forme.
               </p>
-              <Link href="/tarifs" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 mt-auto font-medium">
+              <Link href="/anneau-gastrique" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 mt-auto font-medium">
                 Découvrir l&apos;offre →
               </Link>
             </div>
