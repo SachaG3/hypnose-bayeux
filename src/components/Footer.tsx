@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Youtube, Facebook, FileText } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -106,8 +106,44 @@ export default function Footer() {
           </div>
         </div>
         
+        {/* Réseaux sociaux */}
+        <div className="mt-12 flex justify-center">
+          <div className="flex space-x-6">
+            <a 
+              href="https://www.youtube.com/@hypnosebayeuxnadegeguignar2604/featured" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-500 hover:text-red-600 transition-colors duration-300 group flex flex-col items-center"
+              aria-label="Chaîne YouTube"
+            >
+              <Youtube className="w-6 h-6" />
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs mt-1">YouTube</span>
+            </a>
+            <a 
+              href="https://www.facebook.com/guignard14" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-500 hover:text-blue-600 transition-colors duration-300 group flex flex-col items-center"
+              aria-label="Page Facebook"
+            >
+              <Facebook className="w-6 h-6" />
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs mt-1">Facebook</span>
+            </a>
+            <a 
+              href="https://www.pagesjaunes.fr/pros/56197235" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-500 hover:text-yellow-500 transition-colors duration-300 group flex flex-col items-center"
+              aria-label="Profil Pages Jaunes"
+            >
+              <FileText className="w-6 h-6" />
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs mt-1">Pages Jaunes</span>
+            </a>
+          </div>
+        </div>
+        
         {/* Copyright */}
-        <div className="border-t border-gray-200 mt-12 pt-8 text-center text-gray-500 text-sm">
+        <div className="border-t border-gray-200 mt-6 pt-8 text-center text-gray-500 text-sm">
           <p>© {currentYear} Hypnose Bayeux. Tous droits réservés.</p>
           <div className="mt-4 flex justify-center gap-6">
             <Link href="/mentions-legales" className="hover:text-teal-700 transition-colors duration-300">
