@@ -8,6 +8,7 @@ import { viewport } from "./metadata";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import CookieBanner from "@/components/CookieBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,20 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            
+            // Configuration par défaut - attendre le consentement
+            gtag('consent', 'default', {
+              'analytics_storage': 'denied'
+            });
+            
+            // Vérifier si l'utilisateur a déjà donné son consentement
+            const cookieConsent = localStorage.getItem('cookie-consent');
+            if (cookieConsent === 'true') {
+              gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+              });
+            }
+            
             gtag('config', 'AW-16943869327');
           `}
         </Script>
@@ -53,8 +68,8 @@ export default function RootLayout({
           "priceRange": "€€",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "La Fosse Buhot",
-            "addressLocality": "Maisons",
+            "streetAddress": "LA FOSSE BUHOT",
+            "addressLocality": "MAISONS",
             "postalCode": "14400",
             "addressCountry": "FR"
           },
@@ -90,6 +105,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <CookieBanner />
           <Analytics />
           <SpeedInsights />
         </Providers>

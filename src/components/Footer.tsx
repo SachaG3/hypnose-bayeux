@@ -82,6 +82,14 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-200 mt-12 pt-8 text-center text-gray-500 text-sm">
           <p>© {currentYear} Hypnose Bayeux. Tous droits réservés.</p>
+          <div className="mt-4 flex justify-center gap-6">
+            <Link href="/mentions-legales" className="hover:text-teal-700 transition-colors duration-300">
+              Mentions légales
+            </Link>
+            <Link href="/confidentialite" className="hover:text-teal-700 transition-colors duration-300">
+              Politique de confidentialité
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

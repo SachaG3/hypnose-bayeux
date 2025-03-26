@@ -11,7 +11,8 @@ export default function ContactFormClient() {
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    consent: false
   });
   
   // État pour gérer les statuts de soumission
@@ -24,13 +25,28 @@ export default function ContactFormClient() {
 
   // Gérer les changements dans les champs du formulaire
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormState(prev => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target as HTMLInputElement;
+    if (type === 'checkbox') {
+      setFormState(prev => ({ ...prev, [name]: (e.target as HTMLInputElement).checked }));
+    } else {
+      setFormState(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   // Gérer la soumission du formulaire
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Vérifier que le consentement a été donné
+    if (!formState.consent) {
+      setStatus({
+        submitting: false,
+        submitted: true,
+        success: false,
+        error: 'Veuillez accepter le traitement de vos données pour envoyer le formulaire.'
+      });
+      return;
+    }
     
     // Mettre à jour l'état pour indiquer que le formulaire est en cours d'envoi
     setStatus({ submitting: true, submitted: false, success: false, error: '' });
@@ -56,7 +72,8 @@ export default function ContactFormClient() {
         name: '',
         email: '',
         phone: '',
-        message: ''
+        message: '',
+        consent: false
       });
       
       // Mettre à jour l'état pour indiquer que la soumission a réussi
@@ -234,92 +251,87 @@ export default function ContactFormClient() {
                 )}
                 
                 <form className="space-y-6" id="contactForm" itemScope itemType="https://schema.org/ContactPoint" onSubmit={handleSubmit}>
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Nom complet
-                    </label>
+                  <div className="mb-6">
+                    <label htmlFor="name" className="block text-gray-700 mb-2 font-medium">Nom complet*</label>
                     <input
-                      type="text"
                       id="name"
                       name="name"
+                      type="text"
+                      required
                       value={formState.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
-                      placeholder="Votre nom"
-                      itemProp="name"
-                      required
-                      aria-required="true"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 outline-none"
+                      placeholder="Votre nom et prénom"
                     />
                   </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Email
-                    </label>
+
+                  <div className="mb-6">
+                    <label htmlFor="email" className="block text-gray-700 mb-2 font-medium">Email*</label>
                     <input
-                      type="email"
                       id="email"
                       name="email"
+                      type="email"
+                      required
                       value={formState.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
-                      placeholder="votre@email.com"
-                      itemProp="email"
-                      required
-                      aria-required="true"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 outline-none"
+                      placeholder="Votre adresse email"
                     />
                   </div>
-                  
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                      Téléphone
-                    </label>
+
+                  <div className="mb-6">
+                    <label htmlFor="phone" className="block text-gray-700 mb-2 font-medium">Téléphone*</label>
                     <input
-                      type="tel"
                       id="phone"
                       name="phone"
+                      type="tel"
+                      required
                       value={formState.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 outline-none"
                       placeholder="Votre numéro de téléphone"
-                      itemProp="telephone"
                     />
                   </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                      Message
-                    </label>
+
+                  <div className="mb-6">
+                    <label htmlFor="message" className="block text-gray-700 mb-2 font-medium">Message*</label>
                     <textarea
                       id="message"
                       name="message"
+                      required
+                      rows={5}
                       value={formState.message}
                       onChange={handleChange}
-                      rows={5}
-                      className="w-full px-4 py-3 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-colors"
-                      placeholder="Votre message ou demande de rendez-vous..."
-                      required
-                      aria-required="true"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 outline-none resize-none"
+                      placeholder="Décrivez votre demande"
                     ></textarea>
                   </div>
-                  
+
+                  <div className="mb-6">
+                    <div className="flex items-start space-x-3">
+                      <input
+                        id="consent"
+                        name="consent"
+                        type="checkbox"
+                        checked={formState.consent}
+                        onChange={handleChange}
+                        required
+                        className="mt-1 h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500 transition-all duration-300 cursor-pointer"
+                      />
+                      <label htmlFor="consent" className="text-gray-700 text-sm">
+                        J&apos;accepte le traitement de mes données personnelles*
+                      </label>
+                    </div>
+                  </div>
+
                   <button
                     type="submit"
-                    className="bg-teal-700 text-white px-6 py-3 rounded-md hover:bg-teal-800 transition-colors duration-300 w-full font-medium flex items-center justify-center"
-                    aria-label="Envoyer le message de contact"
                     disabled={status.submitting}
+                    className="w-full bg-teal-700 text-white py-3 px-6 rounded-md font-medium 
+                    hover:bg-teal-800 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md 
+                    active:translate-y-0 active:shadow-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                   >
-                    {status.submitting ? (
-                      <>
-                        <div className="mr-2 h-5 w-5 border-t-2 border-b-2 border-white rounded-full animate-spin"></div>
-                        Envoi en cours...
-                      </>
-                    ) : (
-                      <>
-                        <MessageSquare className="w-5 h-5 mr-2" />
-                        Envoyer le message
-                      </>
-                    )}
+                    {status.submitting ? 'Envoi en cours...' : 'Envoyer'}
                   </button>
                 </form>
               </div>

@@ -86,6 +86,9 @@ export default function TarifsPage() {
                     <p className="text-gray-600" itemProp="description">
                       Entretien approfondi ou première séance d&apos;hypnose (environ 1h30)
                     </p>
+                    <a href="/seance-hypnose" className="text-teal-600 hover:text-teal-800 mt-2 inline-block font-medium">
+                      En savoir plus →
+                    </a>
                   </div>
                   <div className="md:text-right">
                     <p className="text-2xl font-serif text-teal-700 font-medium" itemProp="price">70€</p>
@@ -101,6 +104,9 @@ export default function TarifsPage() {
                     <p className="text-gray-700" itemProp="description">
                       Séance spécifique pour arrêter de fumer durablement
                     </p>
+                    <a href="/arret-tabac" className="text-teal-600 hover:text-teal-800 mt-2 inline-block font-medium">
+                      En savoir plus →
+                    </a>
                   </div>
                   <div className="md:text-right">
                     <p className="text-2xl font-serif text-teal-700 font-medium" itemProp="price">90€</p>
@@ -116,9 +122,12 @@ export default function TarifsPage() {
                     <p className="text-gray-700" itemProp="description">
                       Accompagnement personnalisé pour la perte de poids (3 séances)
                     </p>
+                    <a href="/anneau-gastrique" className="text-teal-600 hover:text-teal-800 mt-2 inline-block font-medium">
+                      En savoir plus →
+                    </a>
                   </div>
                   <div className="md:text-right">
-                    <p className="text-2xl font-serif text-teal-700 font-medium" itemProp="price">210</p>
+                    <p className="text-2xl font-serif text-teal-700 font-medium" itemProp="price">210€</p>
                   </div>
                 </div>
               </div>
