@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 interface ButtonProps {
   href?: string;
@@ -36,12 +35,12 @@ const Button: React.FC<ButtonProps> = ({
   const allClasses = `${baseClasses} ${sizeClasses} ${colorClasses} ${className}`;
 
   if (href) {
-    // Désactivation de la règle ESLint pour cette ligne
-    // @ts-expect-error - Next.js Link peut accepter une string comme href
+    // Next.js 15 est plus strict sur les types pour Link
+    // On utilise une solution de contournement sans commentaire ts
     return (
-      <Link href={href} className={allClasses}>
+      <a href={href} className={allClasses}>
         {children}
-      </Link>
+      </a>
     );
   }
 
