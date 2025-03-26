@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: 'Politique de Confidentialité | Cabinet d\'Hypnose Bayeux',
   description: 'Politique de confidentialité et protection des données personnelles du cabinet d\'hypnose à Bayeux.',
   alternates: {
-    canonical: 'https://www.bayeuxhypnose.fr/confidentialite',
+    canonical: 'https://www.hypnose-bayeux.fr/confidentialite',
   },
   openGraph: {
     ...baseMetadata.openGraph,
     title: 'Politique de Confidentialité | Cabinet d\'Hypnose Bayeux',
     description: 'Politique de confidentialité et protection des données personnelles du cabinet d\'hypnose à Bayeux.',
-    url: 'https://www.bayeuxhypnose.fr/confidentialite',
+    url: 'https://www.hypnose-bayeux.fr/confidentialite',
   },
 };
 

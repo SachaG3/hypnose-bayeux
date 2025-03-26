@@ -341,6 +341,9 @@ export default function HomePage() {
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">Gestion du stress et de l&apos;anxiété</h3>
                   <p className="text-gray-600 leading-relaxed">
                     Apprenez à réduire votre niveau de stress et à gérer votre anxiété pour retrouver calme et sérénité au quotidien.
+                    <Link href="/seance-hypnose" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block mt-2">
+                      Découvrir comment l&apos;hypnose aide à gérer le stress →
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -356,6 +359,9 @@ export default function HomePage() {
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">Confiance en soi</h3>
                   <p className="text-gray-600 leading-relaxed">
                     Renforcez votre confiance et votre estime personnelle pour vivre pleinement et réaliser vos ambitions.
+                    <Link href="/seance-hypnose" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block mt-2">
+                      En savoir plus sur le développement de la confiance →
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -371,6 +377,9 @@ export default function HomePage() {
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">Amélioration du sommeil</h3>
                   <p className="text-gray-600 leading-relaxed">
                     Retrouvez un sommeil de qualité et dites adieu aux insomnies et aux réveils nocturnes.
+                    <Link href="/seance-hypnose" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block mt-2">
+                      Comment l&apos;hypnose améliore votre sommeil →
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -386,6 +395,9 @@ export default function HomePage() {
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">Dépassement des phobies</h3>
                   <p className="text-gray-600 leading-relaxed">
                     Libérez-vous de vos peurs irrationnelles qui limitent votre quotidien et votre épanouissement personnel.
+                    <Link href="/seance-hypnose" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block mt-2">
+                      Comment vaincre vos phobies avec l&apos;hypnose →
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -411,6 +423,9 @@ export default function HomePage() {
               </p>
               <p className="text-gray-800 leading-relaxed">
                 Pendant une séance, vous restez parfaitement conscient et participez activement au processus. Vous atteindrez simplement un état de concentration focalisée et de relaxation profonde, propice aux transformations positives.
+                <Link href="/seance-hypnose" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block mt-4">
+                  Tout savoir sur le déroulement d&apos;une séance →
+                </Link>
               </p>
             </div>
             
@@ -488,6 +503,9 @@ export default function HomePage() {
                 </h3>
                 <p className="text-gray-800 leading-relaxed">
                   L&apos;hypnose thérapeutique est un état naturel de conscience modifiée qui permet d&apos;accéder aux ressources de l&apos;inconscient. Durant une séance, vous restez conscient et gardez le contrôle tout en étant dans un état de relaxation profonde, propice au changement thérapeutique.
+                  <Link href="/seance-hypnose" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block mt-2">
+                    Découvrir le déroulement d&apos;une séance →
+                  </Link>
                 </p>
               </div>
               
@@ -498,6 +516,14 @@ export default function HomePage() {
                 </h3>
                 <p className="text-gray-800 leading-relaxed">
                   En général, une seule séance est suffisante pour la plupart des problématiques. Pour l&apos;arrêt du tabac, une séance peut suffire dans de nombreux cas. Pour l&apos;amaigrissement, un protocole de 3 séances est recommandé afin d&apos;obtenir des résultats durables.
+                  <span className="block mt-2">
+                    <Link href="/arret-tabac" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block mr-4">
+                      Programme arrêt du tabac →
+                    </Link>
+                    <Link href="/anneau-gastrique" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block">
+                      Programme minceur →
+                    </Link>
+                  </span>
                 </p>
               </div>
               
@@ -508,6 +534,9 @@ export default function HomePage() {
                 </h3>
                 <p className="text-gray-800 leading-relaxed">
                   Oui, toute personne capable de concentration et désireuse de changement peut entrer en état d&apos;hypnose. C&apos;est un état naturel que nous expérimentons quotidiennement, par exemple en conduisant ou en lisant un livre captivant.
+                  <Link href="/faq" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block mt-2">
+                    Plus de réponses à vos questions →
+                  </Link>
                 </p>
               </div>
             </div>

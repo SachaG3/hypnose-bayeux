@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: 'Mentions Légales | Cabinet d\'Hypnose Bayeux',
   description: 'Mentions légales du cabinet d\'hypnose à Bayeux. Informations sur l\'éditeur et l\'hébergeur du site.',
   alternates: {
-    canonical: 'https://www.bayeuxhypnose.fr/mentions-legales',
+    canonical: 'https://www.hypnose-bayeux.fr/mentions-legales',
   },
   openGraph: {
     ...baseMetadata.openGraph,
     title: 'Mentions Légales | Cabinet d\'Hypnose Bayeux',
     description: 'Mentions légales du cabinet d\'hypnose à Bayeux. Informations sur l\'éditeur et l\'hébergeur du site.',
-    url: 'https://www.bayeuxhypnose.fr/mentions-legales',
+    url: 'https://www.hypnose-bayeux.fr/mentions-legales',
   },
 };
 

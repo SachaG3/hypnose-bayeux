@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { baseMetadata } from '../metadata';
 import Script from 'next/script';
 import { Phone } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   ...baseMetadata,
@@ -174,6 +175,30 @@ export default function SeanceHypnosePage() {
                   <Phone className="w-5 h-5 mr-2" /> 
                   Appeler maintenant
                 </a>
+              </div>
+              
+              {/* Autres services */}
+              <div className="mt-16">
+                <h3 className="text-2xl font-serif text-center font-medium text-teal-700 mb-8">
+                  Découvrez mes autres accompagnements
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <h4 className="text-xl font-semibold text-gray-800 mb-3">Arrêt du tabac</h4>
+                    <p className="text-gray-700 mb-4">Programme spécifique pour arrêter de fumer durablement en travaillant sur les mécanismes de la dépendance.</p>
+                    <Link href="/arret-tabac" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block font-medium">
+                      Découvrir le programme →
+                    </Link>
+                  </div>
+                  
+                  <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <h4 className="text-xl font-semibold text-gray-800 mb-3">Anneau gastrique virtuel</h4>
+                    <p className="text-gray-700 mb-4">Accompagnement complet pour la perte de poids avec l'installation d'un anneau gastrique virtuel par hypnose.</p>
+                    <Link href="/anneau-gastrique" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block font-medium">
+                      En savoir plus →
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

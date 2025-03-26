@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-gray-200">
       <div className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-4 gap-8">
           {/* Colonne 1: Information contact */}
           <div className="flex flex-col">
             <h3 className="text-xl font-serif text-teal-700 font-medium mb-6">Hypnose Bayeux</h3>
@@ -62,7 +62,34 @@ export default function Footer() {
             </ul>
           </div>
           
-          {/* Colonne 3: Horaires */}
+          {/* Colonne 3: Services */}
+          <div className="flex flex-col">
+            <h3 className="text-xl font-serif text-teal-700 font-medium mb-6">Nos services</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/seance-hypnose" className="text-gray-600 hover:text-teal-700 transition-colors duration-300">
+                  Séance d&apos;hypnose classique
+                </Link>
+              </li>
+              <li>
+                <Link href="/arret-tabac" className="text-gray-600 hover:text-teal-700 transition-colors duration-300">
+                  Arrêt du tabac
+                </Link>
+              </li>
+              <li>
+                <Link href="/anneau-gastrique" className="text-gray-600 hover:text-teal-700 transition-colors duration-300">
+                  Anneau gastrique virtuel
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-gray-600 hover:text-teal-700 transition-colors duration-300">
+                  Questions fréquentes
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Colonne 4: Horaires */}
           <div className="flex flex-col">
             <h3 className="text-xl font-serif text-teal-700 font-medium mb-6">Horaires d&apos;ouverture</h3>
             <div className="flex items-start mb-4">
