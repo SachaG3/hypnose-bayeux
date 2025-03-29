@@ -1,0 +1,54 @@
+# Hypnose Bayeux - Cabinet Nadège Guignard
+
+> Cabinet d'hypnose thérapeutique à Bayeux, spécialisé dans l'hypnose éricksonienne, l'arrêt du tabac et l'anneau gastrique virtuel. Services proposés par Nadège Guignard, hypnothérapeute certifiée. Situé à Maisons (14400), le cabinet offre des séances personnalisées pour accompagner votre bien-être et votre transformation personnelle.
+
+Ce site présente les services d'hypnose thérapeutique proposés à Bayeux, avec des informations détaillées sur les différentes approches et tarifs. L'hypnose éricksonienne est utilisée comme outil thérapeutique pour accompagner les personnes dans leur processus de changement et de guérison.
+
+## Services principaux
+
+- [Séance d'hypnose classique](https://hypnose-bayeux.fr/seance-hypnose): Description détaillée du déroulement d'une séance d'hypnose éricksonienne, incluant les différentes étapes et techniques utilisées
+- [Arrêt du tabac](https://hypnose-bayeux.fr/arret-tabac): Programme spécialisé pour l'arrêt du tabac par hypnose, avec un suivi personnalisé et des techniques adaptées
+- [Anneau gastrique virtuel](https://hypnose-bayeux.fr/anneau-gastrique): Programme d'accompagnement pour la perte de poids utilisant la technique de l'anneau gastrique virtuel par hypnose
+
+## Informations pratiques
+
+- [Tarifs et horaires](https://hypnose-bayeux.fr/tarifs): Détails des prestations et des prix, incluant les différents forfaits et options de paiement
+- [Plan d'accès](https://hypnose-bayeux.fr/acces): Localisation du cabinet à Maisons (14400), avec les informations de stationnement et d'accessibilité
+- [Contact](https://hypnose-bayeux.fr/contact): Coordonnées et formulaire de contact pour prendre rendez-vous ou obtenir des informations
+
+## Ressources et documentation
+
+- [FAQ](https://hypnose-bayeux.fr/faq): Questions fréquentes sur l'hypnose et les séances, couvrant les aspects pratiques et thérapeutiques
+- [Mentions légales](https://hypnose-bayeux.fr/mentions-legales): Informations légales du site, incluant les coordonnées légales et les mentions obligatoires
+- [Politique de confidentialité](https://hypnose-bayeux.fr/confidentialite): Gestion des données personnelles et protection de la vie privée des patients
+
+## Expertise et approche
+
+- [À propos](https://hypnose-bayeux.fr/a-propos): Présentation de Nadège Guignard, son parcours et sa formation en hypnose éricksonienne
+- [Blog](https://hypnose-bayeux.fr/blog): Articles et ressources sur l'hypnose, le bien-être et les techniques thérapeutiques
+- [Témoignages](https://hypnose-bayeux.fr/temoignages): Retours d'expérience de patients ayant suivi des séances d'hypnose
+
+## Optional
+
+- [YouTube](https://www.youtube.com/@hypnosebayeuxnadegeguignar2604/featured): Chaîne YouTube avec des vidéos explicatives sur l'hypnose et les techniques utilisées
+- [Facebook](https://www.facebook.com/guignard14): Page Facebook du cabinet pour suivre l'actualité et les conseils
+- [Pages Jaunes](https://www.pagesjaunes.fr/pros/56197235): Profil professionnel sur Pages Jaunes avec les avis clients
+
+## Métadonnées importantes
+
+- Type de service: Thérapie par hypnose
+- Zone géographique: Bayeux et environs (14400)
+- Spécialités: Hypnose éricksonienne, arrêt du tabac, anneau gastrique virtuel
+- Langue: Français
+- Public cible: Adultes et adolescents
+- Durée des séances: 1h à 1h30
+- Fréquence: Adaptée selon les besoins
+
+## Métadonnées techniques
+
+- Format: Markdown
+- Version: 1.0
+- Dernière mise à jour: 2024
+- Compatible avec: Claude, GPT-4, autres modèles de langage
+- Structure: Hiérarchique avec sections principales et optionnelles
+- Mots-clés: hypnose, thérapie, bien-être, arrêt tabac, perte de poids, Bayeux, éricksonienne 
