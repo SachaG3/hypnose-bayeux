@@ -26,7 +26,7 @@ Ce site présente les services d'hypnose thérapeutique proposés à Bayeux, ave
 
 - [À propos](https://hypnose-bayeux.fr/a-propos): Présentation de Nadège Guignard, son parcours et sa formation en hypnose éricksonienne
 - [Blog](https://hypnose-bayeux.fr/blog): Articles et ressources sur l'hypnose, le bien-être et les techniques thérapeutiques
-- [Témoignages](https://hypnose-bayeux.fr/temoignages): Retours d'expérience de patients ayant suivi des séances d'hypnose
+- [Avis clients](https://g.co/kgs/dGSS9Cj): Consultez les témoignages de clients satisfaits sur Google
 
 ## Optional
 

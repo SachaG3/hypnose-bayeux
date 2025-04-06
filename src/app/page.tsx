@@ -553,6 +553,139 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Témoignages Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-serif font-medium text-center mb-4 text-teal-700">
+              Témoignages de clients satisfaits
+            </h2>
+            <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+              Découvrez les retours d&apos;expérience de personnes qui ont fait appel à mes services d&apos;hypnose
+            </p>
+            
+            {/* Données structurées pour Schema.org */}
+            <div className="hidden" itemScope itemType="https://schema.org/LocalBusiness">
+              <meta itemProp="name" content="Hypnose Bayeux - Nadège Guignard" />
+              <meta itemProp="telephone" content="+33649292077" />
+              <meta itemProp="priceRange" content="€€" />
+              <meta itemProp="image" content="https://hypnose-bayeux.fr/nadegeGuignard.webp" />
+              <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+                <meta itemProp="streetAddress" content="La Fosse Buhot" />
+                <meta itemProp="addressLocality" content="Maisons" />
+                <meta itemProp="postalCode" content="14400" />
+                <meta itemProp="addressCountry" content="FR" />
+              </div>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Témoignage 1 */}
+              <div className="bg-gray-50 rounded-xl p-6 shadow-sm" itemScope itemType="https://schema.org/Review">
+                <meta itemProp="datePublished" content="2023-12-01" />
+                <div className="flex items-center mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-medium text-gray-900" itemProp="author" itemScope itemType="https://schema.org/Person">
+                      <span itemProp="name">Cedric Benoit</span>
+                    </h3>
+                    <div className="flex items-center mt-1" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+                      <meta itemProp="ratingValue" content="5" />
+                      <meta itemProp="bestRating" content="5" />
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-2 text-gray-600" itemProp="reviewBody">
+                  <p>
+                    Très belle rencontre, Venu pour arrêter de fumer.
+                    Ça fait un mois aujourd&apos;hui et tout va bien.
+                    Super rendez vous avec Mme Guignard.
+                    Bref ! Je recommande vivement 👍
+                  </p>
+                  <p className="mt-4 italic text-sm">
+                    Après mon premier avis, Voilà 1 an que j&apos;ai arrêté de fumer et franchement c&apos;est vraiment Top.
+                    Merci encore pour ce que vous avez fait pour Moi.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Témoignage 2 */}
+              <div className="bg-gray-50 rounded-xl p-6 shadow-sm" itemScope itemType="https://schema.org/Review">
+                <meta itemProp="datePublished" content="2023-11-15" />
+                <div className="flex items-center mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-medium text-gray-900" itemProp="author" itemScope itemType="https://schema.org/Person">
+                      <span itemProp="name">Chantal Malherbe</span>
+                    </h3>
+                    <div className="flex items-center mt-1" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+                      <meta itemProp="ratingValue" content="5" />
+                      <meta itemProp="bestRating" content="5" />
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-2 text-gray-600" itemProp="reviewBody">
+                  <p>
+                    Bonjour, il y a maintenant 8 jours que je vous ai rencontré. Depuis je n&apos;ai pas fumé du tout. 
+                    Je me sens en pleine forme. Après les patchs, suivi médical rien ne fonctionnait. 
+                    Je vous recommande vivement.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Témoignage 3 */}
+              <div className="bg-gray-50 rounded-xl p-6 shadow-sm" itemScope itemType="https://schema.org/Review">
+                <meta itemProp="datePublished" content="2021-05-20" />
+                <div className="flex items-center mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-medium text-gray-900" itemProp="author" itemScope itemType="https://schema.org/Person">
+                      <span itemProp="name">Vincent Doutre</span>
+                    </h3>
+                    <div className="flex items-center mt-1" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+                      <meta itemProp="ratingValue" content="5" />
+                      <meta itemProp="bestRating" content="5" />
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-2 text-gray-600" itemProp="reviewBody">
+                  <p>
+                    Déjà presque 3 ans d&apos;arrêt suite à notre séance. Sans &quot;grosse&quot; difficulté. 
+                    Quelques envies très rares par moment. Toutefois, c&apos;est comme si je n&apos;avais jamais 
+                    fumé et je ne suis pas sous tension chaque jour. Vraiment efficace.
+                  </p>
+                  <p className="mt-2">
+                    Merci encore pour cette libération.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-10 text-center">
+              <a
+                href="https://g.co/kgs/dGSS9Cj"
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+              >
+                Voir plus d&apos;avis sur Google
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-teal-700 to-teal-900 text-white">
         <div className="container mx-auto px-6 text-center">
@@ -566,7 +699,7 @@ export default function HomePage() {
           >
             Contactez-moi
           </Link>
-    </div>
+        </div>
       </section>
     </>
   );
