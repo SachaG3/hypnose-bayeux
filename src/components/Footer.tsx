@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { MapPin, Phone, Mail, Clock, Youtube, Facebook, FileText } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Youtube, Facebook, FileText, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -128,6 +128,16 @@ export default function Footer() {
             >
               <Facebook className="w-6 h-6" />
               <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs mt-1">Facebook</span>
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/nadege-guignard-7ba56435a/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-500 hover:text-blue-700 transition-colors duration-300 group flex flex-col items-center"
+              aria-label="Profil LinkedIn"
+            >
+              <Linkedin className="w-6 h-6" />
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs mt-1">LinkedIn</span>
             </a>
             <a 
               href="https://www.pagesjaunes.fr/pros/56197235" 
