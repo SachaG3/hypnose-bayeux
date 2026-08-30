@@ -32,7 +32,9 @@ describe('Search Console driven SEO growth', () => {
     expect(about).toContain("Nadège Guignard, hypnothérapeute près de Bayeux");
     expect(about).toContain("canonical: 'https://www.hypnose-bayeux.fr/a-propos'");
     expect(about).not.toMatch(/certifiée|10 ans|taux de réussite/i);
-    expect(read('src/components/Header.tsx')).toContain('href="/a-propos"');
+    const header = read('src/components/Header.tsx');
+    expect(header).toContain('href="/a-propos"');
+    expect(header).toContain('href="/galerie"');
     expect(read('src/components/Footer.tsx')).toContain('href="/a-propos"');
     expect(read('src/app/sitemap.ts')).toContain("'/a-propos'");
     expect(read('public/llms.txt')).toContain('https://www.hypnose-bayeux.fr/a-propos');

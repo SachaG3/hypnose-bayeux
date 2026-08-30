@@ -22,7 +22,7 @@ export default function Header() {
           </Link>
 
           {/* Navigation Desktop */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
             <Link href="/" className="text-gray-700 hover:text-teal-700 transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all after:duration-300">
               Accueil
             </Link>
@@ -31,6 +31,9 @@ export default function Header() {
             </Link>
             <Link href="/a-propos" className="text-gray-700 hover:text-teal-700 transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all after:duration-300">
               À propos
+            </Link>
+            <Link href="/galerie" className="text-gray-700 hover:text-teal-700 transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all after:duration-300">
+              Galerie
             </Link>
             <Link href="/contact" className="text-gray-700 hover:text-teal-700 transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all after:duration-300">
               Contact
@@ -41,14 +44,14 @@ export default function Header() {
             
             <Link 
               href="/contact" 
-              className="bg-teal-700 text-white px-5 py-2 rounded-md ml-4 hover:bg-teal-800 transition-all duration-300 font-medium shadow-sm hover:shadow-md hover:-translate-y-0.5"
+              className="bg-teal-700 text-white px-5 py-2 rounded-md hover:bg-teal-800 transition-all duration-300 font-medium shadow-sm hover:shadow-md hover:-translate-y-0.5"
             >
               Rendez-vous
             </Link>
           </nav>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={toggleMenu}
               className="text-gray-700 hover:text-teal-700 transition-colors duration-300"
@@ -66,7 +69,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 shadow-md">
+        <div className="lg:hidden bg-white border-t border-gray-100 shadow-md">
           <div className="container mx-auto px-6 py-4">
             <nav className="flex flex-col space-y-4">
               <Link 
@@ -89,6 +92,13 @@ export default function Header() {
                 onClick={toggleMenu}
               >
                 <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all after:duration-300">À propos</span>
+              </Link>
+              <Link
+                href="/galerie"
+                className="text-gray-700 hover:text-teal-700 transition-colors duration-300 py-2 font-medium relative inline-block"
+                onClick={toggleMenu}
+              >
+                <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all after:duration-300">Galerie</span>
               </Link>
               <Link 
                 href="/contact" 
