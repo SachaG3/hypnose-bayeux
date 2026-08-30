@@ -135,7 +135,7 @@ export default function AboutPage() {
             <p className="mx-auto mb-10 max-w-2xl text-center text-gray-600">
               Retrouvez le cabinet sur les principaux annuaires et services professionnels qui le référencent.
             </p>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {professionalProfiles.map((profile) => (
                 <a
                   key={profile.label}

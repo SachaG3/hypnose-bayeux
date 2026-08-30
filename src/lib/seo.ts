@@ -24,6 +24,16 @@ export const professionalProfiles = [
     description: 'Profil professionnel',
     url: 'https://www.crenolibre.fr/therapeute/hypnotherapeute/maisons/cp/25404-nadege_guignard',
   },
+  {
+    label: 'Paralib',
+    description: 'Annuaire de praticiens',
+    url: 'https://www.paralib.net/praticiens/nadege-guignard#prestations',
+  },
+  {
+    label: 'Guide des médecines douces',
+    description: 'Annuaire spécialisé en hypnose',
+    url: 'https://guide-medecines-douces.com/dep/14/hypnose-eft-pnl-aromatherapie-magnetisme-coherence-cardiaque-dans-le-14-calvados-bayeux',
+  },
 ] as const;
 
 export const siteConfig = {

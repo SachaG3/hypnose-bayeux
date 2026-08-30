@@ -81,7 +81,7 @@ describe('Search Console driven SEO growth', () => {
   it('links Nadège Guignard to current professional directory profiles', () => {
     const seo = read('src/lib/seo.ts');
     const about = read('src/app/a-propos/page.tsx');
-    for (const label of ['Google', 'PagesJaunes', 'Liberlo', 'Resalib', 'Crenolibre']) {
+    for (const label of ['Google', 'PagesJaunes', 'Liberlo', 'Resalib', 'Crenolibre', 'Paralib', 'Guide des médecines douces']) {
       expect(seo).toContain(`label: '${label}'`);
     }
     expect(seo).toContain('sameAs: professionalProfiles.map');
