@@ -107,7 +107,8 @@ export default function ConfidentialitePage() {
               <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
                 <li>Vercel, pour l&apos;hébergement du site</li>
                 <li>Resend, pour l&apos;acheminement des messages envoyés depuis le formulaire</li>
-                <li>Google Ads, Vercel Analytics et Speed Insights uniquement après votre consentement</li>
+                <li>Google Ads uniquement après votre consentement</li>
+                <li>Vercel Analytics et Speed Insights pour des statistiques anonymisées, sans cookie publicitaire</li>
                 <li>Google Maps uniquement lorsque vous demandez explicitement l&apos;affichage de la carte sur la page d&apos;accès</li>
                 <li>Organismes publics (uniquement sur demande et dans le cadre d&apos;obligations légales)</li>
               </ul>
@@ -162,9 +163,10 @@ export default function ConfidentialitePage() {
               
               <p className="text-gray-700 mb-6">
                 Le site utilise le stockage local strictement nécessaire pour mémoriser votre choix de confidentialité.
-                Google Ads, Vercel Analytics et Speed Insights ne sont chargés qu&apos;après votre acceptation afin de mesurer
-                l&apos;audience, les performances et l&apos;efficacité des campagnes. Vous pouvez refuser ces services sans perdre
-                l&apos;accès au site et modifier votre choix à tout moment grâce au bouton de préférences affiché en bas de page.
+                Vercel Analytics et Speed Insights mesurent l&apos;audience et les performances avec des données agrégées,
+                sans cookie publicitaire. Les paramètres et fragments des adresses consultées sont retirés avant l&apos;envoi.
+                Google Ads n&apos;est chargé qu&apos;après votre acceptation. Vous pouvez le refuser sans perdre l&apos;accès au site
+                et modifier votre choix à tout moment grâce au bouton de préférences affiché en bas de page.
               </p>
               
               <h2 className="text-3xl font-serif text-teal-700 mt-12 mb-6">Modification de la politique de confidentialité</h2>

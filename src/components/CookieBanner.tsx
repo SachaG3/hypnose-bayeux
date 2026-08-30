@@ -31,9 +31,9 @@ export default function CookieBanner() {
           <div className="container mx-auto px-5 py-4 md:px-6">
             <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
               <p className="text-center text-sm leading-relaxed text-gray-700 md:pr-6 md:text-left md:text-base">
-                Les cookies techniques fonctionnent sans consentement. Avec votre accord, Google Ads,
-                Vercel Analytics et Speed Insights sont aussi chargés pour la mesure d&apos;audience et
-                l&apos;amélioration du site. Vous pouvez refuser sans perdre l&apos;accès au site.{' '}
+                Vercel Analytics et Speed Insights réalisent des mesures anonymisées, sans cookie publicitaire.
+                Avec votre accord, Google Ads mesure aussi l&apos;efficacité des campagnes. Vous pouvez refuser
+                Google Ads sans perdre l&apos;accès au site.{' '}
                 <Link href="/confidentialite" className="text-teal-700 underline hover:text-teal-900">
                   En savoir plus
                 </Link>.
