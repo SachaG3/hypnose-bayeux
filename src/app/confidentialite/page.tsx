@@ -108,6 +108,7 @@ export default function ConfidentialitePage() {
                 <li>Vercel, pour l&apos;hébergement du site</li>
                 <li>Resend, pour l&apos;acheminement des messages envoyés depuis le formulaire</li>
                 <li>Google Ads, Vercel Analytics et Speed Insights uniquement après votre consentement</li>
+                <li>Google Maps uniquement lorsque vous demandez explicitement l&apos;affichage de la carte sur la page d&apos;accès</li>
                 <li>Organismes publics (uniquement sur demande et dans le cadre d&apos;obligations légales)</li>
               </ul>
               

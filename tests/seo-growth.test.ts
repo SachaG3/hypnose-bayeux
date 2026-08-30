@@ -59,6 +59,21 @@ describe('Search Console driven SEO growth', () => {
     expect(read('src/app/page.tsx')).not.toContain('schema-services');
   });
 
+  it('promotes the local cabinet without loading a map on the homepage', () => {
+    const home = read('src/app/page.tsx');
+    expect(home).toContain('Cabinet d&apos;hypnose près de Bayeux');
+    expect(home).toContain('Parking gratuit sur place');
+    expect(home).toContain('href="/acces"');
+    expect(home).not.toContain('<iframe');
+    expect(home).not.toContain('+336****2077');
+    expect(home).not.toContain('itemType="https://schema.org/LocalBusiness"');
+    const access = read('src/app/acces/page.tsx');
+    expect(access).toContain('<MapEmbed />');
+    expect(access).not.toContain('google.com/maps/embed');
+    expect(access).not.toContain('+336****2077');
+    expect(read('src/components/MapEmbed.tsx')).toContain('Afficher la carte Google Maps');
+  });
+
   it('records the Search Console baseline and a repeatable measurement protocol', () => {
     const playbook = read('docs/seo-search-console.md');
     expect(playbook).toContain('2 308 impressions');

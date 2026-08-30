@@ -1,30 +1,12 @@
 import { MapPin, Car, Navigation } from 'lucide-react';
 import { accesMetadata } from '../metadata';
-import Script from 'next/script';
+import MapEmbed from '@/components/MapEmbed';
 
 export const metadata = accesMetadata;
 
 export default function AccesPage() {
   return (
     <>
-      <Script id="schema-location" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "HealthAndBeautyBusiness",
-        "name": "Cabinet d'Hypnose Bayeux - Nadège GUIGNARD",
-        "description": "Cabinet d'hypnothérapie situé à Maisons près de Bayeux. Facile d'accès, à 10 minutes de Bayeux et 30 minutes de Caen.",
-        "image": "https://www.hypnose-bayeux.fr/og-image.jpg",
-        "url": "https://www.hypnose-bayeux.fr/acces",
-        "@id": "https://www.hypnose-bayeux.fr/acces",
-        "telephone": "+33649292077",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "La Fosse Buhot",
-          "addressLocality": "Maisons",
-          "postalCode": "14400",
-          "addressCountry": "FR"
-        }
-      })}} />
-
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-teal-700 to-teal-900 text-white py-20">
         <div className="container mx-auto px-6">
@@ -95,18 +77,7 @@ export default function AccesPage() {
               </h2>
               
               <div className="bg-gray-100 rounded-xl overflow-hidden shadow-sm h-96" itemProp="hasMap">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1300.4321781733267!2d-0.7608520555725226!3d49.316852399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480babc40422e79f%3A0x54e470b69a61bc16!2sGuignard%20nadege!5e0!3m2!1sfr!2sfr!4v1742073744999!5m2!1sfr!2sfr"
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Carte du cabinet d&apos;hypnothérapie"
-                  className="rounded-xl"
-                  aria-label="Google Maps - Localisation du cabinet d&apos;hypnothérapie à Maisons"
-                ></iframe>
+                <MapEmbed />
               </div>
             </div>
             

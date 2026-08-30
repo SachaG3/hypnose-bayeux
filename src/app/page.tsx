@@ -7,7 +7,10 @@ import {
   Mail, 
   SunMedium, 
   Shield,
-  Moon
+  Moon,
+  MapPin,
+  Car,
+  Navigation
 } from 'lucide-react';
 import { homeMetadata } from './metadata';
 
@@ -417,20 +420,6 @@ export default function HomePage() {
               Découvrez les retours d&apos;expérience de personnes qui ont fait appel à mes services d&apos;hypnose
             </p>
             
-            {/* Données structurées pour Schema.org */}
-            <div className="hidden" itemScope itemType="https://schema.org/LocalBusiness">
-              <meta itemProp="name" content="Hypnose Bayeux - Nadège Guignard" />
-              <meta itemProp="telephone" content="+33649292077" />
-              <meta itemProp="priceRange" content="€€" />
-              <meta itemProp="image" content="https://www.hypnose-bayeux.fr/nadegeGuignard.webp" />
-              <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-                <meta itemProp="streetAddress" content="La Fosse Buhot" />
-                <meta itemProp="addressLocality" content="Maisons" />
-                <meta itemProp="postalCode" content="14400" />
-                <meta itemProp="addressCountry" content="FR" />
-              </div>
-            </div>
-            
             <div className="grid md:grid-cols-3 gap-6">
               {/* Témoignage 1 */}
               <div className="bg-gray-50 rounded-xl p-6 shadow-sm" itemScope itemType="https://schema.org/Review">
@@ -552,6 +541,62 @@ export default function HomePage() {
           >
             Contactez-moi
           </Link>
+        </div>
+      </section>
+
+      {/* Localisation Section */}
+      <section className="bg-gray-50 py-16" aria-labelledby="localisation-cabinet">
+        <div className="container mx-auto px-6">
+          <div className="mx-auto max-w-5xl rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
+            <div className="grid items-center gap-10 md:grid-cols-[1.15fr_0.85fr]">
+              <div>
+                <div className="mb-5 inline-flex items-center rounded-full bg-teal-50 px-4 py-2 text-sm font-medium text-teal-700">
+                  <MapPin className="mr-2 h-4 w-4" aria-hidden="true" />
+                  À 10 minutes de Bayeux
+                </div>
+                <h2 id="localisation-cabinet" className="mb-5 font-serif text-3xl font-medium text-teal-700">
+                  Cabinet d&apos;hypnose près de Bayeux
+                </h2>
+                <p className="mb-5 text-lg leading-relaxed text-gray-700">
+                  Le cabinet de Nadège Guignard se trouve à Maisons, dans un environnement calme et facilement accessible depuis Bayeux.
+                </p>
+                <address className="mb-7 not-italic text-gray-700">
+                  <strong className="block text-gray-900">La Fosse Buhot</strong>
+                  14400 Maisons
+                </address>
+                <div className="flex flex-wrap gap-4">
+                  <Link href="/acces" className="inline-flex items-center rounded-md bg-teal-700 px-6 py-3 font-medium text-white hover:bg-teal-800">
+                    <Navigation className="mr-2 h-5 w-5" aria-hidden="true" />
+                    Voir l&apos;adresse et préparer mon trajet
+                  </Link>
+                  <Link href="/contact" className="rounded-md border border-teal-700 px-6 py-3 font-medium text-teal-700 hover:bg-teal-50">
+                    Prendre rendez-vous
+                  </Link>
+                </div>
+              </div>
+
+              <div className="rounded-xl bg-teal-50 p-6">
+                <h3 className="mb-5 text-xl font-semibold text-gray-800">Accès au cabinet</h3>
+                <ul className="space-y-4 text-gray-700">
+                  <li className="flex items-center">
+                    <Navigation className="mr-3 h-5 w-5 shrink-0 text-teal-700" aria-hidden="true" />
+                    À 10 minutes de Bayeux
+                  </li>
+                  <li className="flex items-center">
+                    <Navigation className="mr-3 h-5 w-5 shrink-0 text-teal-700" aria-hidden="true" />
+                    À 30 minutes de Caen
+                  </li>
+                  <li className="flex items-center">
+                    <Car className="mr-3 h-5 w-5 shrink-0 text-teal-700" aria-hidden="true" />
+                    Parking gratuit sur place
+                  </li>
+                </ul>
+                <p className="mt-6 border-t border-teal-100 pt-5 text-sm leading-relaxed text-gray-600">
+                  La carte interactive et les indications détaillées restent disponibles sur la page d&apos;accès afin de ne pas ralentir l&apos;accueil.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>
