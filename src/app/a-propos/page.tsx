@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin, Phone, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, ArrowRight, ExternalLink } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import JsonLd from '@/components/JsonLd';
 import { baseMetadata } from '../metadata';
-import { siteConfig } from '@/lib/seo';
+import { professionalProfiles, siteConfig } from '@/lib/seo';
 
 const pageTitle = 'Nadège Guignard, hypnothérapeute près de Bayeux';
 const pageDescription = 'Découvrez Nadège Guignard, son approche personnalisée de l’hypnose et son cabinet situé à Maisons, à 10 minutes de Bayeux.';
@@ -33,6 +33,7 @@ const personJsonLd = {
   jobTitle: 'Hypnothérapeute',
   url: `${siteConfig.url}/a-propos`,
   image: `${siteConfig.url}/nadegeGuignard.webp`,
+  sameAs: professionalProfiles.map((profile) => profile.url),
   worksFor: { '@id': `${siteConfig.url}/#business` },
   workLocation: {
     '@type': 'Place',
@@ -120,6 +121,37 @@ export default function AboutPage() {
                 <p className="mb-4 text-gray-600">Le programme en trois séances présenté par le cabinet.</p>
                 <span className="inline-flex items-center font-medium text-teal-700">Découvrir <ArrowRight className="ml-2 h-4 w-4" /></span>
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16" aria-labelledby="profils-professionnels">
+        <div className="container mx-auto px-6">
+          <div className="mx-auto max-w-5xl">
+            <h2 id="profils-professionnels" className="mb-4 text-center font-serif text-3xl font-medium text-teal-700">
+              Profils professionnels de Nadège Guignard
+            </h2>
+            <p className="mx-auto mb-10 max-w-2xl text-center text-gray-600">
+              Retrouvez le cabinet sur les principaux annuaires et services professionnels qui le référencent.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {professionalProfiles.map((profile) => (
+                <a
+                  key={profile.label}
+                  href={profile.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between rounded-xl border border-gray-200 bg-gray-50 p-5 transition-colors hover:border-teal-200 hover:bg-teal-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+                  aria-label={`Consulter la fiche ${profile.label} de Nadège Guignard`}
+                >
+                  <span>
+                    <strong className="block text-lg text-gray-900">{profile.label}</strong>
+                    <span className="mt-1 block text-sm text-gray-600">{profile.description}</span>
+                  </span>
+                  <ExternalLink className="ml-4 h-5 w-5 shrink-0 text-teal-700 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                </a>
+              ))}
             </div>
           </div>
         </div>

@@ -1,3 +1,31 @@
+export const professionalProfiles = [
+  {
+    label: 'Google',
+    description: 'Fiche d’établissement et avis',
+    url: 'https://g.co/kgs/dGSS9Cj',
+  },
+  {
+    label: 'PagesJaunes',
+    description: 'Coordonnées et horaires',
+    url: 'https://www.pagesjaunes.fr/pros/56197235',
+  },
+  {
+    label: 'Liberlo',
+    description: 'Annuaire d’hypnothérapeutes',
+    url: 'https://liberlo.com/profil/nadege-guignard/',
+  },
+  {
+    label: 'Resalib',
+    description: 'Annuaire de praticiens',
+    url: 'https://www.resalib.fr/praticien/108302-nadege-guignard-hypnotherapeute-maisons',
+  },
+  {
+    label: 'Crenolibre',
+    description: 'Profil professionnel',
+    url: 'https://www.crenolibre.fr/therapeute/hypnotherapeute/maisons/cp/25404-nadege_guignard',
+  },
+] as const;
+
 export const siteConfig = {
   name: 'Hypnose Bayeux',
   url: 'https://www.hypnose-bayeux.fr',
@@ -24,6 +52,7 @@ export const businessJsonLd = {
   image: `${siteConfig.url}/og-image.jpg`,
   telephone: siteConfig.telephone,
   email: siteConfig.email,
+  sameAs: professionalProfiles.map((profile) => profile.url),
   priceRange: '70 € – 210 €',
   address: {
     '@type': 'PostalAddress',

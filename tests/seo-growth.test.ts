@@ -78,6 +78,17 @@ describe('Search Console driven SEO growth', () => {
     expect(mapEmbed).not.toContain('n&apos;est chargée qu&apos;à votre demande');
   });
 
+  it('links Nadège Guignard to current professional directory profiles', () => {
+    const seo = read('src/lib/seo.ts');
+    const about = read('src/app/a-propos/page.tsx');
+    for (const label of ['Google', 'PagesJaunes', 'Liberlo', 'Resalib', 'Crenolibre']) {
+      expect(seo).toContain(`label: '${label}'`);
+    }
+    expect(seo).toContain('sameAs: professionalProfiles.map');
+    expect(about).toContain('professionalProfiles.map');
+    expect(about).toContain('Profils professionnels de Nadège Guignard');
+  });
+
   it('records the Search Console baseline and a repeatable measurement protocol', () => {
     const playbook = read('docs/seo-search-console.md');
     expect(playbook).toContain('2 308 impressions');
