@@ -64,6 +64,8 @@ describe('Search Console driven SEO growth', () => {
     expect(home).toContain('Cabinet d&apos;hypnose près de Bayeux');
     expect(home).toContain('Parking gratuit sur place');
     expect(home).toContain('href="/acces"');
+    expect(home).not.toContain('afin de ne pas ralentir l&apos;accueil');
+    expect(home).not.toContain('cabinet d&apos;hypnose à Bayeux vous accueille');
     expect(home).not.toContain('<iframe');
     expect(home).not.toContain('+336****2077');
     expect(home).not.toContain('itemType="https://schema.org/LocalBusiness"');
@@ -71,7 +73,9 @@ describe('Search Console driven SEO growth', () => {
     expect(access).toContain('<MapEmbed />');
     expect(access).not.toContain('google.com/maps/embed');
     expect(access).not.toContain('+336****2077');
-    expect(read('src/components/MapEmbed.tsx')).toContain('Afficher la carte Google Maps');
+    const mapEmbed = read('src/components/MapEmbed.tsx');
+    expect(mapEmbed).toContain('Afficher la carte Google Maps');
+    expect(mapEmbed).not.toContain('n&apos;est chargée qu&apos;à votre demande');
   });
 
   it('records the Search Console baseline and a repeatable measurement protocol', () => {

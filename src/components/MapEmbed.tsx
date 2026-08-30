@@ -27,10 +27,7 @@ export default function MapEmbed() {
   return (
     <div className="flex h-full flex-col items-center justify-center px-6 text-center">
       <MapPin className="mb-4 h-10 w-10 text-teal-700" aria-hidden="true" />
-      <p className="mb-2 text-lg font-semibold text-gray-800">La Fosse Buhot, 14400 Maisons</p>
-      <p className="mb-6 max-w-lg text-sm leading-relaxed text-gray-600">
-        La carte Google Maps n&apos;est chargée qu&apos;à votre demande. Son affichage peut transmettre des données de connexion à Google.
-      </p>
+      <p className="mb-6 text-lg font-semibold text-gray-800">La Fosse Buhot, 14400 Maisons</p>
       <button
         type="button"
         onClick={() => setIsLoaded(true)}

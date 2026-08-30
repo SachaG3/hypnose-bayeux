@@ -75,7 +75,7 @@ export default function HomePage() {
                 <h2 className="text-3xl font-serif font-medium text-teal-700 mb-3">
                   Nadège Guignard, hypnothérapeute près de Bayeux
                 </h2>
-                <h3 className="text-xl text-gray-700 mb-4">Cabinet d&apos;hypnose à Bayeux</h3>
+                <h3 className="text-xl text-gray-700 mb-4">Cabinet d&apos;hypnose près de Bayeux</h3>
                 <Link href="/a-propos" className="text-teal-700 font-medium hover:underline">
                   Découvrir mon approche et le cabinet
                 </Link>
@@ -83,12 +83,12 @@ export default function HomePage() {
             </div>
             
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
-              En tant qu&apos;hypnothérapeute à Bayeux, je mets mon expertise au service de votre bien-être. 
+              En tant qu&apos;hypnothérapeute près de Bayeux, je mets mon expertise au service de votre bien-être.
               Spécialisée dans les techniques d&apos;hypnose thérapeutique, j&apos;accompagne mes patients dans leur transformation personnelle.
             </p>
             
             <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-              Mon cabinet d&apos;hypnose à Bayeux vous accueille dans un cadre apaisant. 
+              Mon cabinet d&apos;hypnose à Maisons, près de Bayeux, vous accueille dans un cadre apaisant.
               Je propose des séances d&apos;hypnothérapie adaptées à vos besoins spécifiques, que ce soit pour l&apos;arrêt du tabac, 
               la perte de poids, ou la gestion du stress.
             </p>
@@ -591,9 +591,6 @@ export default function HomePage() {
                     Parking gratuit sur place
                   </li>
                 </ul>
-                <p className="mt-6 border-t border-teal-100 pt-5 text-sm leading-relaxed text-gray-600">
-                  La carte interactive et les indications détaillées restent disponibles sur la page d&apos;accès afin de ne pas ralentir l&apos;accueil.
-                </p>
               </div>
             </div>
           </div>
