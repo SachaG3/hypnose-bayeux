@@ -1,68 +1,23 @@
 import { Clock, CreditCard, MapPin } from 'lucide-react';
 import { tarifsMetadata } from '../metadata';
-import Script from 'next/script';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = tarifsMetadata;
 
 export default function TarifsPage() {
   return (
     <>
-      <Script id="schema-prices" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "HealthAndBeautyBusiness",
-        "name": "Hypnose Bayeux - Tarifs",
-        "url": "https://www.bayeuxhypnose.fr/tarifs",
-        "priceRange": "€€",
-        "paymentAccepted": "Cash, Credit Card, Check",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "09:00",
-            "closes": "19:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Saturday",
-            "opens": "09:00",
-            "closes": "19:00",
-            "description": "Sur rendez-vous uniquement"
-          }
-        ],
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "Séance d&apos;hypnose standard",
-            "description": "Entretien approfondi ou première séance d&apos;hypnose (environ 1h30)",
-            "price": "70",
-            "priceCurrency": "EUR"
-          },
-          {
-            "@type": "Offer",
-            "name": "Arrêt du Tabac",
-            "description": "Séances pour arrêter de fumer durablement",
-            "price": "90",
-            "priceCurrency": "EUR"
-          },
-          {
-            "@type": "Offer",
-            "name": "Programme Amincissement",
-            "description": "Accompagnement personnalisé pour la perte de poids (4 séances)",
-            "price": "260",
-            "priceCurrency": "EUR"
-          }
-        ]
-      })}} />
+      <Breadcrumbs items={[{ name: 'Tarifs et horaires' }]} />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-teal-700 to-teal-900 text-white py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-6 leading-tight">
-              Tarifs et Horaires
+              Tarifs des séances d&apos;hypnose près de Bayeux
             </h1>
             <p className="text-xl opacity-90 font-light">
-              Des séances d&apos;hypnothérapie adaptées à vos besoins
+              Tarifs transparents, horaires et modalités du cabinet à Maisons
             </p>
           </div>
         </div>

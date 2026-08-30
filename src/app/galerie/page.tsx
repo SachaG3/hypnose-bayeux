@@ -9,16 +9,16 @@ export const metadata: Metadata = {
   title: 'Galerie Photos | Cabinet d\'Hypnose à Bayeux',
   description: 'Découvrez en images le cabinet d\'hypnothérapie situé à Maisons près de Bayeux. Un espace apaisant dédié à votre bien-être.',
   alternates: {
-    canonical: 'https://www.bayeuxhypnose.fr/galerie',
+    canonical: 'https://www.hypnose-bayeux.fr/galerie',
   },
   openGraph: {
     ...baseMetadata.openGraph,
     title: 'Photos du Cabinet d\'Hypnose près de Bayeux',
     description: 'Découvrez l\'environnement chaleureux et apaisant du cabinet d\'hypnothérapie de Nadège GUIGNARD à Maisons, près de Bayeux.',
-    url: 'https://www.bayeuxhypnose.fr/galerie',
+    url: 'https://www.hypnose-bayeux.fr/galerie',
     images: [
       {
-        url: 'https://www.bayeuxhypnose.fr/og-image.jpg',
+        url: 'https://www.hypnose-bayeux.fr/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Galerie Photos - Cabinet d&apos;Hypnothérapie à Bayeux',
@@ -30,31 +30,31 @@ export const metadata: Metadata = {
 // Définition des images à l'extérieur du composant pour pouvoir les utiliser à la fois dans le composant et dans les métadonnées JSON-LD
 const galleryImages = [
   {
-    src: '/images/SAM_0448.JPG',
+    src: '/images/salle-hypnose.webp',
     alt: 'Salle de consultation d\'hypnose',
     title: 'Salle d\'Hypnose',
     description: 'Un espace dédié à vos séances d\'hypnothérapie'
   },
   {
-    src: '/images/IMG_1923 2.jpeg',
+    src: '/images/jardin-cabinet.webp',
     alt: 'Vue du jardin du cabinet d\'hypnothérapie',
     title: 'Espace Jardin',
     description: 'Un cadre naturel et relaxant'
   },
   {
-    src: '/images/IMG_5816.jpeg',
+    src: '/images/jardin-verdoyant.webp',
     alt: 'Vue du jardin et de la végétation',
     title: 'Environnement Verdoyant',
     description: 'Un jardin paisible propice à la détente'
   },
   {
-    src: '/images/IMG_4681.jpeg',
+    src: '/images/temoignage-enfant.webp',
     alt: 'Dessin d\'enfant de remerciement',
     title: 'Témoignage Enfant',
     description: 'Dessin de remerciement réalisé par un enfant après une séance'
   },
   {
-    src: '/images/IMG_4682.jpeg',
+    src: '/images/temoignage-creatif.webp',
     alt: 'Dessin d\'enfant de remerciement',
     title: 'Témoignage Créatif',
     description: 'Dessin offert par un enfant en remerciement d\'une séance d\'hypnose'
@@ -75,17 +75,17 @@ export default function GaleriePage() {
           "@type": "Place",
           "name": "Cabinet d'Hypnothérapie - Hypnose Bayeux"
         },
-        "thumbnailUrl": galleryImages.map(img => `https://www.bayeuxhypnose.fr${img.src}`),
+        "thumbnailUrl": galleryImages.map(img => `https://www.hypnose-bayeux.fr${img.src}`),
         "name": "Galerie photos du cabinet d'hypnose à Bayeux",
         "description": "Photos du cabinet d'hypnothérapie situé à Maisons près de Bayeux. Un espace apaisant dédié au bien-être et à la thérapie par l'hypnose.",
-        "image": galleryImages.map(img => `https://www.bayeuxhypnose.fr${img.src}`),
-        "url": "https://www.bayeuxhypnose.fr/galerie",
+        "image": galleryImages.map(img => `https://www.hypnose-bayeux.fr${img.src}`),
+        "url": "https://www.hypnose-bayeux.fr/galerie",
         "provider": {
           "@type": "HealthAndBeautyBusiness",
           "name": "Hypnose Bayeux - Nadège GUIGNARD",
-          "image": "https://www.bayeuxhypnose.fr/og-image.jpg",
-          "@id": "https://www.bayeuxhypnose.fr",
-          "url": "https://www.bayeuxhypnose.fr"
+          "image": "https://www.hypnose-bayeux.fr/og-image.jpg",
+          "@id": "https://www.hypnose-bayeux.fr",
+          "url": "https://www.hypnose-bayeux.fr"
         }
       })}} />
 

@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   title: 'Anneau Gastrique Virtuel par Hypnose | Cabinet d\'Hypnose Bayeux',
   description: 'Perdez du poids naturellement avec l\'anneau gastrique virtuel par hypnose à Bayeux. Solution efficace et non chirurgicale pour une perte de poids durable.',
   alternates: {
-    canonical: 'https://www.bayeuxhypnose.fr/anneau-gastrique',
+    canonical: 'https://www.hypnose-bayeux.fr/anneau-gastrique',
   },
   openGraph: {
     ...baseMetadata.openGraph,
     title: 'Anneau Gastrique Virtuel par Hypnose à Bayeux',
     description: 'Perdez du poids naturellement avec l\'anneau gastrique virtuel par hypnose à Bayeux. Solution efficace et non chirurgicale pour une perte de poids durable.',
-    url: 'https://www.bayeuxhypnose.fr/anneau-gastrique',
+    url: 'https://www.hypnose-bayeux.fr/anneau-gastrique',
   },
 };
 
@@ -26,7 +26,7 @@ export default function AnneauGastriquePage() {
         "@type": "HealthAndBeautyBusiness",
         "name": "Anneau Gastrique Virtuel par Hypnose - Bayeux",
         "description": "Programme de perte de poids par anneau gastrique virtuel à Bayeux. Alternative non chirurgicale pour des résultats durables.",
-        "url": "https://www.bayeuxhypnose.fr/anneau-gastrique",
+        "url": "https://www.hypnose-bayeux.fr/anneau-gastrique",
         "provider": {
           "@type": "Person",
           "name": "Nadège GUIGNARD"

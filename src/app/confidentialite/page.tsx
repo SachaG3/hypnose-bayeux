@@ -105,7 +105,9 @@ export default function ConfidentialitePage() {
               </p>
               
               <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                <li>Prestataires techniques (hébergement du site, maintenance)</li>
+                <li>Vercel, pour l&apos;hébergement du site</li>
+                <li>Resend, pour l&apos;acheminement des messages envoyés depuis le formulaire</li>
+                <li>Google Ads, Vercel Analytics et Speed Insights uniquement après votre consentement</li>
                 <li>Organismes publics (uniquement sur demande et dans le cadre d&apos;obligations légales)</li>
               </ul>
               
@@ -158,9 +160,10 @@ export default function ConfidentialitePage() {
               <h2 className="text-3xl font-serif text-teal-700 mt-12 mb-6">Cookies</h2>
               
               <p className="text-gray-700 mb-6">
-                Le site hypnose-bayeux.fr utilise des cookies techniques strictement nécessaires au fonctionnement du site. 
-                Aucun cookie publicitaire ou de traçage n&apos;est utilisé. Vous pouvez paramétrer votre navigateur pour 
-                refuser les cookies, mais cela pourrait affecter certaines fonctionnalités du site.
+                Le site utilise le stockage local strictement nécessaire pour mémoriser votre choix de confidentialité.
+                Google Ads, Vercel Analytics et Speed Insights ne sont chargés qu&apos;après votre acceptation afin de mesurer
+                l&apos;audience, les performances et l&apos;efficacité des campagnes. Vous pouvez refuser ces services sans perdre
+                l&apos;accès au site et modifier votre choix à tout moment grâce au bouton de préférences affiché en bas de page.
               </p>
               
               <h2 className="text-3xl font-serif text-teal-700 mt-12 mb-6">Modification de la politique de confidentialité</h2>

@@ -1,115 +1,119 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
+import {
+  CONTACT_BODY_LIMIT_BYTES,
+  ContactRateLimiter,
+  validateContactPayload,
+} from '@/lib/contact';
 
-// Vérifier si la clé API est configurée
-const resendApiKey = process.env.RESEND_API_KEY;
-if (!resendApiKey || resendApiKey === 're_VOTRE_CLE_API_ICI') {
-  console.error('⚠️ La clé API Resend n\'est pas configurée correctement. Veuillez configurer votre clé API dans le fichier .env');
+const rateLimiter = new ContactRateLimiter();
+const textEncoder = new TextEncoder();
+
+function clientIdentifier(request: Request) {
+  return request.headers.get('x-forwarded-for')?.split(',')[0]?.trim()
+    || request.headers.get('x-real-ip')
+    || 'unknown';
 }
 
-// Initialiser Resend avec la clé API
-const resend = new Resend(resendApiKey);
+function isSameOrigin(request: Request) {
+  const origin = request.headers.get('origin');
+  if (!origin) return true;
 
-// Fonction pour valider l'email
-const isValidEmail = (email: string) => {
-  const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-  return regex.test(email);
-};
+  try {
+    const requestUrl = new URL(request.url);
+    const forwardedHost = request.headers.get('x-forwarded-host');
+    return new URL(origin).host === (forwardedHost || requestUrl.host);
+  } catch {
+    return false;
+  }
+}
+
+function jsonError(error: string, status: number, headers?: HeadersInit) {
+  return NextResponse.json({ error }, { status, headers });
+}
 
 export async function POST(request: Request) {
-  try {
-    // Vérifier si la clé API est configurée
-    if (!resendApiKey || resendApiKey === 're_VOTRE_CLE_API_ICI') {
-      return NextResponse.json(
-        { error: 'La clé API Resend n\'est pas configurée. Veuillez configurer votre clé API dans le fichier .env' },
-        { status: 500 }
-      );
-    }
-
-    // Récupérer les données du formulaire
-    const { name, email, phone, message } = await request.json();
-
-    // Validation des champs
-    if (!name || !name.trim()) {
-      return NextResponse.json(
-        { error: 'Le nom est requis' },
-        { status: 400 }
-      );
-    }
-
-    if (!email || !isValidEmail(email)) {
-      return NextResponse.json(
-        { error: 'Un email valide est requis' },
-        { status: 400 }
-      );
-    }
-
-    if (!message || !message.trim()) {
-      return NextResponse.json(
-        { error: 'Le message est requis' },
-        { status: 400 }
-      );
-    }
-
-    // Téléphone est facultatif, mais vérifions qu'il est formaté correctement s'il est fourni
-    const phoneFormatted = phone ? phone : 'Non fourni';
-
-    // Formatter l'email
-    try {
-      const { data, error } = await resend.emails.send({
-        from: 'Contact <contact@hypnose-bayeux.fr>',
-        to: ['drguignard@gmail.com','nadege.antik@wanadoo.fr','sacha.guignard03@gmail.com'], // Remplacez par votre adresse email réelle
-        subject: `Nouveau message de ${name}`,
-        replyTo: email,
-        text: `
-Nouveau message de contact:
-
-Nom: ${name}
-Email: ${email}
-Téléphone: ${phoneFormatted}
-
-Message:
-${message}
-        `,
-      });
-
-      if (error) {
-        console.error('Erreur Resend:', error);
-        
-        // Gérer spécifiquement l'erreur de clé API invalide
-        if (error.message && error.message.includes('API key is invalid')) {
-          return NextResponse.json(
-            { error: 'La clé API Resend est invalide. Veuillez vérifier votre clé API dans le fichier .env' },
-            { status: 500 }
-          );
-        }
-        
-        return NextResponse.json(
-          { error: `Erreur lors de l'envoi de l'email: ${error.message}` },
-          { status: 500 }
-        );
-      }
-
-      return NextResponse.json(
-        { 
-          success: true, 
-          message: 'Email envoyé avec succès',
-          data 
-        }
-      );
-    } catch (resendError) {
-      console.error('Erreur lors de l\'envoi avec Resend:', resendError);
-      return NextResponse.json(
-        { error: 'Erreur lors de l\'envoi de l\'email via Resend' },
-        { status: 500 }
-      );
-    }
-    
-  } catch (error) {
-    console.error('Erreur lors du traitement de la demande:', error);
-    return NextResponse.json(
-      { error: 'Erreur lors du traitement de la demande' },
-      { status: 500 }
-    );
+  if (!isSameOrigin(request)) {
+    return jsonError('Origine de la demande non autorisée.', 403);
   }
-} 
+
+  const rateLimit = rateLimiter.check(clientIdentifier(request));
+  if (!rateLimit.allowed) {
+    return jsonError('Trop de demandes ont été envoyées. Veuillez réessayer plus tard.', 429, {
+      'Retry-After': String(rateLimit.retryAfterSeconds),
+    });
+  }
+
+  if (!request.headers.get('content-type')?.toLowerCase().startsWith('application/json')) {
+    return jsonError('Le format de la demande doit être JSON.', 415);
+  }
+
+  const announcedLength = Number(request.headers.get('content-length'));
+  if (Number.isFinite(announcedLength) && announcedLength > CONTACT_BODY_LIMIT_BYTES) {
+    return jsonError('La demande est trop volumineuse.', 413);
+  }
+
+  let rawBody: string;
+  try {
+    rawBody = await request.text();
+  } catch {
+    return jsonError('Impossible de lire la demande.', 400);
+  }
+
+  if (textEncoder.encode(rawBody).byteLength > CONTACT_BODY_LIMIT_BYTES) {
+    return jsonError('La demande est trop volumineuse.', 413);
+  }
+
+  let parsedBody: unknown;
+  try {
+    parsedBody = JSON.parse(rawBody);
+  } catch {
+    return jsonError('Le contenu de la demande est invalide.', 400);
+  }
+
+  const validation = validateContactPayload(parsedBody);
+  if (!validation.ok) return jsonError(validation.error, 400);
+
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey || apiKey === 're_VOTRE_CLE_API_ICI') {
+    console.error('RESEND_API_KEY is missing.');
+    return jsonError('Le service de messagerie est temporairement indisponible.', 503);
+  }
+
+  const recipients = (process.env.CONTACT_EMAIL_TO || 'contact@hypnose-bayeux.fr')
+    .split(',')
+    .map((recipient) => recipient.trim())
+    .filter(Boolean);
+  const sender = process.env.CONTACT_EMAIL_FROM || 'Contact <contact@hypnose-bayeux.fr>';
+  const { name, email, phone, message } = validation.value;
+
+  try {
+    const resend = new Resend(apiKey);
+    const result = await resend.emails.send({
+      from: sender,
+      to: recipients,
+      subject: `Nouveau message de ${name}`,
+      replyTo: email,
+      text: [
+        'Nouveau message de contact :',
+        '',
+        `Nom : ${name}`,
+        `Email : ${email}`,
+        `Téléphone : ${phone}`,
+        '',
+        'Message :',
+        message,
+      ].join('\n'),
+    });
+
+    if (result.error) {
+      console.error('Resend rejected a contact email:', result.error.name);
+      return jsonError('Le message n’a pas pu être envoyé. Veuillez réessayer plus tard.', 502);
+    }
+
+    return NextResponse.json({ success: true, message: 'Message envoyé avec succès.' });
+  } catch (error) {
+    console.error('Contact email delivery failed:', error instanceof Error ? error.name : 'UnknownError');
+    return jsonError('Le message n’a pas pu être envoyé. Veuillez réessayer plus tard.', 502);
+  }
+}

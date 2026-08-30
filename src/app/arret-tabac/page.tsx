@@ -1,44 +1,46 @@
 import { Metadata } from 'next';
 import { baseMetadata } from '../metadata';
-import Script from 'next/script';
 import { Phone } from 'lucide-react';
+import Link from 'next/link';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import JsonLd from '@/components/JsonLd';
+import { serviceJsonLd } from '@/lib/seo';
+
+const pageTitle = 'Arrêt du tabac par hypnose à Bayeux | Nadège Guignard';
+const pageDescription = 'Découvrez le déroulement et le tarif d’une séance d’hypnose pour l’arrêt du tabac près de Bayeux, au cabinet de Nadège Guignard à Maisons.';
 
 export const metadata: Metadata = {
   ...baseMetadata,
-  title: 'Arrêt du Tabac par Hypnose | Cabinet d\'Hypnose Bayeux',
-  description: 'Arrêtez de fumer naturellement avec l\'hypnose à Bayeux. Programme efficace d\'arrêt du tabac en une seule séance. Plus de 90% de réussite.',
+  title: { absolute: pageTitle },
+  description: pageDescription,
   alternates: {
-    canonical: 'https://www.bayeuxhypnose.fr/arret-tabac',
+    canonical: 'https://www.hypnose-bayeux.fr/arret-tabac',
   },
   openGraph: {
     ...baseMetadata.openGraph,
-    title: 'Arrêt du Tabac par Hypnose à Bayeux',
-    description: 'Arrêtez de fumer naturellement avec l\'hypnose à Bayeux. Programme efficace d\'arrêt du tabac en une seule séance. Plus de 90% de réussite.',
-    url: 'https://www.bayeuxhypnose.fr/arret-tabac',
+    title: pageTitle,
+    description: pageDescription,
+    url: 'https://www.hypnose-bayeux.fr/arret-tabac',
   },
 };
 
 export default function ArretTabacPage() {
   return (
     <>
-      <Script id="schema-arret-tabac" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "HealthAndBeautyBusiness",
-        "name": "Arrêt du Tabac par Hypnose - Bayeux",
-        "description": "Programme d'arrêt du tabac par hypnose à Bayeux en une seule séance. Plus de 90% de réussite.",
-        "url": "https://www.bayeuxhypnose.fr/arret-tabac",
-        "provider": {
-          "@type": "Person",
-          "name": "Nadège GUIGNARD"
-        }
-      })}} />
+      <JsonLd data={serviceJsonLd(
+        'Accompagnement pour l’arrêt du tabac par hypnose',
+        'Séance d’hypnose personnalisée pour accompagner une démarche d’arrêt du tabac près de Bayeux.',
+        '/arret-tabac',
+        '90',
+      )} />
+      <Breadcrumbs items={[{ name: 'Arrêt du tabac par hypnose' }]} />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-teal-700 to-teal-900 text-white py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-6 leading-tight">
-              Arrêt du Tabac par Hypnose
+              Arrêt du tabac par hypnose à Bayeux
             </h1>
             <p className="text-xl mb-8 leading-relaxed opacity-90 font-light">
               Libérez-vous du tabac définitivement en une seule séance grâce à l&apos;hypnose
@@ -117,6 +119,10 @@ export default function ArretTabacPage() {
                   <Phone className="w-5 h-5 mr-2" /> 
                   Appeler maintenant
                 </a>
+                <p className="mt-5 text-sm text-gray-600">
+                  Consultez aussi le <Link href="/tarifs" className="font-medium text-teal-700 hover:underline">tarif de 90 €</Link>
+                  {' '}et le <Link href="/seance-hypnose" className="font-medium text-teal-700 hover:underline">déroulement général d’une séance</Link>.
+                </p>
               </div>
             </div>
           </div>

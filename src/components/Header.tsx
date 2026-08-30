@@ -29,8 +29,8 @@ export default function Header() {
             <Link href="/tarifs" className="text-gray-700 hover:text-teal-700 transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all after:duration-300">
               Tarifs et Horaires
             </Link>
-            <Link href="/galerie" className="text-gray-700 hover:text-teal-700 transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all after:duration-300">
-              Galerie
+            <Link href="/a-propos" className="text-gray-700 hover:text-teal-700 transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all after:duration-300">
+              À propos
             </Link>
             <Link href="/contact" className="text-gray-700 hover:text-teal-700 transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all after:duration-300">
               Contact
@@ -84,11 +84,11 @@ export default function Header() {
                 <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all after:duration-300">Tarifs et Horaires</span>
               </Link>
               <Link 
-                href="/galerie" 
+                href="/a-propos"
                 className="text-gray-700 hover:text-teal-700 transition-colors duration-300 py-2 font-medium relative inline-block"
                 onClick={toggleMenu}
               >
-                <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all after:duration-300">Galerie</span>
+                <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all after:duration-300">À propos</span>
               </Link>
               <Link 
                 href="/contact" 

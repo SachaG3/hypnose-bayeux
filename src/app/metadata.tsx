@@ -1,48 +1,28 @@
-import { Metadata, Viewport } from 'next';
+import type { Metadata, Viewport } from 'next';
+import { siteConfig } from '@/lib/seo';
 
-// Configuration du viewport
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
 };
 
-// Métadonnées de base pour tout le site
+const homeTitle = 'Hypnothérapeute à Bayeux | Nadège Guignard';
+const homeDescription = 'Cabinet d’hypnose près de Bayeux, à Maisons. Nadège Guignard propose des séances personnalisées pour l’arrêt du tabac, le stress et la gestion du poids.';
+
 export const baseMetadata: Metadata = {
-  metadataBase: new URL('https://www.hypnose-bayeux.fr'),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Hypnothérapeute Bayeux | Nadège Guignard - Bien-être',
-    template: '%s | Hypnothérapie Bayeux - Nadège GUIGNARD',
+    default: homeTitle,
+    template: '%s | Nadège Guignard',
   },
-  description: 'Expert en hypnothérapie à Bayeux : séances pour arrêt du tabac, gestion du stress et perte de poids. Plus de 10 ans d\'expérience depuis 2014.',
-  keywords: [
-    'hypnothérapeute bayeux', 
-    'hypnose bayeux',
-    'cabinet hypnose bayeux', 
-    'hypnothérapie certifiée bayeux',
-    'arrêt tabac hypnose bayeux',
-    'expert hypnose bayeux',
-    'hypnothérapeute certifié bayeux',
-    'meilleur hypnothérapeute bayeux',
-    'hypnothérapie bayeux',
-    'hypnose bayeux',
-    'cabinet hypnose bayeux',
-    'hypnothérapie certifiée bayeux',
-    'arrêt tabac hypnose bayeux',
-    'expert hypnose bayeux',
-    'nadege guignard',
-    'nadege guignard hypnothérapeute',
-    'nadege guignard hypnose',
-    'nadege guignard cabinet hypnose',
-    'nadege guignard hypnothérapie',
-    'nadege guignard arrêt tabac',
-    'nadege guignard expert hypnose',
-  ],
-  authors: [{ 
-    name: 'Nadège GUIGNARD', 
-    url: 'https://www.hypnose-bayeux.fr/a-propos' 
+  description: homeDescription,
+  applicationName: 'Hypnose Bayeux',
+  authors: [{
+    name: siteConfig.practitioner,
+    url: `${siteConfig.url}/a-propos`,
   }],
-  creator: 'Nadège GUIGNARD - Hypnothérapeute Certifiée',
-  publisher: 'Cabinet d\'Hypnose Bayeux',
+  creator: `${siteConfig.practitioner}, hypnothérapeute`,
+  publisher: 'Cabinet d’hypnose de Nadège Guignard',
   formatDetection: {
     email: true,
     address: true,
@@ -51,30 +31,22 @@ export const baseMetadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://www.hypnose-bayeux.fr',
-    siteName: 'Cabinet d\'Hypnose Bayeux - Nadège GUIGNARD',
-    title: 'Hypnose à Bayeux | Cabinet Certifié - Nadège GUIGNARD',
-    description: 'Expert en hypnothérapie à Bayeux : arrêt du tabac, perte de poids et gestion du stress. Plus de 10 ans d\'expérience depuis 2014.',
-    images: [
-      {
-        url: 'https://www.hypnose-bayeux.fr/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Hypnose Bayeux - Cabinet d\'Hypnothérapie',
-      },
-      {
-        url: 'https://www.hypnose-bayeux.fr/nadegeGuignard.png',
-        width: 400,
-        height: 400,
-        alt: 'Nadège GUIGNARD - Hypnothérapeute à Bayeux',
-      }
-    ],
+    url: siteConfig.url,
+    siteName: 'Hypnose Bayeux – Nadège Guignard',
+    title: homeTitle,
+    description: homeDescription,
+    images: [{
+      url: `${siteConfig.url}/og-image.jpg`,
+      width: 1200,
+      height: 630,
+      alt: 'Cabinet d’hypnose près de Bayeux – Nadège Guignard',
+    }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Expert Hypnothérapeute à Bayeux | Nadège GUIGNARD',
-    description: 'Hypnothérapeute certifiée à Bayeux : expertise en arrêt du tabac, perte de poids et gestion du stress. Plus de 10 ans d\'expérience depuis 2014.',
-    images: ['https://www.hypnose-bayeux.fr/og-image.jpg'],
+    title: homeTitle,
+    description: homeDescription,
+    images: [`${siteConfig.url}/og-image.jpg`],
   },
   robots: {
     index: true,
@@ -84,13 +56,11 @@ export const baseMetadata: Metadata = {
       follow: true,
       'max-image-preview': 'large',
       'max-snippet': -1,
+      'max-video-preview': -1,
     },
   },
   alternates: {
-    canonical: 'https://www.hypnose-bayeux.fr',
-  },
-  verification: {
-    google: 'à_remplacer_par_votre_code_de_vérification',
+    canonical: siteConfig.url,
   },
   icons: {
     icon: '/favicon.ico',
@@ -98,58 +68,56 @@ export const baseMetadata: Metadata = {
   },
 };
 
-// Métadonnées pour la page d'accueil
 export const homeMetadata: Metadata = {
   ...baseMetadata,
-  alternates: {
-    canonical: 'https://www.hypnose-bayeux.fr',
-  },
+  title: { absolute: homeTitle },
+  alternates: { canonical: siteConfig.url },
 };
 
-// Métadonnées pour la page des tarifs
+const tarifsTitle = 'Tarifs hypnose à Bayeux : séances dès 70 €';
+const tarifsDescription = 'Tarifs du cabinet près de Bayeux : séance d’hypnose 70 €, arrêt du tabac 90 € et programme amincissement de 3 séances 210 €. Horaires et modalités.';
+
 export const tarifsMetadata: Metadata = {
   ...baseMetadata,
-  title: 'Tarifs et Horaires | Hypnose Bayeux',
-  description: 'Découvrez les tarifs des séances d\'hypnothérapie à Bayeux. Consultations d\'hypnose, programmes arrêt du tabac et perte de poids. Horaires d\'ouverture du cabinet.',
-  alternates: {
-    canonical: 'https://www.hypnose-bayeux.fr/tarifs',
-  },
+  title: { absolute: tarifsTitle },
+  description: tarifsDescription,
+  alternates: { canonical: `${siteConfig.url}/tarifs` },
   openGraph: {
     ...baseMetadata.openGraph,
-    title: 'Tarifs et Horaires | Hypnose Bayeux',
-    description: 'Découvrez les tarifs des séances d\'hypnothérapie à Bayeux. Consultations d\'hypnose, programmes arrêt du tabac et perte de poids. Horaires d\'ouverture du cabinet.',
-    url: 'https://www.hypnose-bayeux.fr/tarifs',
+    title: tarifsTitle,
+    description: tarifsDescription,
+    url: `${siteConfig.url}/tarifs`,
   },
 };
 
-// Métadonnées pour la page de contact
+const contactTitle = 'Contact et rendez-vous | Hypnose Bayeux';
+const contactDescription = `Contactez ${siteConfig.practitioner}, hypnothérapeute à Maisons près de Bayeux. Rendez-vous par téléphone au ${siteConfig.telephoneDisplay} ou par formulaire.`;
+
 export const contactMetadata: Metadata = {
   ...baseMetadata,
-  title: 'Contact | Hypnose Bayeux',
-  description: 'Contactez Nadège GUIGNARD, hypnothérapeute à Maisons près de Bayeux. Prenez rendez-vous par téléphone au 06 49 29 20 77 ou par email.',
-  alternates: {
-    canonical: 'https://www.hypnose-bayeux.fr/contact',
-  },
+  title: { absolute: contactTitle },
+  description: contactDescription,
+  alternates: { canonical: `${siteConfig.url}/contact` },
   openGraph: {
     ...baseMetadata.openGraph,
-    title: 'Contact | Hypnose Bayeux',
-    description: 'Contactez Nadège GUIGNARD, hypnothérapeute à Maisons près de Bayeux. Prenez rendez-vous par téléphone au 06 49 29 20 77 ou par email.',
-    url: 'https://www.hypnose-bayeux.fr/contact',
+    title: contactTitle,
+    description: contactDescription,
+    url: `${siteConfig.url}/contact`,
   },
 };
 
-// Métadonnées pour la page d'accès
+const accessTitle = 'Cabinet d’hypnose près de Bayeux : adresse et accès';
+const accessDescription = 'Adresse et itinéraire vers le cabinet de Nadège Guignard, La Fosse Buhot à Maisons, à 10 minutes de Bayeux. Parking gratuit sur place.';
+
 export const accesMetadata: Metadata = {
   ...baseMetadata,
-  title: 'Plan d\'Accès | Hypnose Bayeux',
-  description: 'Plan d\'accès au cabinet d\'hypnothérapie à Maisons près de Bayeux. Situé à La Fosse Buhot, 14400 Maisons, à 10 minutes de Bayeux et 30 minutes de Caen.',
-  alternates: {
-    canonical: 'https://www.hypnose-bayeux.fr/acces',
-  },
+  title: { absolute: accessTitle },
+  description: accessDescription,
+  alternates: { canonical: `${siteConfig.url}/acces` },
   openGraph: {
     ...baseMetadata.openGraph,
-    title: 'Plan d\'Accès | Hypnose Bayeux',
-    description: 'Plan d\'accès au cabinet d\'hypnothérapie à Maisons près de Bayeux. Situé à La Fosse Buhot, 14400 Maisons, à 10 minutes de Bayeux et 30 minutes de Caen.',
-    url: 'https://www.hypnose-bayeux.fr/acces',
+    title: accessTitle,
+    description: accessDescription,
+    url: `${siteConfig.url}/acces`,
   },
-}; 
+};

@@ -10,175 +10,22 @@ import {
   Moon
 } from 'lucide-react';
 import { homeMetadata } from './metadata';
-import Script from 'next/script';
 
 export const metadata = homeMetadata;
 
 export default function HomePage() {
   return (
     <>
-      <Script
-        id="schema-local"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "@id": "https://www.hypnose-bayeux.fr/#business",
-            "name": "Cabinet d'Hypnothérapie Bayeux",
-            "image": "https://www.hypnose-bayeux.fr/og-image.jpg",
-            "url": "https://www.hypnose-bayeux.fr",
-            "telephone": "+33649292077",
-            "priceRange": "€€",
-            "description": "Cabinet d'hypnothérapie à Bayeux spécialisé dans l'arrêt du tabac, la gestion du stress et l'amincissement. Hypnothérapeute certifiée.",
-            "slogan": "Expertise et résultats en hypnothérapie à Bayeux",
-            "knowsAbout": [
-              "Hypnothérapie",
-              "Arrêt du tabac",
-              "Gestion du stress",
-              "Perte de poids",
-              "Confiance en soi",
-              "Sommeil",
-              "Phobies"
-            ],
-            "hasCredential": {
-              "@type": "EducationalOccupationalCredential",
-              "credentialCategory": "Certification",
-              "name": "Certification en Hypnothérapie",
-              "recognizedBy": {
-                "@type": "Organization",
-                "name": "Institut de Formation en Hypnose"
-              }
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "127",
-              "bestRating": "5",
-              "worstRating": "1"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Marie L."
-                },
-                "reviewBody": "Grâce à Nadège, j&apos;ai réussi à arrêter de fumer après 15 ans de tabagisme. Son approche est efficace."
-              },
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Thomas D."
-                },
-                "reviewBody": "Une expérience très positive pour la gestion du stress. Les séances sont personnalisées et les résultats sont là."
-              }
-            ],
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "La Fosse Buhot",
-              "addressLocality": "Maisons",
-              "postalCode": "14400",
-              "addressCountry": "FR"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "49.2683",
-              "longitude": "-0.7006"
-            },
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "09:00",
-                "closes": "19:00"
-              }
-            ],
-            "areaServed": {
-              "@type": "GeoCircle",
-              "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": "49.2683",
-                "longitude": "-0.7006"
-              },
-              "geoRadius": "30000"
-            }
-          })
-        }}
-      />
-      <Script
-        id="schema-services"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HealthAndBeautyBusiness",
-            "name": "Hypnose Bayeux",
-            "image": "https://www.hypnose-bayeux.fr/og-image.jpg",
-            "@id": "https://www.hypnose-bayeux.fr",
-            "url": "https://www.hypnose-bayeux.fr",
-            "telephone": "+33649292077",
-            "priceRange": "€€",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "La Fosse Buhot",
-              "addressLocality": "Maisons",
-              "postalCode": "14400",
-              "addressCountry": "FR"
-            },
-            "makesOffer": [
-              {
-                "@type": "Offer",
-                "name": "Séance d&apos;hypnose standard",
-                "description": "Séance d&apos;hypnose pour stress, anxiété, phobies, confiance en soi",
-                "price": "70",
-                "priceCurrency": "EUR"
-              },
-              {
-                "@type": "Offer",
-                "name": "Programme Arrêt du Tabac",
-                "description": "Séance spécifique pour arrêter de fumer durablement",
-                "price": "90",
-                "priceCurrency": "EUR"
-              },
-              {
-                "@type": "Offer",
-                "name": "Programme Amincissement",
-                "description": "Accompagnement personnalisé pour la perte de poids (3 séances)",
-                "price": "210",
-                "priceCurrency": "EUR"
-              }
-            ],
-            "employee": {
-              "@type": "Person",
-              "name": "Nadège GUIGNARD",
-              "jobTitle": "Hypnothérapeute",
-              "image": "https://www.hypnose-bayeux.fr/nadegeGuignard.webp",
-              "description": "Hypnothérapeute certifiée spécialisée dans l'accompagnement des personnes souhaitant se libérer de leurs blocages"
-            }
-          })
-        }}
-      />
-
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-teal-700 to-teal-900 text-white py-28">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-8 leading-tight">
-              Cabinet d&apos;Hypnose à Bayeux | Votre Hypnothérapeute
+              Hypnothérapeute à Bayeux – Cabinet d&apos;hypnose de Nadège Guignard
             </h1>
             <p className="text-xl mb-10 leading-relaxed opacity-90 font-light">
-              Découvrez les bienfaits de l&apos;hypnose à Bayeux avec une hypnothérapeute certifiée. 
-              Séances personnalisées pour arrêt du tabac, perte de poids, gestion du stress et plus encore.
+              Des séances personnalisées près de Bayeux, à Maisons, pour vous accompagner notamment
+              dans l&apos;arrêt du tabac, la gestion du stress et la gestion du poids.
             </p>
             <div className="flex flex-wrap gap-6 justify-center">
               <Link 
@@ -223,12 +70,12 @@ export default function HomePage() {
               </div>
               <div className="md:w-2/3 text-center md:text-left">
                 <h2 className="text-3xl font-serif font-medium text-teal-700 mb-3">
-                  Nadège GUIGNARD - Hypnothérapeute à Bayeux
+                  Nadège Guignard, hypnothérapeute près de Bayeux
                 </h2>
                 <h3 className="text-xl text-gray-700 mb-4">Cabinet d&apos;hypnose à Bayeux</h3>
-                <div className="bg-teal-50 px-4 py-2 rounded-md inline-block mb-2">
-                  <p className="text-teal-700 font-medium">Certifiée en hypnothérapie</p>
-                </div>
+                <Link href="/a-propos" className="text-teal-700 font-medium hover:underline">
+                  Découvrir mon approche et le cabinet
+                </Link>
               </div>
             </div>
             
@@ -241,6 +88,12 @@ export default function HomePage() {
               Mon cabinet d&apos;hypnose à Bayeux vous accueille dans un cadre apaisant. 
               Je propose des séances d&apos;hypnothérapie adaptées à vos besoins spécifiques, que ce soit pour l&apos;arrêt du tabac, 
               la perte de poids, ou la gestion du stress.
+            </p>
+
+            <p className="text-gray-700 mb-8 leading-relaxed">
+              Vous recherchez un hypnotiseur à Bayeux ? Ce terme courant désigne souvent l&apos;accompagnement présenté ici sous le nom
+              d&apos;hypnothérapie. Consultez le <Link href="/seance-hypnose" className="font-medium text-teal-700 hover:underline">déroulement d&apos;une séance</Link>
+              {' '}ou découvrez <Link href="/a-propos" className="font-medium text-teal-700 hover:underline">mon approche</Link>.
             </p>
             
             <div className="bg-teal-50 p-6 rounded-lg border border-teal-100 mb-8">
@@ -569,7 +422,7 @@ export default function HomePage() {
               <meta itemProp="name" content="Hypnose Bayeux - Nadège Guignard" />
               <meta itemProp="telephone" content="+33649292077" />
               <meta itemProp="priceRange" content="€€" />
-              <meta itemProp="image" content="https://hypnose-bayeux.fr/nadegeGuignard.webp" />
+              <meta itemProp="image" content="https://www.hypnose-bayeux.fr/nadegeGuignard.webp" />
               <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                 <meta itemProp="streetAddress" content="La Fosse Buhot" />
                 <meta itemProp="addressLocality" content="Maisons" />

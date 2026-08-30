@@ -1,45 +1,46 @@
 import { Metadata } from 'next';
 import { baseMetadata } from '../metadata';
-import Script from 'next/script';
 import { Phone } from 'lucide-react';
 import Link from 'next/link';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import JsonLd from '@/components/JsonLd';
+import { serviceJsonLd } from '@/lib/seo';
+
+const pageTitle = 'Séance d’hypnose à Bayeux : déroulement et tarif';
+const pageDescription = 'Comment se déroule une séance d’hypnose près de Bayeux ? Découvrez les étapes, la durée d’environ 1 h 30, le tarif de 70 € et les réponses aux questions courantes.';
 
 export const metadata: Metadata = {
   ...baseMetadata,
-  title: 'Séance d\'Hypnose Classique | Cabinet d\'Hypnose Bayeux',
-  description: 'Découvrez la séance d\'hypnose thérapeutique à Bayeux. Approche sur-mesure pour gérer stress, phobies, sommeil, confiance en soi. Résultats durables dès la première séance.',
+  title: { absolute: pageTitle },
+  description: pageDescription,
   alternates: {
-    canonical: 'https://www.bayeuxhypnose.fr/seance-hypnose',
+    canonical: 'https://www.hypnose-bayeux.fr/seance-hypnose',
   },
   openGraph: {
     ...baseMetadata.openGraph,
-    title: 'Séance d\'Hypnose Thérapeutique à Bayeux',
-    description: 'Découvrez la séance d\'hypnose thérapeutique à Bayeux. Approche sur-mesure pour gérer stress, phobies, sommeil, confiance en soi. Résultats durables dès la première séance.',
-    url: 'https://www.bayeuxhypnose.fr/seance-hypnose',
+    title: pageTitle,
+    description: pageDescription,
+    url: 'https://www.hypnose-bayeux.fr/seance-hypnose',
   },
 };
 
 export default function SeanceHypnosePage() {
   return (
     <>
-      <Script id="schema-seance-hypnose" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "HealthAndBeautyBusiness",
-        "name": "Séance d'Hypnose Thérapeutique - Bayeux",
-        "description": "Séances d'hypnose thérapeutique personnalisées à Bayeux pour le bien-être, la gestion du stress et le développement personnel.",
-        "url": "https://www.bayeuxhypnose.fr/seance-hypnose",
-        "provider": {
-          "@type": "Person",
-          "name": "Nadège GUIGNARD"
-        }
-      })}} />
+      <JsonLd data={serviceJsonLd(
+        'Séance d’hypnose près de Bayeux',
+        'Séance personnalisée d’environ 1 h 30 au cabinet de Nadège Guignard à Maisons.',
+        '/seance-hypnose',
+        '70',
+      )} />
+      <Breadcrumbs items={[{ name: 'Séance d’hypnose' }]} />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-teal-700 to-teal-900 text-white py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-medium mb-6 leading-tight">
-              Séance d&apos;Hypnose Thérapeutique
+              Séance d&apos;hypnose près de Bayeux
             </h1>
             <p className="text-xl mb-8 leading-relaxed opacity-90 font-light">
               Libérez votre potentiel et transformez votre vie grâce à l&apos;hypnose ericksonienne
@@ -175,6 +176,9 @@ export default function SeanceHypnosePage() {
                   <Phone className="w-5 h-5 mr-2" /> 
                   Appeler maintenant
                 </a>
+                <p className="mt-5 text-sm text-gray-600">
+                  Une séance dure environ 1 h 30 et coûte <Link href="/tarifs" className="font-medium text-teal-700 hover:underline">70 €</Link>.
+                </p>
               </div>
               
               {/* Autres services */}

@@ -1,13 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Route } from 'next';
 
 interface CardProps {
   title: string;
   description: string;
   imageUrl?: string;
   imageAlt?: string;
-  href?: string;
+  href?: Route;
   className?: string;
 }
 
@@ -51,10 +52,11 @@ const Card: React.FC<CardProps> = ({
   );
 
   if (href) {
-    // Utilisation de la syntaxe JSX standard
-    const linkProps = { href, className: `block group ${className}` };
-    // @ts-expect-error - Next.js Link n'est pas correctement typé pour les strings simples
-    return React.createElement(Link, linkProps, cardContent);
+    return (
+      <Link href={href} className={`block group ${className}`}>
+        {cardContent}
+      </Link>
+    );
   }
 
   return <div className={className}>{cardContent}</div>;

@@ -12,7 +12,9 @@ export default function ContactFormClient() {
     email: '',
     phone: '',
     message: '',
-    consent: false
+    consent: false,
+    website: '',
+    startedAt: 0
   });
   
   // État pour gérer les statuts de soumission
@@ -27,9 +29,17 @@ export default function ContactFormClient() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target as HTMLInputElement;
     if (type === 'checkbox') {
-      setFormState(prev => ({ ...prev, [name]: (e.target as HTMLInputElement).checked }));
+      setFormState(prev => ({
+        ...prev,
+        [name]: (e.target as HTMLInputElement).checked,
+        startedAt: prev.startedAt || Date.now(),
+      }));
     } else {
-      setFormState(prev => ({ ...prev, [name]: value }));
+      setFormState(prev => ({
+        ...prev,
+        [name]: value,
+        startedAt: prev.startedAt || Date.now(),
+      }));
     }
   };
 
@@ -73,7 +83,9 @@ export default function ContactFormClient() {
         email: '',
         phone: '',
         message: '',
-        consent: false
+        consent: false,
+        website: '',
+        startedAt: 0
       });
       
       // Mettre à jour l'état pour indiquer que la soumission a réussi
@@ -234,7 +246,7 @@ export default function ContactFormClient() {
                 
                 {/* Message de succès */}
                 {status.submitted && status.success && (
-                  <div className="bg-green-50 border border-green-200 text-green-800 rounded-md p-4 mb-6">
+                  <div className="bg-green-50 border border-green-200 text-green-800 rounded-md p-4 mb-6" role="status" aria-live="polite">
                     <p className="text-center font-medium">
                       Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais.
                     </p>
@@ -243,7 +255,7 @@ export default function ContactFormClient() {
                 
                 {/* Message d'erreur */}
                 {status.submitted && !status.success && (
-                  <div className="bg-red-50 border border-red-200 text-red-800 rounded-md p-4 mb-6">
+                  <div className="bg-red-50 border border-red-200 text-red-800 rounded-md p-4 mb-6" role="alert" aria-live="assertive">
                     <p className="text-center font-medium">
                       {status.error || "Une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer."}
                     </p>
@@ -251,6 +263,18 @@ export default function ContactFormClient() {
                 )}
                 
                 <form className="space-y-6" id="contactForm" itemScope itemType="https://schema.org/ContactPoint" onSubmit={handleSubmit}>
+                  <div className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+                    <label htmlFor="website">Laissez ce champ vide</label>
+                    <input
+                      id="website"
+                      name="website"
+                      type="text"
+                      value={formState.website}
+                      onChange={handleChange}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
                   <div className="mb-6">
                     <label htmlFor="name" className="block text-gray-700 mb-2 font-medium">Nom complet*</label>
                     <input
@@ -258,6 +282,7 @@ export default function ContactFormClient() {
                       name="name"
                       type="text"
                       required
+                      maxLength={100}
                       value={formState.name}
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 outline-none"
@@ -272,6 +297,7 @@ export default function ContactFormClient() {
                       name="email"
                       type="email"
                       required
+                      maxLength={254}
                       value={formState.email}
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 outline-none"
@@ -286,6 +312,7 @@ export default function ContactFormClient() {
                       name="phone"
                       type="tel"
                       required
+                      maxLength={30}
                       value={formState.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 outline-none"
@@ -300,6 +327,7 @@ export default function ContactFormClient() {
                       name="message"
                       required
                       rows={5}
+                      maxLength={5000}
                       value={formState.message}
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 outline-none resize-none"

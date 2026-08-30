@@ -1,89 +1,55 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { Settings } from 'lucide-react';
-
-// Omit la déclaration explicite du type pour window.gtag
+import {
+  COOKIE_CONSENT_EVENT,
+  type CookieConsent,
+  useCookieConsent,
+} from './TrackingScripts';
 
 export default function CookieBanner() {
-  const [showBanner, setShowBanner] = useState(false);
-  const [showSettingsButton, setShowSettingsButton] = useState(false);
+  const consent = useCookieConsent();
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const showBanner = consent === null || settingsOpen;
 
-  useEffect(() => {
-    // Vérifie si l'utilisateur a déjà fait un choix concernant les cookies
-    const cookieConsent = localStorage.getItem('cookie-consent');
-    if (!cookieConsent) {
-      setShowBanner(true);
-      setShowSettingsButton(false);
-    } else {
-      setShowBanner(false);
-      setShowSettingsButton(true);
-    }
-  }, []);
-
-  const acceptCookies = () => {
-    localStorage.setItem('cookie-consent', 'true');
-    
-    // On active Google Analytics si c'est accepté
-    if (typeof window !== 'undefined' && 'gtag' in window) {
-      // @ts-expect-error - Appel dynamique à gtag
-      window.gtag('consent', 'update', {
-        'analytics_storage': 'granted'
-      });
-    }
-    
-    setShowBanner(false);
-    setShowSettingsButton(true);
-  };
-
-  const refuseCookies = () => {
-    localStorage.setItem('cookie-consent', 'false');
-    
-    // On désactive Google Analytics si c'est refusé
-    if (typeof window !== 'undefined' && 'gtag' in window) {
-      // @ts-expect-error - Appel dynamique à gtag
-      window.gtag('consent', 'update', {
-        'analytics_storage': 'denied'
-      });
-    }
-    
-    setShowBanner(false);
-    setShowSettingsButton(true);
-  };
-
-  const openSettings = () => {
-    setShowBanner(true);
-    setShowSettingsButton(false);
+  const saveConsent = (choice: Exclude<CookieConsent, null>) => {
+    localStorage.setItem('cookie-consent', choice);
+    window.dispatchEvent(new CustomEvent<CookieConsent>(COOKIE_CONSENT_EVENT, { detail: choice }));
+    setSettingsOpen(false);
   };
 
   return (
     <>
       {showBanner && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-teal-100 shadow-md z-50">
-          <div className="container mx-auto px-6 py-4">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="text-gray-700 md:pr-6 text-center md:text-left">
-                <p className="mb-2">
-                  Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement. 
-                  Pour en savoir plus, consultez notre{' '}
-                  <Link href="/confidentialite" className="text-teal-600 hover:text-teal-800 underline">
-                    politique de confidentialité
-                  </Link>.
-                </p>
-              </div>
-              <div className="flex gap-4">
+        <div
+          className="fixed inset-x-0 bottom-0 z-50 max-h-[70vh] overflow-y-auto border-t border-teal-100 bg-white shadow-lg"
+          role="dialog"
+          aria-label="Préférences de confidentialité"
+        >
+          <div className="container mx-auto px-5 py-4 md:px-6">
+            <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+              <p className="text-center text-sm leading-relaxed text-gray-700 md:pr-6 md:text-left md:text-base">
+                Les cookies techniques fonctionnent sans consentement. Avec votre accord, Google Ads,
+                Vercel Analytics et Speed Insights sont aussi chargés pour la mesure d&apos;audience et
+                l&apos;amélioration du site. Vous pouvez refuser sans perdre l&apos;accès au site.{' '}
+                <Link href="/confidentialite" className="text-teal-700 underline hover:text-teal-900">
+                  En savoir plus
+                </Link>.
+              </p>
+              <div className="flex w-full gap-3 md:w-auto md:shrink-0">
                 <button
-                  onClick={refuseCookies}
-                  className="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-800 transition-colors"
-                  aria-label="Refuser les cookies"
+                  type="button"
+                  onClick={() => saveConsent('refused')}
+                  className="flex-1 rounded-md bg-gray-700 px-4 py-2 text-white transition-colors hover:bg-gray-800 md:flex-none"
                 >
                   Refuser
                 </button>
                 <button
-                  onClick={acceptCookies}
-                  className="px-4 py-2 bg-teal-700 text-white rounded-md hover:bg-teal-800 transition-colors"
-                  aria-label="Accepter les cookies"
+                  type="button"
+                  onClick={() => saveConsent('accepted')}
+                  className="flex-1 rounded-md bg-teal-700 px-4 py-2 text-white transition-colors hover:bg-teal-800 md:flex-none"
                 >
                   Accepter
                 </button>
@@ -93,16 +59,17 @@ export default function CookieBanner() {
         </div>
       )}
 
-      {showSettingsButton && (
+      {consent !== null && !settingsOpen && (
         <button
-          onClick={openSettings}
-          className="fixed bottom-4 right-4 bg-gray-700 text-white p-2 rounded-full shadow-md hover:bg-gray-800 transition-colors z-40"
-          aria-label="Paramètres des cookies"
-          title="Paramètres des cookies"
+          type="button"
+          onClick={() => setSettingsOpen(true)}
+          className="fixed bottom-4 right-4 z-40 rounded-full bg-gray-700 p-2 text-white shadow-md transition-colors hover:bg-gray-800"
+          aria-label="Modifier les préférences de confidentialité"
+          title="Préférences de confidentialité"
         >
-          <Settings className="w-5 h-5" />
+          <Settings className="h-5 w-5" />
         </button>
       )}
     </>
   );
-} 
+}

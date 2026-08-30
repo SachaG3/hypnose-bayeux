@@ -45,8 +45,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/a-propos" className="text-gray-600 hover:text-teal-700 transition-colors duration-300">
+                  À propos de Nadège
+                </Link>
+              </li>
+              <li>
                 <Link href="/tarifs" className="text-gray-600 hover:text-teal-700 transition-colors duration-300">
                   Tarifs et horaires
+                </Link>
+              </li>
+              <li>
+                <Link href="/galerie" className="text-gray-600 hover:text-teal-700 transition-colors duration-300">
+                  Galerie du cabinet
                 </Link>
               </li>
               <li>

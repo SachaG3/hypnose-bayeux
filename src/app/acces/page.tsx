@@ -12,9 +12,9 @@ export default function AccesPage() {
         "@type": "HealthAndBeautyBusiness",
         "name": "Cabinet d'Hypnose Bayeux - Nadège GUIGNARD",
         "description": "Cabinet d'hypnothérapie situé à Maisons près de Bayeux. Facile d'accès, à 10 minutes de Bayeux et 30 minutes de Caen.",
-        "image": "https://www.bayeuxhypnose.fr/og-image.jpg",
-        "url": "https://www.bayeuxhypnose.fr/acces",
-        "@id": "https://www.bayeuxhypnose.fr/acces",
+        "image": "https://www.hypnose-bayeux.fr/og-image.jpg",
+        "url": "https://www.hypnose-bayeux.fr/acces",
+        "@id": "https://www.hypnose-bayeux.fr/acces",
         "telephone": "+33649292077",
         "address": {
           "@type": "PostalAddress",
@@ -22,13 +22,7 @@ export default function AccesPage() {
           "addressLocality": "Maisons",
           "postalCode": "14400",
           "addressCountry": "FR"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 49.2774,
-          "longitude": -0.7335
-        },
-        "hasMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10369.347158127243!2d-0.7335947767212842!3d49.27745889782615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480a8a31000e6eaf%3A0x40c14484fbf9f90!2s14400%20Maisons!5e0!3m2!1sfr!2sfr!4v1701684562715!5m2!1sfr!2sfr"
+        }
       })}} />
 
       {/* Hero Section */}
