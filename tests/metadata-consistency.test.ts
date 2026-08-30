@@ -24,6 +24,14 @@ describe('public metadata consistency', () => {
     expect(source).not.toContain('+336****2077');
   });
 
+  it('keeps the stop-smoking offer aligned with its single-session format', () => {
+    const home = read('src/app/page.tsx');
+    const faq = read('src/app/faq/page.tsx');
+    expect(home).toContain('programme en une séance');
+    expect(home).not.toContain('protocole en 3 séances ciblant les mécanismes de la dépendance');
+    expect(faq).toContain("Pour l'arrêt du tabac, le programme se déroule en une seule séance");
+  });
+
   it('keeps the slimming offer aligned with the visible 3-session 210-euro price', () => {
     const tarifs = read('src/app/tarifs/page.tsx');
     const seo = read('src/lib/seo.ts');

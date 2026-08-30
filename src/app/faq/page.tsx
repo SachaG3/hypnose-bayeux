@@ -68,7 +68,7 @@ export default function FAQPage() {
       },
       {
         question: "Combien de séances sont nécessaires pour voir des résultats ?",
-        answer: "Le nombre de séances varie selon les problématiques. Pour l'arrêt du tabac, une seule séance peut suffire. Pour la perte de poids avec l'anneau gastrique virtuel, un protocole de 3 séances est recommandé. Pour les troubles anxieux ou les phobies, généralement 1 à 3 séances sont nécessaires. Les résultats sont souvent perceptibles dès la première séance, mais certaines problématiques plus complexes peuvent nécessiter un suivi plus long."
+        answer: "Le nombre de séances varie selon les problématiques. Pour l'arrêt du tabac, le programme se déroule en une seule séance. Pour la perte de poids avec l'anneau gastrique virtuel, un protocole de 3 séances est recommandé. Pour les troubles anxieux ou les phobies, généralement 1 à 3 séances sont nécessaires. Les résultats sont souvent perceptibles dès la première séance, mais certaines problématiques plus complexes peuvent nécessiter un suivi plus long."
       }
     ],
     tabac: [

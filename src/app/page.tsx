@@ -154,7 +154,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">TABAC</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Programme spécifique pour arrêter de fumer durablement grâce à un protocole en 3 séances ciblant les mécanismes de la dépendance.
+                Un programme en une séance pour arrêter de fumer, centré sur les mécanismes de la dépendance.
               </p>
               <Link href="/arret-tabac" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 mt-auto font-medium">
                 Voir le programme →
@@ -371,7 +371,7 @@ export default function HomePage() {
                   Combien de séances sont nécessaires ?
                 </h3>
                 <p className="text-gray-800 leading-relaxed">
-                  En général, une seule séance est suffisante pour la plupart des problématiques. Pour l&apos;arrêt du tabac, une séance peut suffire dans de nombreux cas. Pour l&apos;amaigrissement, un protocole de 3 séances est recommandé afin d&apos;obtenir des résultats durables.
+                  En général, une seule séance est suffisante pour la plupart des problématiques. Pour l&apos;arrêt du tabac, le programme se déroule en une seule séance. Pour l&apos;amaigrissement, un protocole de 3 séances est recommandé afin d&apos;obtenir des résultats durables.
                   <span className="block mt-2">
                     <Link href="/arret-tabac" className="text-teal-600 hover:text-teal-800 transition-colors duration-300 inline-block mr-4">
                       Programme arrêt du tabac →
