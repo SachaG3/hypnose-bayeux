@@ -20,8 +20,8 @@ describe('public metadata consistency', () => {
     expect(source).not.toContain('https://hypnose-bayeux.fr');
   });
 
-  it('does not publish unsupported ratings, reviews, credentials or masked phones', () => {
-    expect(source).not.toMatch(/aggregateRating|Marie L\.|Thomas D\.|recognizedBy/);
+  it('does not publish unsupported ratings, reviews or masked phones', () => {
+    expect(source).not.toMatch(/aggregateRating|Marie L\.|Thomas D\./);
     expect(source).not.toContain('+336****2077');
   });
 
@@ -51,6 +51,31 @@ describe('public metadata consistency', () => {
       'https://www.linkedin.com/in/nadege-guignard-7ba56435a/',
     ]));
     expect(personJsonLd.sameAs.join(' ')).not.toContain('URL_');
+  });
+
+  it('publishes the five supplied credentials without treating attendance as certification', () => {
+    const credentials = personJsonLd.hasCredential;
+    expect(credentials).toHaveLength(5);
+    expect(credentials.map((credential) => credential.name)).toEqual(expect.arrayContaining([
+      'Certificat de formation de praticien en Hypnose Ericksonienne et Programmation Neuro-Linguistique',
+      'Certification à la méthode Réduction virtuelle de l’estomac',
+      'Certification à la méthode Devenez non-fumeur en 1h30',
+      'Certificat de praticien en Hypnose magnétique et rapide',
+      'Attestation de présence à la formation Hypnose quantique',
+    ]));
+    expect(credentials.map((credential) => credential.dateCreated)).toEqual([
+      '2014-08-24',
+      '2015-02-09',
+      '2015-02-09',
+      '2015-03-08',
+      '2019-04-14',
+    ]);
+    expect(credentials.at(-1)?.credentialCategory).toBe('Attestation de présence');
+    expect(credentials.at(-1)?.recognizedBy.name).toBe('ESH');
+
+    const about = read('src/app/a-propos/page.tsx');
+    expect(about).toContain('Formations et certifications');
+    expect(about).toContain('practitionerCredentials.map');
   });
 
   it('keeps the slimming offer aligned with the visible 3-session 210-euro price', () => {

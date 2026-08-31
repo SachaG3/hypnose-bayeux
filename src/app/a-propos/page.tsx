@@ -5,7 +5,7 @@ import { MapPin, Phone, ArrowRight, ExternalLink } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import JsonLd from '@/components/JsonLd';
 import { baseMetadata } from '../metadata';
-import { personJsonLd, professionalProfiles, siteConfig } from '@/lib/seo';
+import { personJsonLd, practitionerCredentials, professionalProfiles, siteConfig } from '@/lib/seo';
 
 const pageTitle = 'Nadège Guignard, hypnothérapeute près de Bayeux';
 const pageDescription = 'Découvrez Nadège Guignard, son approche personnalisée de l’hypnose et son cabinet situé à Maisons, à 10 minutes de Bayeux.';
@@ -74,6 +74,32 @@ export default function AboutPage() {
                 L’hypnose proposée au cabinet s’inscrit dans une démarche d’accompagnement et ne remplace pas un diagnostic,
                 un traitement ou un suivi par un professionnel de santé.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-gray-100 bg-white py-16" aria-labelledby="formations-certifications">
+        <div className="container mx-auto px-6">
+          <div className="mx-auto max-w-5xl">
+            <h2 id="formations-certifications" className="mb-4 text-center font-serif text-3xl font-medium text-teal-700">
+              Formations et certifications
+            </h2>
+            <p className="mx-auto mb-10 max-w-2xl text-center text-gray-600">
+              Le parcours de formation de Nadège Guignard en hypnose et techniques associées.
+            </p>
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {practitionerCredentials.map((credential) => (
+                <article key={`${credential.name}-${credential.dateCreated}`} className="rounded-xl border border-gray-200 bg-gray-50 p-6 last:lg:col-start-2">
+                  <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-teal-700">
+                    {credential.credentialCategory}
+                  </p>
+                  <h3 className="mb-4 text-lg font-semibold leading-snug text-gray-900">{credential.name}</h3>
+                  <p className="text-gray-700">{credential.issuer}</p>
+                  <p className="mt-1 text-sm text-gray-600">{credential.dateLabel}</p>
+                  {credential.note && <p className="mt-4 text-sm leading-relaxed text-gray-600">{credential.note}</p>}
+                </article>
+              ))}
             </div>
           </div>
         </div>

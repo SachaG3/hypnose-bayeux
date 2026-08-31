@@ -68,6 +68,49 @@ export const siteConfig = {
   },
 } as const;
 
+export const practitionerCredentials = [
+  {
+    name: 'Certificat de formation de praticien en Hypnose Ericksonienne et Programmation Neuro-Linguistique',
+    credentialCategory: 'Certificat de formation',
+    issuer: 'Institut Normand de Coaching et de Thérapies Brèves (INCTB)',
+    dateLabel: '24 août 2014',
+    dateCreated: '2014-08-24',
+    note: null,
+  },
+  {
+    name: 'Certification à la méthode Réduction virtuelle de l’estomac',
+    credentialCategory: 'Certification en Hypnose Ericksonienne',
+    issuer: 'IFTA',
+    dateLabel: '9 février 2015, Paris',
+    dateCreated: '2015-02-09',
+    note: null,
+  },
+  {
+    name: 'Certification à la méthode Devenez non-fumeur en 1h30',
+    credentialCategory: 'Certification en Hypnose Ericksonienne',
+    issuer: 'IFTA',
+    dateLabel: '9 février 2015, Paris',
+    dateCreated: '2015-02-09',
+    note: null,
+  },
+  {
+    name: 'Certificat de praticien en Hypnose magnétique et rapide',
+    credentialCategory: 'Certificat de praticien',
+    issuer: 'IFTA',
+    dateLabel: '8 mars 2015, Paris',
+    dateCreated: '2015-03-08',
+    note: null,
+  },
+  {
+    name: 'Attestation de présence à la formation Hypnose quantique',
+    credentialCategory: 'Attestation de présence',
+    issuer: 'ESH',
+    dateLabel: '13 et 14 avril 2019',
+    dateCreated: '2019-04-14',
+    note: 'Formation de deux jours, attestation signée par Thierry Zalic.',
+  },
+] as const;
+
 export const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -77,6 +120,16 @@ export const personJsonLd = {
   url: `${siteConfig.url}/a-propos`,
   image: `${siteConfig.url}/nadegeGuignard.webp`,
   sameAs: practitionerProfiles.map((profile) => profile.url),
+  hasCredential: practitionerCredentials.map((credential) => ({
+    '@type': 'EducationalOccupationalCredential',
+    name: credential.name,
+    credentialCategory: credential.credentialCategory,
+    dateCreated: credential.dateCreated,
+    recognizedBy: {
+      '@type': 'Organization',
+      name: credential.issuer,
+    },
+  })),
   worksFor: { '@id': `${siteConfig.url}/#business` },
   workLocation: {
     '@type': 'Place',
