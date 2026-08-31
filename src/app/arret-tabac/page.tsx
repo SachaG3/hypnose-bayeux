@@ -29,7 +29,7 @@ export default function ArretTabacPage() {
     <>
       <JsonLd data={serviceJsonLd(
         'Accompagnement pour l’arrêt du tabac par hypnose',
-        'Séance d’hypnose personnalisée pour accompagner une démarche d’arrêt du tabac près de Bayeux.',
+        'Une seule séance d’hypnose personnalisée pour accompagner une démarche d’arrêt du tabac près de Bayeux.',
         '/arret-tabac',
         '90',
       )} />

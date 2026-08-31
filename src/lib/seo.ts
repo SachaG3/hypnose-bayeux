@@ -96,7 +96,8 @@ export const businessJsonLd = {
       },
       {
         '@type': 'Offer',
-        name: 'Accompagnement arrêt du tabac',
+        name: 'Arrêt du tabac – 1 séance',
+        description: 'Programme d’arrêt du tabac en une seule séance',
         price: '90',
         priceCurrency: 'EUR',
         url: `${siteConfig.url}/arret-tabac`,

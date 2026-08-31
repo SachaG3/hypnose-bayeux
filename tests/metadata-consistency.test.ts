@@ -30,6 +30,11 @@ describe('public metadata consistency', () => {
     expect(home).toContain('programme en une séance');
     expect(home).not.toContain('protocole en 3 séances ciblant les mécanismes de la dépendance');
     expect(faq).toContain("Pour l'arrêt du tabac, le programme se déroule en une seule séance");
+    const seo = read('src/lib/seo.ts');
+    const stopSmoking = read('src/app/arret-tabac/page.tsx');
+    expect(seo).toContain("name: 'Arrêt du tabac – 1 séance'");
+    expect(seo).toContain("description: 'Programme d’arrêt du tabac en une seule séance'");
+    expect(stopSmoking).toContain('Une seule séance d’hypnose personnalisée');
   });
 
   it('keeps the slimming offer aligned with the visible 3-session 210-euro price', () => {
