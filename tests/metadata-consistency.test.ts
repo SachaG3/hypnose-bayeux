@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
+import { personJsonLd } from '../src/lib/seo';
 
 const root = new URL('../', import.meta.url);
 const read = (path: string) => readFileSync(new URL(path, root), 'utf8');
@@ -35,6 +36,21 @@ describe('public metadata consistency', () => {
     expect(seo).toContain("name: 'Arrêt du tabac – 1 séance'");
     expect(seo).toContain("description: 'Programme d’arrêt du tabac en une seule séance'");
     expect(stopSmoking).toContain('Une seule séance d’hypnose personnalisée');
+  });
+
+  it('publishes Nadège Guignard as a Person with ten real sameAs profiles', () => {
+    expect(personJsonLd['@type']).toBe('Person');
+    expect(personJsonLd['@id']).toBe('https://www.hypnose-bayeux.fr/#nadege-guignard');
+    expect(personJsonLd.url).toBe('https://www.hypnose-bayeux.fr/a-propos');
+    expect(personJsonLd.sameAs).toHaveLength(10);
+    expect(personJsonLd.sameAs).toEqual(expect.arrayContaining([
+      'https://g.co/kgs/dGSS9Cj',
+      'https://www.paralib.net/praticiens/nadege-guignard#prestations',
+      'https://www.youtube.com/@hypnosebayeuxnadegeguignar2604/featured',
+      'https://www.facebook.com/guignard14',
+      'https://www.linkedin.com/in/nadege-guignard-7ba56435a/',
+    ]));
+    expect(personJsonLd.sameAs.join(' ')).not.toContain('URL_');
   });
 
   it('keeps the slimming offer aligned with the visible 3-session 210-euro price', () => {

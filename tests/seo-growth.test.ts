@@ -52,7 +52,7 @@ describe('Search Console driven SEO growth', () => {
     const seo = read('src/lib/seo.ts');
     const layout = read('src/app/layout.tsx');
     expect(seo).toContain("'@type': 'HealthAndBeautyBusiness'");
-    expect(seo).toContain("telephone: '+33649292077'");
+    expect(seo).not.toContain('telephone: siteConfig.telephone');
     expect(seo).not.toContain('founder:');
     expect(layout).toContain('businessJsonLd');
     expect(read('src/app/page.tsx')).not.toContain('schema-local');
@@ -85,6 +85,8 @@ describe('Search Console driven SEO growth', () => {
       expect(seo).toContain(`label: '${label}'`);
     }
     expect(seo).toContain('sameAs: professionalProfiles.map');
+    expect(seo).toContain('sameAs: practitionerProfiles.map');
+    expect(about).toContain('<JsonLd data={personJsonLd}');
     expect(about).toContain('professionalProfiles.map');
     expect(about).toContain('Profils professionnels de Nadège Guignard');
   });

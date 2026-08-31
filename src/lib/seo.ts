@@ -36,11 +36,27 @@ export const professionalProfiles = [
   },
 ] as const;
 
+export const socialProfiles = [
+  {
+    label: 'YouTube',
+    url: 'https://www.youtube.com/@hypnosebayeuxnadegeguignar2604/featured',
+  },
+  {
+    label: 'Facebook',
+    url: 'https://www.facebook.com/guignard14',
+  },
+  {
+    label: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/nadege-guignard-7ba56435a/',
+  },
+] as const;
+
+export const practitionerProfiles = [...professionalProfiles, ...socialProfiles] as const;
+
 export const siteConfig = {
   name: 'Hypnose Bayeux',
   url: 'https://www.hypnose-bayeux.fr',
   practitioner: 'Nadège Guignard',
-  telephone: '+33649292077',
   telephoneDisplay: '06 49 29 20 77',
   email: 'contact@hypnose-bayeux.fr',
   address: {
@@ -52,6 +68,26 @@ export const siteConfig = {
   },
 } as const;
 
+export const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${siteConfig.url}/#nadege-guignard`,
+  name: siteConfig.practitioner,
+  jobTitle: 'Hypnothérapeute',
+  url: `${siteConfig.url}/a-propos`,
+  image: `${siteConfig.url}/nadegeGuignard.webp`,
+  sameAs: practitionerProfiles.map((profile) => profile.url),
+  worksFor: { '@id': `${siteConfig.url}/#business` },
+  workLocation: {
+    '@type': 'Place',
+    name: 'Cabinet d’hypnose près de Bayeux',
+    address: {
+      '@type': 'PostalAddress',
+      ...siteConfig.address,
+    },
+  },
+} as const;
+
 export const businessJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'HealthAndBeautyBusiness',
@@ -60,7 +96,6 @@ export const businessJsonLd = {
   alternateName: 'Hypnose Bayeux',
   url: siteConfig.url,
   image: `${siteConfig.url}/og-image.jpg`,
-  telephone: siteConfig.telephone,
   email: siteConfig.email,
   sameAs: professionalProfiles.map((profile) => profile.url),
   priceRange: '70 € – 210 €',

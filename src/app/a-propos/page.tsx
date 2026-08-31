@@ -5,7 +5,7 @@ import { MapPin, Phone, ArrowRight, ExternalLink } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import JsonLd from '@/components/JsonLd';
 import { baseMetadata } from '../metadata';
-import { professionalProfiles, siteConfig } from '@/lib/seo';
+import { personJsonLd, professionalProfiles, siteConfig } from '@/lib/seo';
 
 const pageTitle = 'Nadège Guignard, hypnothérapeute près de Bayeux';
 const pageDescription = 'Découvrez Nadège Guignard, son approche personnalisée de l’hypnose et son cabinet situé à Maisons, à 10 minutes de Bayeux.';
@@ -22,26 +22,6 @@ export const metadata: Metadata = {
     title: pageTitle,
     description: pageDescription,
     url: 'https://www.hypnose-bayeux.fr/a-propos',
-  },
-};
-
-const personJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  '@id': `${siteConfig.url}/a-propos#nadege-guignard`,
-  name: siteConfig.practitioner,
-  jobTitle: 'Hypnothérapeute',
-  url: `${siteConfig.url}/a-propos`,
-  image: `${siteConfig.url}/nadegeGuignard.webp`,
-  sameAs: professionalProfiles.map((profile) => profile.url),
-  worksFor: { '@id': `${siteConfig.url}/#business` },
-  workLocation: {
-    '@type': 'Place',
-    name: 'Cabinet d’hypnose près de Bayeux',
-    address: {
-      '@type': 'PostalAddress',
-      ...siteConfig.address,
-    },
   },
 };
 
