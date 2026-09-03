@@ -14,6 +14,16 @@ const collectSource = (directory: URL): string => readdirSync(directory, { withF
   .join('\n');
 const source = collectSource(new URL('src/', root));
 
+const readWebpDimensions = (asset: URL) => {
+  const bytes = readFileSync(asset);
+  const vp8 = bytes.indexOf(Buffer.from('VP8 '));
+  if (vp8 < 0) throw new Error('Portrait WebP VP8 attendu');
+  return {
+    width: bytes.readUInt16LE(vp8 + 14) & 0x3fff,
+    height: bytes.readUInt16LE(vp8 + 16) & 0x3fff,
+  };
+};
+
 describe('public metadata consistency', () => {
   it('uses only the live hypnose-bayeux.fr domain', () => {
     expect(source).not.toContain('bayeuxhypnose.fr');
@@ -109,5 +119,12 @@ describe('public metadata consistency', () => {
     for (const asset of referencedAssets) {
       expect(() => readFileSync(new URL(`public/${asset}`, root))).not.toThrow();
     }
+  });
+
+  it('uses the supplied 1300 by 1331 portrait everywhere', () => {
+    expect(readWebpDimensions(new URL('public/nadegeGuignard.webp', root))).toEqual({
+      width: 1300,
+      height: 1331,
+    });
   });
 });
